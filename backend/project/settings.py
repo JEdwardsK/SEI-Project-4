@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # USER CREATED APPS
     'books',
     # 3RD PARTY APPS
-
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
