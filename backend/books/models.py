@@ -11,8 +11,8 @@ class Book(models.Model):
     page_count = models.IntegerField(default= 0)
     published_by =models.CharField(max_length=50)
     pub_date = models.DateField('date published', null=True)
-    genre = models.ManyToManyField('genres.Genre', related_name="genres")
-    supporting_characters = models.ManyToManyField('supporting_characters.SupportingCharacter', related_name='books')
+    genre = models.ManyToManyField('genres.Genre', related_name="books")
+    supporting_characters = models.ManyToManyField('supporting_characters.SupportingCharacter', related_name="books")
 
 
     # RELATIONSHIPS - MANY2MANY
