@@ -25,6 +25,8 @@ urlpatterns = [
     path('api/genres/', include ('genres.urls')),
     path('api/supporting_characters/', include ('supporting_characters.urls')),
     path('api/archetypes/', include ('archetypes.urls')),
+    path('api/protagonists/', include ('protagonists.urls')),
+
 
 
 ]
