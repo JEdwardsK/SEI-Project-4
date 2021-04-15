@@ -26,5 +26,7 @@ class SupportingCharacter(models.Model):
         default=Relationship.NO_INPUT
         )
     character_bio = models.TextField(max_length=700)
+    character_archetypes = models.ManyToManyField('archetypes.Archetype', related_name="supporting_characters")
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
