@@ -12,3 +12,11 @@ django = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+flush = "python manage.py flush"
+seedall = "python manage.py loaddata archetypes/seeds.json genres/seeds.json supporting_characters/seeds.json books/seeds.json "
+mm = "python manage.py makemigrations"
+migrate = "python manage.py migrate"
+serve = "python manage.py runserver"
+
