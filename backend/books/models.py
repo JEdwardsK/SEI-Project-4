@@ -27,6 +27,6 @@ class Book(models.Model):
     # book_creator =
 
     def __str__(self):
-        return f"{self.book_name}, by {self.author}."
+        return f"{self.title}, by {self.author}."
 
 
