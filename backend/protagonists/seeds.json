@@ -1,0 +1,15 @@
+[
+{
+  "model": "protagonists.protagonist",
+  "pk": 1,
+  "fields": {
+    "first_name": "Harry",
+    "last_name": "Potter",
+    "character_bio": "The Boy Who Lived\r\nThe Boy Who Returned",
+    "character_archetypes": [
+      1,
+      19
+    ]
+  }
+}
+]
