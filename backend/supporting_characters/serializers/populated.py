@@ -4,4 +4,4 @@ from archetypes.serializers.common import ArchetypeSerializer
 
 class PopulatedSupportingCharacterSerializer(SupportingCharacterSerializer):
     books = BookSerializer(many=True)
-    archetypes = ArchetypeSerializer(many=True)
+    character_archetypes = ArchetypeSerializer(many=True)
