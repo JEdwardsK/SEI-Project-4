@@ -1,4 +1,18 @@
 [
+  {
+    "model": "genres.genre",
+    "pk": 1,
+    "fields": {
+      "genre": "Drama"
+    }
+  },
+  {
+    "model": "genres.genre",
+    "pk": 2,
+    "fields": {
+      "genre": "Fantasy-Thriller"
+    }
+  },
 {
   "model": "genres.genre",
   "pk": 3,
