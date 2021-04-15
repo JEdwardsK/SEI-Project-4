@@ -10,8 +10,8 @@ class BookListView(APIView):
     '''Request routes for all Books (INDEX page).'''
 
     def get(self, _request):
-        meals = Book.objects.all() # return everything from the db
-        serialized_books = PopulateBookSerializer(meals, many=True) # convert the data
+        books = Book.objects.all()
+        serialized_books = PopulateBookSerializer(books, many=True)
         return Response(serialized_books.data, status=status.HTTP_200_OK)
 
 class BookDetailView(APIView):
