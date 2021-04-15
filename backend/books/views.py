@@ -5,12 +5,13 @@ from rest_framework.exceptions import NotFound
 
 from .models import Book
 from .serializers.common import BookSerializer
+from .serializers.populated import PopulateBookSerializer
 class BookListView(APIView):
     '''Request routes for all Books (INDEX page).'''
 
     def get(self, _request):
         meals = Book.objects.all() # return everything from the db
-        serialized_books = BookSerializer(meals, many=True) # convert the data
+        serialized_books = PopulateBookSerializer(meals, many=True) # convert the data
         return Response(serialized_books.data, status=status.HTTP_200_OK)
 
 class BookDetailView(APIView):
@@ -21,7 +22,7 @@ class BookDetailView(APIView):
             book = Book.objects.get(pk = pk)
         except Book.DoesNotExist:
             raise NotFound(detail = "Cannot find the requested book")
-        serialised_book = BookSerializer(book)
+        serialised_book = PopulateBookSerializer(book)
         return Response(serialised_book.data, status= status.HTTP_200_OK)
 
     def put(self, request, pk):
