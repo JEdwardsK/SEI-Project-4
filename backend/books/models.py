@@ -12,12 +12,12 @@ class Book(models.Model):
     published_by =models.CharField(max_length=50)
     pub_date = models.DateField('date published', null=True)
     genre = models.ManyToManyField('genres.Genre', related_name="genres")
+    supporting_characters = models.ManyToManyField('supporting_characters.SupportingCharacter', related_name='books')
 
 
     # RELATIONSHIPS - MANY2MANY
     # protagonist_character =
     # antagonist_character =
-    # supporting_characters =
     # book_contributor =
     # RELATIONSHIPS - MANY2ONE
 

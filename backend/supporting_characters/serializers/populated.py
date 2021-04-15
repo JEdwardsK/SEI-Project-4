@@ -1,5 +1,5 @@
-from .common import GenreSerializer
+from .common import SupportingCharacterSerializer
 from books.serializers.common import BookSerializer
 
-class PopulatedGenreSerializer(GenreSerializer):
+class PopulatedSupportingCharacterSerializer(SupportingCharacterSerializer):
     books = BookSerializer(many=True)
