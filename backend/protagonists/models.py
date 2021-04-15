@@ -7,7 +7,7 @@ class Protagonist(models.Model):
     last_name = models.CharField(max_length= 50)
     # aliases = models.ArrayField(models.CharField(max_length=50))
     character_bio = models.TextField(max_length=700)
-    character_archetypes = models.ManyToManyField('archetypes.Archetype', related_name="supporting_characters")
+    character_archetypes = models.ManyToManyField('archetypes.Archetype', related_name="main_protagonist")
 
     def __str__(self):
-        return f" the protagonist {self.first_name} {self.last_name}"
+        return f"{self.first_name} {self.last_name}"

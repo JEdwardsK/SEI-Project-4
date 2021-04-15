@@ -13,6 +13,7 @@ class Book(models.Model):
     pub_date = models.DateField('date published', null=True)
     genre = models.ManyToManyField('genres.Genre', related_name="books")
     supporting_characters = models.ManyToManyField('supporting_characters.SupportingCharacter', related_name="books")
+    main_protagonist = models.ManyToManyField('protagonists.Protagonist', related_name="books")
 
 
     # RELATIONSHIPS - MANY2MANY

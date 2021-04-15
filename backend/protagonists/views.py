@@ -11,4 +11,4 @@ class ProtagonistListView(APIView):
         protagonists = Protagonist.objects.all()
         serialised_protagonists = PopulatedProtagonistSerializer(protagonists, many=True)
 
-        return Response(serialised_supporting_characters.data, status = status.HTTP_200_OK)
+        return Response(serialised_protagonists.data, status = status.HTTP_200_OK)
