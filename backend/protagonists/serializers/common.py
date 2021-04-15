@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from ..models import SupportingCharacter
+from ..models import Protagonist
 
-class SupportingCharacterSerializer(serializers.ModelSerializer):
+class ProtagonistSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = SupportingCharacter
+        model = Protagonist
         fields = '__all__'
