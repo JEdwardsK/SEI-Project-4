@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # USER CREATED APPS
     'books',
     'users',
+    'reviews',
     # 3RD PARTY APPS
     'rest_framework',
 ]
