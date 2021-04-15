@@ -3,22 +3,22 @@ from django.db import models
 class SupportingCharacter(models.Model):
 
     class Relationship(models.TextChoices):
-        NO_INPUT = 'N/A', ('None Input')
-        FAMILY_MEMBER = 'FM', ('Family Member')
-        RIVAL = 'R', ('Rival')
-        LOVER = 'L', ('Love Interest')
-        FRIEND = 'F', ('Friend')
-        COMPANION = 'C', ('Companion')
-        ALLY = 'A', ('Ally')
-        ENEMY = 'E', ('Enemy')
-        SERVANT = 'SER', ('Servant')
-        MENTOR = 'M', ('Mentor')
+        NO_INPUT = 'None Input', ('None Input')
+        FAMILY_MEMBER = 'Family Member', ('Family Member')
+        RIVAL = 'Rival', ('Rival')
+        LOVER = 'Love Interest', ('Love Interest')
+        FRIEND = 'Friend', ('Friend')
+        COMPANION = 'Companion', ('Companion')
+        ALLY = 'Ally', ('Ally')
+        ENEMY = 'Enemy', ('Enemy')
+        SERVANT = 'Servant', ('Servant')
+        MENTOR = 'Mentor', ('Mentor')
 
 
     first_name = models.CharField(max_length= 50)
     last_name = models.CharField(max_length= 50)
     relationship_to_protagonist = models.CharField(
-        max_length=10,
+        max_length=50,
         choices=Relationship.choices,
         default=Relationship.NO_INPUT
         )
