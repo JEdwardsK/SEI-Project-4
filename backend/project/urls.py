@@ -26,6 +26,7 @@ urlpatterns = [
     path('api/supporting_characters/', include ('supporting_characters.urls')),
     path('api/archetypes/', include ('archetypes.urls')),
     path('api/protagonists/', include ('protagonists.urls')),
+    path('api/antagonists/', include ('antagonists.urls')),
 
 
 

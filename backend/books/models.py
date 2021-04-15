@@ -14,13 +14,11 @@ class Book(models.Model):
     genre = models.ManyToManyField('genres.Genre', related_name="books")
     supporting_characters = models.ManyToManyField('supporting_characters.SupportingCharacter', related_name="books")
     main_protagonist = models.ManyToManyField('protagonists.Protagonist', related_name="books")
+    main_antagonist = models.ManyToManyField('antagonists.Antagonist', related_name="books")
 
 
     # RELATIONSHIPS - MANY2MANY
-    # protagonist_character =
-    # antagonist_character =
     # book_contributor =
-    # RELATIONSHIPS - MANY2ONE
 
 
     # RELATIONSHIPS - ONE2MANY

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'supporting_characters',
     'archetypes',
     'protagonists',
+    'antagonists',
     # 3RD PARTY APPS
     'rest_framework',
 ]
