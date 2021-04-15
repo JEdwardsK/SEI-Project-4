@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'users',
     'reviews',
     'genres',
+    'supporting_characters'
     # 3RD PARTY APPS
     'rest_framework',
 ]
