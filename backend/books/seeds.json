@@ -1,0 +1,211 @@
+[
+{
+  "model": "books.book",
+  "pk": 1,
+  "fields": {
+    "title": "Harry Potter and the Chamber of Secrets",
+    "author": "J.K. Rowling",
+    "cover_image": "https://media.harrypotterfanzone.com/chamber-of-se",
+    "ISBN": "0747538484",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "Harry Potter returns to Hogwarts School for a second year of studying, unbeknownst to him the Chamber of Secrets has been opened by his oldest enemy.",
+    "page_count": 251,
+    "published_by": "Bloomsbury",
+    "pub_date": "1998-02-07",
+    "genre": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "supporting_characters": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 2,
+  "fields": {
+    "title": "Harry Potter and the Philosophers Stone",
+    "author": "J.K. Rowling",
+    "cover_image": "https://media.harrypotterfanzone.com/philsophers-s",
+    "ISBN": "9780747532743",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "Harry Potter receives his first letters from Hogwarts School of Witchcraft and Wizardry, much to the dismay of his abusive aunt and uncle.",
+    "page_count": 233,
+    "published_by": "Bloomsbury",
+    "pub_date": "1997-06-26",
+    "genre": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "supporting_characters": [
+      1,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 3,
+  "fields": {
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "author": "J.K. Rowling",
+    "cover_image": "https://pictures.abebooks.com/inventory/3085235042",
+    "ISBN": "0747546290",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "Harry Potter returns to Hogwarts for his third year of study, although much has changed this year, with soul draining Dementors and the crazy Sirius Black on the loose from Azkaban.",
+    "page_count": 317,
+    "published_by": "Bloomsbury",
+    "pub_date": "1999-08-07",
+    "genre": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supporting_characters": [
+      1,
+      3,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 4,
+  "fields": {
+    "title": "Harry Potter and the Goblet of Fire",
+    "author": "J.K. Rowling",
+    "cover_image": "https://media.harrypotterfanzone.com/goblet-of-fir",
+    "ISBN": "9780439139595",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "Big changes are being made across the world of Harry Potter, with the schools of Durmstrang and Beauxbaton arriving at Hogwarts for the Tri Wizard Tournament. However, the dark lord Voldemort is secretly gathering strength and plans to strike when Harry is at his most vulnerable.",
+    "page_count": 636,
+    "published_by": "Bloomsbury",
+    "pub_date": "2000-08-07",
+    "genre": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supporting_characters": [
+      1,
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 5,
+  "fields": {
+    "title": "Harry Potter and the Order of the Phoenix",
+    "author": "J.K. Rowling",
+    "cover_image": "https://image.invaluable.com/housePhotos/Antikbar/",
+    "ISBN": "9781855496484",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "In Harrys 5th year at Hogwarts he is persecuted for his claims of Voldemorts return, with the Ministry of Magic appointing a new Defence Against the Dark Arts teacher, Dolores Umbridge.",
+    "page_count": 766,
+    "published_by": "Bloomsbury",
+    "pub_date": "2003-06-21",
+    "genre": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supporting_characters": [
+      1,
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 6,
+  "fields": {
+    "title": "Harry Potter and the Half-Blood Prince",
+    "author": "J.K. Rowling",
+    "cover_image": "https://media.harrypotterfanzone.com/half-blood-pr",
+    "ISBN": "9780307283641",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "The second to last book in the Harry Potter Series, In this book the final plot lines for the saga are approaching culmination. Much is learned about Lord Voldemort, including snippets of his childhood and many of his actions whilst he still went by the name Tom Riddle",
+    "page_count": 607,
+    "published_by": "Bloomsbury",
+    "pub_date": "2005-07-16",
+    "genre": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supporting_characters": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 7,
+  "fields": {
+    "title": "Harry Potter and the Deathly Hallows",
+    "author": "J.K. Rowling",
+    "cover_image": "https://i2-prod.mirror.co.uk/incoming/article74649",
+    "ISBN": "9780739360385",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "The final book in the Harry Potter Saga, Harry Ron and Hermione are on the run from the Dark Lord, who's power and Influence has risen to new heights. With the help of numerous friends and allies, the trio seek to destroy each of Voldemorts Horcruxes, with Harry facing him for one final confrontation",
+    "page_count": 607,
+    "published_by": "Bloomsbury",
+    "pub_date": "2007-07-21",
+    "genre": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "supporting_characters": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ]
+  }
+}
+]
