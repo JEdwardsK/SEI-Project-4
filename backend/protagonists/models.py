@@ -4,7 +4,7 @@ from django.db import models
 class Protagonist(models.Model):
 
     first_name = models.CharField(max_length= 50)
-    last_name = models.CharField(max_length= 50)
+    last_name = models.CharField(max_length= 50, default="", blank=True)
     # aliases = models.ArrayField(models.CharField(max_length=50))
     character_bio = models.TextField(max_length=700)
     character_archetypes = models.ManyToManyField('archetypes.Archetype', related_name="main_protagonist")

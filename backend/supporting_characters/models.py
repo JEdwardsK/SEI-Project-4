@@ -18,8 +18,7 @@ class SupportingCharacter(models.Model):
 
 
     first_name = models.CharField(max_length= 50)
-    last_name = models.CharField(max_length= 50)
-    # aliases = models.ArrayField(models.CharField(max_length=50))
+    last_name = models.CharField(max_length= 50, default="", blank=True)    # aliases = models.ArrayField(models.CharField(max_length=50))
     relationship_to_protagonist = models.CharField(
         max_length=50,
         choices=Relationship.choices,
