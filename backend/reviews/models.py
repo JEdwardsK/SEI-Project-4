@@ -7,7 +7,7 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     book = models.ForeignKey(
         "books.Book",
-        related_name="book_reviews",
+        related_name="reviews",
         # Users will not be able to delete the books after posting so this cascade is not used,
         # however keep in if decide to have an admin user to with delete privileges.
         on_delete=models.CASCADE
