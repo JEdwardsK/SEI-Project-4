@@ -12,6 +12,8 @@ class SupportingCharacter(models.Model):
         ALLY = 'A', ('Ally')
         ENEMY = 'E', ('Enemy')
         SERVANT = 'SER', ('Servant')
+        MENTOR = 'M', ('Mentor')
+
 
     first_name = models.CharField(max_length= 50)
     last_name = models.CharField(max_length= 50)
