@@ -7,8 +7,17 @@
 - React (Hooks)
 - JavaScript
 
+## FRONTEND PACKAGES
 
+- http-proxy-middleware
+- react-router-dom
+- axios
 
+## BACKEND PACKAGES
+
+- django
+- psycopg2-binary
+- pyjwt
 ## Outline
 Client can search a database of user generated content to find a book based on input search criteria. The goal of the app is to allow client to find a book where they know things about the book but not the name.
 

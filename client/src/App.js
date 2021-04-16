@@ -1,25 +1,17 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom' 
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import HomePage from './components/SitePages/HomePage';
+import Navbar from './components/SitePages/Navbar';
+import BookIndex from './components/Books/BookIndex';
+import GenreIndex from './components/Genres/GenreIndex';
+import BookShow from './components/Books/BookShow';
+import ProtagonistIndex from './components/Characters/ProtagonistIndex';
+import Footer from './components/SitePages/Footer';
+
 
 //#region imports
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import HomePage from './components/HomePage'
 
-import BookCard from './components/BookCard'
-import BookIndex from './components/BookIndex'
-import BookShow from './components/BookShow'
-
-import CharacterCard from './components/CharacterCard'
-import AntagonistIndex from './components/AntagonistIndex'
-import ProtagonistIndex from './components/ProtagonistIndex'
-import SupportingCharacterIndex from './components/SupportingCharacterIndex'
-
-import Register from './components/Register'
-import Login from './components/Login'
-import GenreIndex from './components/GenreIndex'
-import Profile from './components/Profile'
 //#endregion
 
 function App() {
@@ -53,11 +45,11 @@ function App() {
       <Route exact path ='/register'>
       </Route>
       {/* once someone has logged in show the profile button in navbar */}
-      <Route exact path ='/profile'> 
+      <Route exact path ='/profile'>
       </Route>
       {/* If the User is a superUser or admin send them to the auth profile page with additional options */}
       <Route exact path ='/profile/auth'>
-      </Route> 
+      </Route>
     </Switch>
     <Footer/>
     </BrowserRouter>
