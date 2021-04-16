@@ -7,13 +7,16 @@ export const BookIndex = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get('/api/books')
+      const { data } = await axios.get('/api/books/')
       setBooks(data)
+      console.log(books)
     }
     getData()
   }, [])
 
-  if(!books) return null
+  if(!books) return (
+    <div>Loading, please wait</div>
+  )
 
   return (
     <>
