@@ -7,10 +7,9 @@ export const BookIndex = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get('/api/books')
-      setBooks(response.data)
+      const { data } = await axios.get('/api/books')
+      setBooks(data)
     }
-    console.log('The Book List', books)
     getData()
   }, [])
 
@@ -19,9 +18,11 @@ export const BookIndex = () => {
   return (
     <>
       { books.map( book => {
-                return <div key = {book.id} >
-                  <BookCard { ...book } />
-                </div> 
+                return (
+                  <div key = {book.id} >
+                    <BookCard { ...book } />
+                  </div>
+                )
               })}
     </>
   )

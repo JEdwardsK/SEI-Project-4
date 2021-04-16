@@ -9,7 +9,7 @@ from .serializers.common import BookSerializer
 from .serializers.populated import PopulateBookSerializer
 class BookListView(APIView):
     '''Request routes for all Books (INDEX page).'''
-    permission_classes = (IsAuthenticated,)
+
     def get(self, _request):
         books = Book.objects.all()
         serialized_books = PopulateBookSerializer(books, many=True)
