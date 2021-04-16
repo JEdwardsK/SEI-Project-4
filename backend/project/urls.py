@@ -28,4 +28,5 @@ urlpatterns = [
     path('api/protagonists/', include ('protagonists.urls')),
     path('api/antagonists/', include ('antagonists.urls')),
 
+
 ]
