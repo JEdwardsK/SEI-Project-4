@@ -4,7 +4,6 @@ from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
 
-
 User = get_user_model()
 
 class JWTAuthentication(BasicAuthentication):
@@ -35,3 +34,11 @@ class JWTAuthentication(BasicAuthentication):
             raise PermissionDenied(detail='User not found')
 
         return (user, token)
+
+
+
+
+
+
+
+
