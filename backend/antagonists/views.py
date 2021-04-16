@@ -12,3 +12,4 @@ class AntagonistListView(APIView):
         serialised_antagonists = PopulatedAntagonistSerializer(antagonists, many=True)
 
         return Response(serialised_antagonists.data, status = status.HTTP_200_OK)
+
