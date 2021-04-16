@@ -3,7 +3,7 @@ from django.db import models
 class Book(models.Model):
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
-    cover_image = models.CharField(max_length=50, null=True)
+    cover_image = models.CharField(max_length=200, null=True)
     ISBN = models.CharField(max_length=50)
     is_made_into_film = models.BooleanField('Has the book been made into a film?', default=False)
     is_made_into_series = models.BooleanField('Has the book been made into a tv series?', default=False)
