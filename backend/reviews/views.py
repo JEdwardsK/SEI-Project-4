@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.exceptions import NotFound
+from rest_framework.exceptions import NotFound, PermissionDenied
 
 from.serializers.common import ReviewSerializer
 from.models import Review
@@ -9,6 +9,7 @@ from.models import Review
 class ReviewListView(APIView):
     """Handles requests relating to all Reviews."""
     def post(self, request):
+        request.data["review_owner"] = request.user.id
         review_to_create = ReviewSerializer(data=request.data)
         if review_to_create.is_valid():
             review_to_create.save()
@@ -23,5 +24,7 @@ class ReviewDetailView(APIView):
             review_to_delete = Review.objects.get(pk=pk)
         except Review.DoesNotExist:
             raise NotFound()
+        if review_to_delete.owner != request.user:
+            raise PermissionDenied()
         review_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

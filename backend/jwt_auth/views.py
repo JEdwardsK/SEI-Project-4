@@ -42,9 +42,9 @@ class LoginView(APIView):
         token_expiry = datetime.now() + timedelta(days=7)
         #generate token
         token = jwt.encode(
-            {'sub': user_to_login.id, 'exp': int(dt.strftime('%s'))},
+            {'sub': user_to_login.id, 'exp': int(token_expiry.strftime('%s'))},
             settings.SECRET_KEY,
             algorithm='HS256'
         )
 
-        return Response({ 'token': token, 'message': f'Welcome back {user_to_login.first_name}'})
+        return Response({ 'token': token, 'message': f'Welcome back {user_to_login.username}'})

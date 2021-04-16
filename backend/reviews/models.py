@@ -12,5 +12,10 @@ class Review(models.Model):
         # however keep in if decide to have an admin user to with delete privileges.
         on_delete=models.CASCADE
     )
+    review_owner = models.ForeignKey(
+        "jwt_auth.User",
+        related_name="reviews",
+        on_delete= models.CASCADE
+)
     def __str__(self):
         return f"Review of {self.book}"
