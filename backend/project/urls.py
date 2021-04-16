@@ -27,6 +27,7 @@ urlpatterns = [
     path('api/archetypes/', include ('archetypes.urls')),
     path('api/protagonists/', include ('protagonists.urls')),
     path('api/antagonists/', include ('antagonists.urls')),
+    path('api/auth/', include('jwt_auth.urls')),
 
 
 ]
