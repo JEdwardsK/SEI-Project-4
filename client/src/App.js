@@ -1,20 +1,19 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import HomePage from './components/SitePages/HomePage';
-import Navbar from './components/SitePages/Navbar';
-import BookIndex from './components/Books/BookIndex';
-import GenreIndex from './components/Genres/GenreIndex';
-import BookShow from './components/Books/BookShow';
-import ProtagonistIndex from './components/Characters/ProtagonistIndex';
-import Footer from './components/SitePages/Footer';
 
 
 //#region imports
-
+import HomePage from './components/SitePages/HomePage'
+import Navbar from './components/SitePages/Navbar'
+import BookIndex from './components/Books/BookIndex'
+import GenreIndex from './components/Genres/GenreIndex'
+import BookShow from './components/Books/BookShow'
+import ProtagonistIndex from './components/Characters/ProtagonistIndex'
+import Footer from './components/SitePages/Footer'
 //#endregion
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
     <Navbar/>
