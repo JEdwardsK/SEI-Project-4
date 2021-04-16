@@ -3,18 +3,10 @@
   "model": "reviews.review",
   "pk": 1,
   "fields": {
-    "review_text": "My favourite book of the series!",
-    "created_at": "2021-04-15T14:21:43.205Z",
-    "book": 3
-  }
-},
-{
-  "model": "reviews.review",
-  "pk": 2,
-  "fields": {
-    "review_text": "A quality book, the elements of horror work well whilst still retaining the classic coming of age storyline.",
-    "created_at": "2021-04-15T14:34:41.328Z",
-    "book": 1
+    "review_text": "sfdkjnsfjk",
+    "created_at": "2021-04-16T14:44:47.530Z",
+    "book": 1,
+    "review_owner": 2
   }
 }
 ]
