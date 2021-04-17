@@ -5,7 +5,7 @@ import BooksCarousel from '../Books/BooksCarousel'
 const GenreIndex = () => {
 
   const [allGenres, setAllGenres] = useState(null)
-
+  const [showBooks, setShowBooks] = useState(false)
 
   useEffect(() => {
     const getGenres = async () => {
@@ -15,18 +15,27 @@ const GenreIndex = () => {
     getGenres()
   },[])
 
+  const toggleShowBooks = () => {
+    setShowBooks(!showBooks)
+  }
+
   if (!allGenres) return null
   return (
     <>
-      {allGenres.map(item => {
+      {allGenres
+      .filter(item => item.books.length > 0)
+      .map(item => {
         const {id, books, genre } = item
         return (
           <>
           <div className="genre" key={id}>
-            <h3>{genre}</h3>
-            <div className="genre-books">
-              <BooksCarousel books={books}/>
-            </div>
+              <h3 onClick={toggleShowBooks}>{genre}</h3>
+              { showBooks &&
+                <div className="genre-books">
+                test
+                <BooksCarousel books={books}/>
+                </div>
+              }
           </div>
           </>
         )
