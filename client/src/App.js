@@ -11,6 +11,7 @@ import GenreIndex from './components/Genres/GenreIndex'
 import BookShow from './components/Books/BookShow'
 import ProtagonistIndex from './components/Characters/ProtagonistIndex'
 import Footer from './components/SitePages/Footer'
+import Search from './components/helpers/Search/Search';
 //#endregion
 
 const App = () => {
@@ -47,7 +48,12 @@ const App = () => {
       <Route exact path ='/profile'>
       </Route>
       {/* If the User is a superUser or admin send them to the auth profile page with additional options */}
+      {/** no need for separate page, can conditionally render on same page based on status
       <Route exact path ='/profile/auth'>
+      </Route>
+      */}
+      <Route exact path='/search'>
+        <Search />
       </Route>
     </Switch>
     <Footer/>
