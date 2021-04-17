@@ -1,11 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+const BooksCarousel = ( { books } ) => {
 
-const BooksCarousel = ( {title, author, cover_image, genre, id, is_made_into_film, is_made_into_series, page_count,published_by, pub_date, reviews, story_overview, supporting_characters, ISBN  }) => {
   return (
 
-    <li class='book'>
-      <img src="http://37signals.com/images/remote/remote_front.png" alt={`the cover for ${title}, by ${author}`} />
-    </li>
+    <>
+      {books.map(book => {
+        const { title, author, cover_image, id } = book
+
+        return (
+          <Link to={`/books/${id}`}>
+          <li className='book'>
+            <img src={cover_image} alt={`the cover for ${title}, by ${author}`} />
+          </li>
+          </Link>
+        )
+      })}
+    </>
   )
 }
 
