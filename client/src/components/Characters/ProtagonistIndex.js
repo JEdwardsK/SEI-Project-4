@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-
+import CharacterCard from './CharacterCard'
 
 
 
@@ -18,7 +18,13 @@ const ProtagonistIndex = () => {
   if(!allProtagonists) return null
   console.log(allProtagonists)
   return (
-    <div>hello world</div>
+    <>
+    <h1>Protagonists</h1>
+    {allProtagonists.map(character => {
+      return <CharacterCard character={character} />
+    })}
+    </>
+
   )
 }
 

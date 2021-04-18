@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import CharacterCard from './CharacterCard'
 
 
 const SupportingCharacterIndex = () => {
@@ -15,10 +16,15 @@ const SupportingCharacterIndex = () => {
 
 
   if(!allSupportingCharacters) return null
-  console.log('🚀 ~ file: SupportingCharacterIndex.js ~ line 18 ~ SupportingCharacterIndex ~ allSupportingCharacters', allSupportingCharacters)
+
 
   return (
-    <div>hello world</div>
+    <>
+    <h1>Supporting Characters</h1>
+    {allSupportingCharacters.map(character => {
+      return <CharacterCard character={character} />
+    })}
+    </>
   )
 }
 
