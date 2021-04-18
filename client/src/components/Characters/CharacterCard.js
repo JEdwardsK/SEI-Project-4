@@ -5,8 +5,8 @@ const CharacterCard = ({ character }) => {
 
   console.log(character)
 
-    const {books, id, character_archetypes: archetypes, first_name, last_name, character_bio: bio, relationship_to_protagonist: relationship } = character
-
+    const {books, character_archetypes: archetypes, first_name, last_name, character_bio: bio, relationship_to_protagonist: relationship } = character
+    //* id not used, removed to prevent linter issues, add back when required
   return (
     <div>
       <div className="character-info-right">

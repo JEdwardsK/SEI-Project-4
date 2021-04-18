@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BookSubmit = () => {
-  // * the following fields are required for a succesful post: title, author, ISBN, published by, genre, supporting characters, protag and antag. will change these later to only require title author and synopsis.
+  // * the following fields are required for a successful post: title, author, ISBN, published by, genre, supporting characters, protagonist and antagonist. will change these later to only require title author and synopsis.
 
   // * the form will be segmented into at least parts: first the user will have the required fields. then they will pass to optional fields, displaying all of the remaining fields EXCEPT the character fields. these are relationship based and so must be posted first.
 
@@ -21,7 +21,7 @@ const BookSubmit = () => {
   //? buttons visible are cancel (clear current fields and submit previous), and submit
   //? 4) client again asked if they want to add more or submit
   //? buttons visible are submit or continue
-  //? 5) characters are displayed as dropdown entries. user can select one protag, one antag and any number of supporting characters
+  //? 5) characters are displayed as dropdown entries. user can select one protagonist, one antagonist and any number of supporting characters
   //? buttons visible are cancel (clear current fields and submit previous),  submit, and my characters not there
   //? 6) if user selects third button, the form is submitted and posted. they are then asked if they want submit characters and are directed to the character submission page. if they do not want to submit a character, they are directed to the posted books show page
 
