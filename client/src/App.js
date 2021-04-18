@@ -12,6 +12,8 @@ import BookShow from './components/Books/BookShow'
 import ProtagonistIndex from './components/Characters/ProtagonistIndex'
 import Footer from './components/SitePages/Footer'
 import Search from './components/helpers/Search/Search';
+import AntagonistIndex from './components/Characters/AntagonistIndex';
+import SupportingCharacterIndex from './components/Characters/SupportingCharacterIndex';
 //#endregion
 
 const App = () => {
@@ -31,15 +33,17 @@ const App = () => {
       <Route exact path ='/genres'>
         <GenreIndex/>
       </Route>
-      {/* The three feilds below will all use CharacterCard to display the data */}
+      {/* The three fields below will all use CharacterCard to display the data */}
       <Route exact path ='/protagonists'>
         <ProtagonistIndex/>
       </Route>
       <Route exact path ='/antagonists'>
+        <AntagonistIndex/>
       </Route>
       <Route exact path ='/supporting_characters'>
+        <SupportingCharacterIndex/>
       </Route>
-      {/* Use a : to display either login/register or as signout button based on a users login status */}
+      {/* Use a : to display either login/register or as sign out button based on a users login status */}
       <Route exact path ='/login'>
       </Route>
       <Route exact path ='/register'>

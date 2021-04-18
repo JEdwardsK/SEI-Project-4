@@ -14,7 +14,7 @@ const BookShow = () => {
       setSingleBook(data)
     }
     getSingleBook()
-  },[])
+  },[bookID])
 
   if (!singleBook) return null
 
