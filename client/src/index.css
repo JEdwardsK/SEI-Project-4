@@ -103,3 +103,33 @@ ul {
 
 .book::before { left: -3px; }
 .book::after { left: -6px; }
+
+
+/* Inline #2 | http://localhost:3000/profile */
+
+.profile-container {
+  display: flex;
+  border: 2px solid black;
+  justify-content: space-around;
+}
+
+.profile-info-left {
+  flex: 1;
+}
+
+.profile-info-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info-right-sections {
+  /* display: fl\]; */
+  display: flex;
+  justify-content: start;
+}
+
+.profile-info-left {
+  border: 2px dotted red;
+}
+

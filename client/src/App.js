@@ -14,6 +14,7 @@ import Footer from './components/SitePages/Footer'
 import Search from './components/helpers/Search/Search';
 import AntagonistIndex from './components/Characters/AntagonistIndex';
 import SupportingCharacterIndex from './components/Characters/SupportingCharacterIndex';
+import Profile from './components/Users/Profile';
 //#endregion
 
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
       </Route>
       {/* once someone has logged in show the profile button in navbar */}
       <Route exact path ='/profile'>
+        <Profile/>
       </Route>
       {/* If the User is a superUser or admin send them to the auth profile page with additional options */}
       {/** no need for separate page, can conditionally render on same page based on status

@@ -3,7 +3,6 @@ import BooksCarousel from '../Books/BooksCarousel'
 
 const CharacterCard = ({ character }) => {
 
-  console.log(character)
 
     const {books, character_archetypes: archetypes, first_name, last_name, character_bio: bio, relationship_to_protagonist: relationship } = character
     //* id not used, removed to prevent linter issues, add back when required
