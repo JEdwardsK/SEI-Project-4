@@ -2,14 +2,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+# from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
 from .models import Book
 from .serializers.common import BookSerializer
 from .serializers.populated import PopulateBookSerializer
 class BookListView(APIView):
     '''Request routes for all Books (INDEX page).'''
-    permission_classes = (IsAuthenticated,)
+
     def get(self, _request):
         books = Book.objects.all()
         serialized_books = PopulateBookSerializer(books, many=True)
@@ -48,3 +48,27 @@ class BookDetailView(APIView):
             updated_book.save()
             return Response(updated_book.data, status = status.HTTP_202_ACCEPTED)
         return Response(updated_book.errors, status = status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+
+class SearchBooksView(APIView):
+    '''Takes Request data and compares it against each book in the database. if the data matches, return the book into an array'''
+
+    def post(self, request):
+        user = request.user.email
+        print('user: ', user)
+        search_data = request.data
+        print('search_data: ', search_data)
+        message = "i am a test"
+        book = Book.objects.get(pk=1)
+        title = book.title.lower()
+        print('title: ', title)
+        title_contains_search = title.find(('chamber').lower()) != -1
+        print('title_contains_search: ', title_contains_search)
+
+        genre = book.genre
+        print('genre: ', genre)
+
+
+
+
+        return Response(message, status = status.HTTP_200_OK)

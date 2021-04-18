@@ -48,3 +48,17 @@ class LoginView(APIView):
         )
 
         return Response({ 'token': token, 'message': f'Welcome back {user_to_login.username}'})
+
+class UserDetailView(APIView):
+
+        # identify the user from the request id
+    def get(self, _request, pk):
+        # get the user from the database
+        try:
+            user = User.objects.get(pk = pk)
+            print('user: ', user)
+        except User.DoesNotExist:
+            raise NotFound(detail = "Cannot find the requested user")
+        # return the user found in the response
+        serialised_user = UserSerializer(user)
+        return Response(serialised_user.data, status = status.HTTP_200_OK)

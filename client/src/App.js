@@ -1,28 +1,25 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom' 
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
 
 //#region imports
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import HomePage from './components/HomePage'
+import HomePage from './components/SitePages/HomePage'
+import Navbar from './components/SitePages/Navbar'
+import BookIndex from './components/Books/BookIndex'
+import GenreIndex from './components/Genres/GenreIndex'
+import BookShow from './components/Books/BookShow'
+import ProtagonistIndex from './components/Characters/ProtagonistIndex'
+import Footer from './components/SitePages/Footer'
+import Search from './components/helpers/Search/Search';
+import AntagonistIndex from './components/Characters/AntagonistIndex';
+import SupportingCharacterIndex from './components/Characters/SupportingCharacterIndex';
+import Profile from './components/Users/Profile';
+import Login from './components/Forms/Users/Login';
 
-import BookCard from './components/BookCard'
-import BookIndex from './components/BookIndex'
-import BookShow from './components/BookShow'
-
-import CharacterCard from './components/CharacterCard'
-import AntagonistIndex from './components/AntagonistIndex'
-import ProtagonistIndex from './components/ProtagonistIndex'
-import SupportingCharacterIndex from './components/SupportingCharacterIndex'
-
-import Register from './components/Register'
-import Login from './components/Login'
-import GenreIndex from './components/GenreIndex'
-import Profile from './components/Profile'
 //#endregion
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
     <Navbar/>
@@ -39,25 +36,34 @@ function App() {
       <Route exact path ='/genres'>
         <GenreIndex/>
       </Route>
-      {/* The three feilds below will all use CharacterCard to display the data */}
+      {/* The three fields below will all use CharacterCard to display the data */}
       <Route exact path ='/protagonists'>
         <ProtagonistIndex/>
       </Route>
       <Route exact path ='/antagonists'>
+        <AntagonistIndex/>
       </Route>
       <Route exact path ='/supporting_characters'>
+        <SupportingCharacterIndex/>
       </Route>
-      {/* Use a : to display either login/register or as signout button based on a users login status */}
+      {/* Use a : to display either login/register or as sign out button based on a users login status */}
       <Route exact path ='/login'>
+        <Login/>
       </Route>
       <Route exact path ='/register'>
       </Route>
       {/* once someone has logged in show the profile button in navbar */}
-      <Route exact path ='/profile'> 
+      <Route exact path ='/profile'>
+        <Profile/>
       </Route>
       {/* If the User is a superUser or admin send them to the auth profile page with additional options */}
+      {/** no need for separate page, can conditionally render on same page based on status
       <Route exact path ='/profile/auth'>
-      </Route> 
+      </Route>
+      */}
+      <Route exact path='/search'>
+        <Search />
+      </Route>
     </Switch>
     <Footer/>
     </BrowserRouter>

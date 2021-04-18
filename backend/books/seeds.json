@@ -5,7 +5,7 @@
   "fields": {
     "title": "Harry Potter and the Chamber of Secrets",
     "author": "J.K. Rowling",
-    "cover_image": "https://media.harrypotterfanzone.com/chamber-of-se",
+    "cover_image": "https://i.pinimg.com/originals/e7/6e/d0/e76ed082d852c4fa97cbcf6018cd384c.jpg",
     "ISBN": "0747538484",
     "is_made_into_film": true,
     "is_made_into_series": false,
@@ -39,7 +39,7 @@
   "fields": {
     "title": "Harry Potter and the Philosophers Stone",
     "author": "J.K. Rowling",
-    "cover_image": "https://media.harrypotterfanzone.com/philsophers-s",
+    "cover_image": "https://www.techrora.com/wp-content/uploads/harry-potter-and-the-sorcerer%E2%80%99s-stone-book-cover-original.jpg",
     "ISBN": "9780747532743",
     "is_made_into_film": true,
     "is_made_into_series": false,
@@ -72,7 +72,7 @@
   "fields": {
     "title": "Harry Potter and the Prisoner of Azkaban",
     "author": "J.K. Rowling",
-    "cover_image": "https://pictures.abebooks.com/inventory/3085235042",
+    "cover_image": "https://www.harrypotterfanzone.com/wp-content/2009/06/poa-uk-kids-jacket-art.jpg",
     "ISBN": "0747546290",
     "is_made_into_film": true,
     "is_made_into_series": false,
@@ -108,7 +108,7 @@
   "fields": {
     "title": "Harry Potter and the Goblet of Fire",
     "author": "J.K. Rowling",
-    "cover_image": "https://media.harrypotterfanzone.com/goblet-of-fir",
+    "cover_image": "https://media.harrypotterfanzone.com/goblet-of-fire-uk-childrens-edition.jpg",
     "ISBN": "9780439139595",
     "is_made_into_film": true,
     "is_made_into_series": false,
@@ -143,7 +143,7 @@
   "fields": {
     "title": "Harry Potter and the Order of the Phoenix",
     "author": "J.K. Rowling",
-    "cover_image": "https://image.invaluable.com/housePhotos/Antikbar/",
+    "cover_image": "https://media.harrypotterfanzone.com/order-of-the-phoenix-uk-childrens-edition.jpg",
     "ISBN": "9781855496484",
     "is_made_into_film": true,
     "is_made_into_series": false,
@@ -180,7 +180,7 @@
   "fields": {
     "title": "Harry Potter and the Half-Blood Prince",
     "author": "J.K. Rowling",
-    "cover_image": "https://media.harrypotterfanzone.com/half-blood-pr",
+    "cover_image": "https://media.harrypotterfanzone.com/half-blood-prince-uk-childrens-edition.jpg",
     "ISBN": "9780307283641",
     "is_made_into_film": true,
     "is_made_into_series": false,
@@ -217,7 +217,7 @@
   "fields": {
     "title": "Harry Potter and the Deathly Hallows",
     "author": "J.K. Rowling",
-    "cover_image": "https://i2-prod.mirror.co.uk/incoming/article74649",
+    "cover_image": "https://media.harrypotterfanzone.com/deathly-hallows-uk-childrens-edition.jpg",
     "ISBN": "9780739360385",
     "is_made_into_film": true,
     "is_made_into_series": false,
