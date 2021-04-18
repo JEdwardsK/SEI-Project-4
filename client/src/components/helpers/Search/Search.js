@@ -71,11 +71,10 @@ const Search = () => {
   })
 
   const handleChange = (event) => {
-    console.log('testing value of button click', event.target.value)
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     setFormData(newFormData)
 
-    console.log('🚀 ~ file: Search.js ~ line 74 ~ handleChange ~ newFormData', newFormData)
+    console.log('🚀 ~ file: Search.js ~ line 74 ~ handleChange ~ newFormData', formData)
   }
   const handleSubmit = (event) => {
     event.preventDefault()

@@ -15,6 +15,8 @@ import Search from './components/helpers/Search/Search';
 import AntagonistIndex from './components/Characters/AntagonistIndex';
 import SupportingCharacterIndex from './components/Characters/SupportingCharacterIndex';
 import Profile from './components/Users/Profile';
+import Login from './components/Forms/Users/Login';
+
 //#endregion
 
 const App = () => {
@@ -46,6 +48,7 @@ const App = () => {
       </Route>
       {/* Use a : to display either login/register or as sign out button based on a users login status */}
       <Route exact path ='/login'>
+        <Login/>
       </Route>
       <Route exact path ='/register'>
       </Route>
