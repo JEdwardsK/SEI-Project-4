@@ -4,7 +4,7 @@ from django.db import models
 class SupportingCharacter(models.Model):
 
     class Relationship(models.TextChoices):
-        NO_INPUT = 'None Input', ('None Input')
+        NO_INPUT = '', ('None')
         NOT_APPLICABLE = 'n/a', ('Not Applicable')
         FAMILY_MEMBER = 'Family Member', ('Family Member')
         RIVAL = 'Rival', ('Rival')
