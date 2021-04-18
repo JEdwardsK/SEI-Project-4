@@ -31,7 +31,11 @@ const CharacterCard = ({ character }) => {
       </div>
       <div className="character-info-right">
         <h3>Appears In</h3>
-        <BooksCarousel books={books} />
+        {
+          books.length > 0
+            ? <BooksCarousel books={books} />
+            : <p>We Don't Know! Maybe you can help us...</p>
+        }
       </div>
     </div>
   )
