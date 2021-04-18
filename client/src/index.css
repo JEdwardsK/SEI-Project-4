@@ -133,3 +133,26 @@ ul {
   border: 2px dotted red;
 }
 
+
+/* Inline #2 | http://localhost:3000/ */
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nav-element {
+  padding: 10px;
+}
+
+.navbar {
+  /* justify-content: space-between; */
+  justify-content: space-evenly;
+}
+
+/* Element | http://localhost:3000/ */
+
+p.nav-element:nth-child(10) {
+  padding-left: -2px;
+}
