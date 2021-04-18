@@ -23,6 +23,14 @@ const GenreIndex = () => {
   return (
     <>
       {allGenres
+      .sort((a, b) => {
+        const genreA = a.genre.toUpperCase()
+        const genreB = b.genre.toUpperCase()
+
+        return genreA < genreB ? -1
+        : genreA > genreB ? 1
+        : 0
+      })
       .filter(item => item.books.length > 0)
       .map(item => {
         const {id, books, genre } = item
