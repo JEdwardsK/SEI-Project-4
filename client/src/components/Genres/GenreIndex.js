@@ -31,9 +31,7 @@ const GenreIndex = () => {
           <div className="genre" key={id}>
             <h3 onClick={toggleShowBooks}>{genre}</h3>
             {showBooks &&
-              <ul className='list-inline'>
               <BooksCarousel books={ books } />
-            </ul>
             }
           </div>
           </>

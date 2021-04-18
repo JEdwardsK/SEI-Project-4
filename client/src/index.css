@@ -65,7 +65,7 @@ ul {
   transition: box-shadow .3s linear;
 }
 
-.book img {
+.book img, .book-image {
   @extend %book-rounded-corners;
 
   width: inherit;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import BookCard from './BookCard'
+// import BookCard from './BookCard'
+import BooksCarousel from './BooksCarousel'
 import axios from 'axios'
 
 export const BookIndex = () => {
@@ -19,13 +20,14 @@ export const BookIndex = () => {
 
   return (
     <>
-      { books.map( book => {
+      {/* { books.map( book => {
                 return (
                   <div key = {book.id} >
                     <BookCard { ...book } />
                   </div>
                 )
-              })}
+              })} */}
+      <BooksCarousel books={books} />
     </>
   )
 }
