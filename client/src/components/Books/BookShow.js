@@ -41,7 +41,9 @@ const BookShow = () => {
           </div>
           <div className="book-info">
             <h4>Author</h4>
-            <p>{author}</p>
+            <a href={`https://en.wikipedia.org/wiki/${author}`}>
+            {author}
+              </a>
           </div>
           <div className="book-info">
             <h4>Protagonist</h4>
