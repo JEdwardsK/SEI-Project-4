@@ -16,6 +16,7 @@ import AntagonistIndex from './components/Characters/AntagonistIndex';
 import SupportingCharacterIndex from './components/Characters/SupportingCharacterIndex';
 import Profile from './components/Users/Profile';
 import Login from './components/Forms/Users/Login';
+import Register from './components/Forms/Users/Register'
 
 //#endregion
 
@@ -51,6 +52,7 @@ const App = () => {
         <Login/>
       </Route>
       <Route exact path ='/register'>
+        <Register/>
       </Route>
       {/* once someone has logged in show the profile button in navbar */}
       <Route exact path ='/profile'>
