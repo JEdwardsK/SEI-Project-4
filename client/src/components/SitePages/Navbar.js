@@ -12,6 +12,8 @@ const Navbar = () => {
       <Link to="/supporting_characters">Supporting Characters</Link>
       <Link to="/profile">Profile</Link>
       <Link to="/login">Log In</Link>
+      <Link to="/search">Search</Link>
+
     </div>
   )
 }

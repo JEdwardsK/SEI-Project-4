@@ -1,7 +1,7 @@
 /*eslint-disable no-unused-vars */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 
 
 const Search = () => {
@@ -54,8 +54,8 @@ const Search = () => {
     allBooks.forEach(book => {
       let matchCount = 0
       const { title, author, is_made_into_film, is_made_into_series, story_overview, genre: genres, supporting_characters} = book
-      if (formTitle.toLowerCase() !== "" && title.includes(formTitle.toLowerCase())) matchCount++
-      if (formAuthor.toLowerCase() !== "" && author.includes(formAuthor.toLowerCase())) matchCount++
+      if (formTitle !== "" && title.toLowerCase().includes(formTitle.toLowerCase())) matchCount++
+      if (formAuthor !== "" && author.toLowerCase().includes(formAuthor.toLowerCase())) matchCount++
       if (formIsFilm !== "" && is_made_into_film.toString() === formIsFilm) matchCount++
       if (formIsSeries !== "" && is_made_into_series === formIsSeries) matchCount++
       // console.log(genres, story_overview)
@@ -86,7 +86,6 @@ const Search = () => {
     setSearchResults(validBooksSearchArray)
 
   }
-
 
   if (!allBooks || !allGenres) return null
 
@@ -152,20 +151,24 @@ const Search = () => {
       </section>
         <section>
           <h2>Search Results</h2>
+          <p>if we've found the book you were looking for, click on it below</p>
         <ul className="list-inline">
           {console.log('validBooksSearchArray', searchResults)}
           {
-            searchResults.map(result => {
+            searchResults
+            .sort((a, b) => b.searchHits - a.searchHits)
+            .map(result => {
               const { searchHits, resultBook } = result
               const { cover_image, id, title, author } = resultBook
 
               return (
                 <>
-                  <Link to={`/books/${id}`}>
-                  <li className='book'>
-                    <img src={cover_image} alt={`the cover for ${title}, by ${author}`} />
-                  </li>
-                  </Link>
+                    <Link to= {`/books/${id}`}>
+                      <li className='book'>
+                        <img src={cover_image} alt={`the cover for ${title}, by ${author}`} value={id}/>
+                      </li>
+                    </Link>
+
                   <p>search hits: {searchHits}</p>
                 </>
               )
