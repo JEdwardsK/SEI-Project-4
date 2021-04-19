@@ -3,6 +3,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
+import BookCard3d from './BookCard3d'
 
 const BookShow = () => {
   const { id: bookID } = useParams()
@@ -33,7 +34,9 @@ const BookShow = () => {
   return (
     <>
       <div className="book-show-info-container">
-        <div className="book-show-info-left book"><img src={coverImage} alt={`the cover of ${title}, by ${author}`} className="book-show-bookCover"/></div>
+        <div className="book-show-info-left book-card">
+          <BookCard3d book={singleBook}/>
+        </div>
         <div className="book-show-info-right">
           <div className="book-info">
             <h4>Title</h4>
@@ -47,11 +50,19 @@ const BookShow = () => {
           </div>
           <div className="book-info">
             <h4>Protagonist</h4>
-            <p>{`${protag[0].first_name} ${protag[0].last_name}`}</p>
+            {
+              protag.length > 0 &&
+
+              <p>{`${protag[0].first_name} ${protag[0].last_name}`}</p>
+            }
           </div>
           <div className="book-info">
             <h4>Antagonist</h4>
-            <p>{`${antag[0].first_name} ${antag[0].last_name}`}</p>
+            {
+              antag.length > 0 &&
+
+              <p>{`${antag[0].first_name} ${antag[0].last_name}`}</p>
+            }
           </div>
           <div className="book-info">
             <h4>Supporting Characters</h4>
