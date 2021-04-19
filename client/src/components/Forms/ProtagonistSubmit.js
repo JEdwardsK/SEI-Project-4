@@ -65,7 +65,7 @@ const ProtagonistSubmit = () => {
           <Col>
             <Form.Group controlId="formFirstNameProtagonist">
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="text" placeholder="What is their first name" required name="first_name"/>
+              <Form.Control type="text" placeholder="What is their first name" required name="first_name" onSubmit={handleChange}/>
               <Form.Text className="text-muted">
                 {'for a character with a title or one given name enter here. e.g "Lord Voldemort".'}
               </Form.Text>
@@ -74,7 +74,7 @@ const ProtagonistSubmit = () => {
           <Col>
             <Form.Group controlId="formLastNameProtagonist">
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="What is their last name" name="last_name"/>
+              <Form.Control type="text" placeholder="What is their last name" name="last_name" onSubmit={handleChange}/>
               <Form.Text className="text-muted">
                 {'input user message'}
               </Form.Text>
@@ -84,14 +84,14 @@ const ProtagonistSubmit = () => {
 
         <Form.Group controlId="formCharacterBioProtagonist">
           <Form.Label>Character Bio</Form.Label>
-          <Form.Control as="textarea" rows ={5} placeholder="enter info about the character" required />
+          <Form.Control as="textarea" rows ={5} placeholder="enter info about the character" required onSubmit={handleChange}/>
           <Form.Text className="text-muted">
             {'input user message'}
           </Form.Text>
         </Form.Group>
         <Form.Group controlId="formBooksProtagonist">
           <Form.Label>Appears in</Form.Label>
-          <Form.Control as="select" multiple>
+          <Form.Control as="select" multiple onSubmit={handleChange}>
             {allBooks.map(book => {
               const { id, title } = book
               return (
