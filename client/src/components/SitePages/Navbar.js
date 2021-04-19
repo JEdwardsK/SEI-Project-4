@@ -17,11 +17,13 @@ const Navbar = () => {
       <Link to="/protagonists"><p className="nav-element">Protagonists</p></Link>
       <Link to="/antagonists"><p className="nav-element">Antagonists</p></Link>
       <Link to="/supporting_characters"><p className="nav-element">Supporting Characters</p></Link>
-      <Link to="/profile"><p className="nav-element">Profile</p></Link>
       <Link to="/search"><p className="nav-element">Search</p></Link>
       {
         userIsAuthenticated() &&
-      <p className="nav-element" onClick={handleLogout}>Logout</p>
+        <>
+          <Link to="/profile"><p className="nav-element">Profile</p></Link>
+          <p className="nav-element" onClick={handleLogout}>Logout</p>
+        </>
       }
       {
         !userIsAuthenticated() &&

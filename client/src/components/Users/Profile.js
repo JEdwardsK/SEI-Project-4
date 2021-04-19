@@ -1,12 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { getPayloadFromToken } from '../helpers/auth'
 
 
 const Profile = () => {
 
   const [user, setUser] = useState(null)
 
-  const userID = 1
+  const userID = getPayloadFromToken().sub
   useEffect(() => {
     const getUser = async () => {
       const { data } = await axios.get(`api/auth/user/${userID}`)
