@@ -15,14 +15,14 @@ const ProtagonistIndex = () => {
   }, [])
 
 
-  if(!allProtagonists) return null
+  if (!allProtagonists) return null
   console.log(allProtagonists)
   return (
     <>
-    <h1>Protagonists</h1>
-    {allProtagonists.map(character => {
-      return <CharacterCard character={character} />
-    })}
+      <h1>Protagonists</h1>
+      {allProtagonists.map(character => {
+        return <CharacterCard key={character.index} character={character} />
+      })}
     </>
 
   )

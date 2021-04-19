@@ -16,14 +16,14 @@ const AntagonistIndex = () => {
   }, [])
 
 
-  if(!allAntagonists) return null
+  if (!allAntagonists) return null
 
   return (
     <>
-    <h1>Antagonists</h1>
-    {allAntagonists.map(character => {
-      return <CharacterCard character={character} />
-    })}
+      <h1>Antagonists</h1>
+      {allAntagonists.map(character => {
+        return <CharacterCard key={character.id} character={character} />
+      })}
     </>
   )
 }

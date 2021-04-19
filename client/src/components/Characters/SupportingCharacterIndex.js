@@ -15,15 +15,15 @@ const SupportingCharacterIndex = () => {
   }, [])
 
 
-  if(!allSupportingCharacters) return null
+  if (!allSupportingCharacters) return null
 
 
   return (
     <>
-    <h1>Supporting Characters</h1>
-    {allSupportingCharacters.map(character => {
-      return <CharacterCard character={character} />
-    })}
+      <h1>Supporting Characters</h1>
+      {allSupportingCharacters.map(character => {
+        return <CharacterCard key={character.id} character={character} />
+      })}
     </>
   )
 }

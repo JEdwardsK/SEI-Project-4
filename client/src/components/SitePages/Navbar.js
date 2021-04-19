@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { userIsAuthenticated } from '../helpers/auth'
+import { userIsAuthenticated } from '../../helpers/auth'
 
 const Navbar = () => {
   const history = useHistory()
@@ -8,6 +8,8 @@ const Navbar = () => {
     window.localStorage.removeItem('token')
     window.alert('you have logged out, returning to homepage')
     history.push('/')
+    window.location.reload()
+
   }
   return (
     <div className="navbar">
@@ -22,7 +24,7 @@ const Navbar = () => {
         userIsAuthenticated() &&
         <>
           <Link to="/profile"><p className="nav-element">Profile</p></Link>
-          <p className="nav-element" onClick={handleLogout}>Logout</p>
+          <button className="nav-element" onClick={handleLogout}>Logout</button>
         </>
       }
       {

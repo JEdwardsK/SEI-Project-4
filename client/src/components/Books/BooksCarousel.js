@@ -6,14 +6,14 @@ const BooksCarousel = ( { books } ) => {
 
     <ul className='list-inline'>
       {books.map(book => {
-        const { title, author, cover_image, id } = book
+        const { title, author, cover_image: coverImage, id } = book
 
         return (
-          <Link to={`/books/${id}`}>
-          <li className='book'>
-            <img src={cover_image} alt={`the cover for ${title}, by ${author}`} />
+          <li className='book' key={id}>
+            <Link to={`/books/${id}`}>
+              <img src={coverImage} alt={`the cover for ${title}, by ${author}`} />
+            </Link>
           </li>
-          </Link>
         )
       })}
     </ul>
