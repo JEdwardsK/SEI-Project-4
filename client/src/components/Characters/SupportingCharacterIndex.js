@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import CharacterCard from './CharacterCard'
+import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/Spinner'
 
 
 const SupportingCharacterIndex = () => {
@@ -15,7 +17,17 @@ const SupportingCharacterIndex = () => {
   }, [])
 
 
-  if (!allSupportingCharacters) return null
+  if (!allSupportingCharacters) return (
+    <Button disabled>
+      <Spinner
+        as="span"
+        animation="border"
+        role="status"
+        aria-hidden="true"
+      />
+    Loading...
+    </Button>
+  )
 
 
   return (

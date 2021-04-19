@@ -3,6 +3,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/Spinner'
 
 const BookSubmit = () => {
   // * the following fields are required for a successful post: title, author, ISBN, published by, genre, supporting characters, protagonist and antagonist. will change these later to only require title author and synopsis.
@@ -81,7 +83,18 @@ const BookSubmit = () => {
     event.preventDefault()
   }
 
-  if (!allAntagonists || !allProtagonists || !allSupportingCharacters) return null
+  if (!allAntagonists || !allProtagonists || !allSupportingCharacters) return (
+
+    <Button disabled>
+      <Spinner
+        as="span"
+        animation="border"
+        role="status"
+        aria-hidden="true"
+      />
+    Loading...
+    </Button>
+  )
 
   return (
 
