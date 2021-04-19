@@ -1,3 +1,4 @@
+/*eslint-disable camelcase, no-unused-vars */
 import React from 'react'
 
 const BookCard = ( { title, author, cover_image, genre, id, is_made_into_film, is_made_into_series, page_count,published_by, pub_date, reviews, story_overview, supporting_characters, ISBN  } ) => {

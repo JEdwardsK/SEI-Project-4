@@ -19,17 +19,17 @@ const BookShow = () => {
 
   if (!singleBook) return null
 
-  const {id, reviews, supporting_characters:supChars, main_protagonist: protag, main_antagonist: antag, genre: genres, title, author, cover_image: coverImage, ISBN, is_made_into_film: isFilm, is_made_into_series: isSeries, story_overview: synopsis, page_count: pageCount, published_by: publisher, pub_date: pubDate } = singleBook
+  const { id, reviews, supporting_characters: supChars, main_protagonist: protag, main_antagonist: antag, genre: genres, title, author, cover_image: coverImage, ISBN, is_made_into_film: isFilm, is_made_into_series: isSeries, story_overview: synopsis, page_count: pageCount, published_by: publisher, pub_date: pubDate } = singleBook
 
   const genreString = genres.map(item => ` ${item.genre}`).toString()
   const supCharsString = supChars.map(item => ` ${item.first_name} ${item.last_name}`).toString()
 
   //* remember the following data structures:
-    //* Arrays of objects = supChars, genres, protag, antag, reviews
-    //* Booleans = isFilm, isSeries
-    //* Strings = title, author, coverImage, ISBN, synopsis, publisher
-    //* Numbers = id, pageCount
-    //* pubDate is a string in format "yyyy-mm-dd"
+  //* Arrays of objects = supChars, genres, protag, antag, reviews
+  //* Booleans = isFilm, isSeries
+  //* Strings = title, author, coverImage, ISBN, synopsis, publisher
+  //* Numbers = id, pageCount
+  //* pubDate is a string in format "yyyy-mm-dd"
 
   return (
     <>
@@ -45,8 +45,8 @@ const BookShow = () => {
           <div className="book-info">
             <h4>Author</h4>
             <a href={`https://en.wikipedia.org/wiki/${author}`}>
-            {author}
-              </a>
+              {author}
+            </a>
           </div>
           <div className="book-info">
             <h4>Protagonist</h4>
@@ -78,11 +78,11 @@ const BookShow = () => {
           </div>
           <div className="book-info">
             <h4>Made into Film(s)?</h4>
-            <p>{isFilm ? "Yes" : "No"}</p>
+            <p>{isFilm ? 'Yes' : 'No'}</p>
           </div>
           <div className="book-info">
             <h4>Made into Series?</h4>
-            <p>{isSeries ? "Yes" : "No"}</p>
+            <p>{isSeries ? 'Yes' : 'No'}</p>
           </div>
           <div className="book-info">
             <h4>Publisher</h4>
@@ -105,17 +105,17 @@ const BookShow = () => {
       <div className="reviews">
         <h2>Reviews</h2>
         {reviews.map(review => {
-          const { review_text: text, created_at, review_owner } = review
+          const { id, review_text: text, created_at: createdAt, reviewOwner } = review
           return (
 
-            <div>
-              <div>{review_owner}</div>
+            <div key={id}>
+              <div>{reviewOwner}</div>
               <div>{text}</div>
             </div>
 
           )
         })}
-        </div>
+      </div>
 
     </>
   )
