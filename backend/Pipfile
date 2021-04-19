@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pylint = "*"
+djangorestframework = "*"
+django = "*"
+pyjwt = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+flush = "python manage.py flush"
+seedall = "python manage.py loaddata jwt_auth/seeds.json archetypes/seeds.json genres/seeds.json supporting_characters/seeds.json protagonists/seeds.json antagonists/seeds.json reviews/seeds.json books/seeds.json "
+mm = "python manage.py makemigrations"
+migrate = "python manage.py migrate"
+serve = "python manage.py runserver"
+
+dump_jwt_auth = "python manage.py dumpdata jwt_auth --output jwt_auth/seeds.json --indent=2"
+dump_archetype = "python manage.py dumpdata archetypes --output archetypes/seeds.json --indent=2"
+dump_genres = "python manage.py dumpdata genres --output genres/seeds.json --indent=2"
+dump_supporting_characters ="python manage.py dumpdata supporting_characters --output supporting_characters/seeds.json --indent=2"
+dump_protagonists = "python manage.py dumpdata protagonists --output protagonists/seeds.json --indent=2"
+dump_antagonists = "python manage.py dumpdata antagonists --output antagonists/seeds.json --indent=2"
+dump_books = "python manage.py dumpdata books --output books/seeds.json --indent=2"
+dump_reviews = "python manage.py dumpdata reviews --output reviews/seeds.json --indent=2"

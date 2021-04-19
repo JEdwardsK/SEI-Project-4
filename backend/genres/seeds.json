@@ -1,0 +1,520 @@
+[
+  {
+    "model": "genres.genre",
+    "pk": 1,
+    "fields": {
+      "genre": "Drama"
+    }
+  },
+  {
+    "model": "genres.genre",
+    "pk": 2,
+    "fields": {
+      "genre": "Fantasy-Thriller"
+    }
+  },
+{
+  "model": "genres.genre",
+  "pk": 3,
+  "fields": {
+    "genre": "Horror"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 4,
+  "fields": {
+    "genre": "Children's"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 5,
+  "fields": {
+    "genre": "Classic"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 6,
+  "fields": {
+    "genre": "Comedy"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 7,
+  "fields": {
+    "genre": "Fantasy"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 8,
+  "fields": {
+    "genre": "Comedy Horror"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 9,
+  "fields": {
+    "genre": "Parody"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 10,
+  "fields": {
+    "genre": "Sci-Fi"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 11,
+  "fields": {
+    "genre": "Surreal"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 12,
+  "fields": {
+    "genre": "Nonsense"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 13,
+  "fields": {
+    "genre": "Coming-of-Age"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 14,
+  "fields": {
+    "genre": "Epic"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 15,
+  "fields": {
+    "genre": "Folklore"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 16,
+  "fields": {
+    "genre": "Fairytale"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 17,
+  "fields": {
+    "genre": "Bildungsromann"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 18,
+  "fields": {
+    "genre": "Fable"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 19,
+  "fields": {
+    "genre": "Ghost Story"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 20,
+  "fields": {
+    "genre": "Body Horror"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 21,
+  "fields": {
+    "genre": "Myth"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 22,
+  "fields": {
+    "genre": "Legend"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 23,
+  "fields": {
+    "genre": "Urban Legend"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 24,
+  "fields": {
+    "genre": "Historical"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 25,
+  "fields": {
+    "genre": "Philosophical"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 26,
+  "fields": {
+    "genre": "Religious"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 27,
+  "fields": {
+    "genre": "Realist"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 28,
+  "fields": {
+    "genre": "Rational"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 29,
+  "fields": {
+    "genre": "Fan-Fic"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 30,
+  "fields": {
+    "genre": "Pop Culture"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 31,
+  "fields": {
+    "genre": "Satire"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 32,
+  "fields": {
+    "genre": "Alternate History"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 33,
+  "fields": {
+    "genre": "Western"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 34,
+  "fields": {
+    "genre": "Wuxia"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 35,
+  "fields": {
+    "genre": "Sword-and-Board"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 36,
+  "fields": {
+    "genre": "Sword-and-Sorcery"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 37,
+  "fields": {
+    "genre": "Pirates"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 38,
+  "fields": {
+    "genre": "Space Opera"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 39,
+  "fields": {
+    "genre": "Nautical (Sea-Faring)"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 40,
+  "fields": {
+    "genre": "Romance"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 41,
+  "fields": {
+    "genre": "Steampunk"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 42,
+  "fields": {
+    "genre": "Thriller"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 43,
+  "fields": {
+    "genre": "Psychological"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 44,
+  "fields": {
+    "genre": "Psychological-Thriller"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 45,
+  "fields": {
+    "genre": "Hybrid"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 46,
+  "fields": {
+    "genre": "Crime"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 47,
+  "fields": {
+    "genre": "Legal"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 48,
+  "fields": {
+    "genre": "Mystery"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 49,
+  "fields": {
+    "genre": "Whodunnit"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 50,
+  "fields": {
+    "genre": "Detective"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 51,
+  "fields": {
+    "genre": "Noir"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 52,
+  "fields": {
+    "genre": "High Fantasy"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 53,
+  "fields": {
+    "genre": "Occult"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 54,
+  "fields": {
+    "genre": "Superhero"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 55,
+  "fields": {
+    "genre": "Grimdark"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 56,
+  "fields": {
+    "genre": "Supernatural"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 57,
+  "fields": {
+    "genre": "Gothic"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 58,
+  "fields": {
+    "genre": "Techno"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 59,
+  "fields": {
+    "genre": "Technomancy"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 60,
+  "fields": {
+    "genre": "Weird Fiction"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 61,
+  "fields": {
+    "genre": "Monster"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 62,
+  "fields": {
+    "genre": "Bedtime"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 63,
+  "fields": {
+    "genre": "Erotic"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 64,
+  "fields": {
+    "genre": "Chilvaric"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 65,
+  "fields": {
+    "genre": "Post-Apocalyptic"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 66,
+  "fields": {
+    "genre": "Dystopian"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 67,
+  "fields": {
+    "genre": "Feminist"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 68,
+  "fields": {
+    "genre": "Isekai"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 69,
+  "fields": {
+    "genre": "Manga"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 70,
+  "fields": {
+    "genre": "Manwha"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 71,
+  "fields": {
+    "genre": "Webcomic"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 72,
+  "fields": {
+    "genre": "Comic"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 73,
+  "fields": {
+    "genre": "Military"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 74,
+  "fields": {
+    "genre": "Science-Fantasy"
+  }
+}
+]

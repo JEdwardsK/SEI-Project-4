@@ -1,0 +1,17 @@
+[
+{
+  "model": "antagonists.antagonist",
+  "pk": 1,
+  "fields": {
+    "first_name": "Lord Voldemort",
+    "last_name": "",
+    "character_bio": "He Who Must Not Be Named",
+    "character_archetypes": [
+      33,
+      3,
+      53,
+      59
+    ]
+  }
+}
+]
