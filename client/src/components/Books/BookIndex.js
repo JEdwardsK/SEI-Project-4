@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 // import BooksCarousel from './BooksCarousel'
 import axios from 'axios'
 import BookCard3d from './BookCard3d'
+import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/Spinner'
 
 export const BookIndex = () => {
   const [books, setBooks] = useState(null)
@@ -16,7 +18,15 @@ export const BookIndex = () => {
   }, [])
 
   if (!books) return (
-    <div>Loading, please wait</div>
+    <Button disabled>
+      <Spinner
+        as="span"
+        animation="border"
+        role="status"
+        aria-hidden="true"
+      />
+    Loading...
+    </Button>
   )
 
   return (

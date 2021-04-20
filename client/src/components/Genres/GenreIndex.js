@@ -18,7 +18,7 @@ const GenreIndex = () => {
   const toggleShowBooks = () => {
     setShowBooks(!showBooks)
   }
-
+  //!use bootstraps accordion for collapsing the genres!!
   if (!allGenres) return null
   return (
     <>

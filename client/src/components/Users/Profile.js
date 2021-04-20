@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { getPayloadFromToken } from '../../helpers/auth'
-
+import Button from 'react-bootstrap/Button'
+import Spinner from 'react-bootstrap/Spinner'
 
 const Profile = () => {
 
@@ -14,9 +15,19 @@ const Profile = () => {
       setUser(data)
     }
     getUser()
-  },[])
+  },[userID])
 
-  if (!user) return null
+  if (!user) return (
+    <Button disabled>
+      <Spinner
+        as="span"
+        animation="border"
+        role="status"
+        aria-hidden="true"
+      />
+    Loading...
+    </Button>
+  )
   console.log('🚀 ~ file: Profile.js ~ line 18 ~ Profile ~ user', user)
   const { username, email, profile_image: profileImage, date_joined: dateJoined, nationality } = user
   return (

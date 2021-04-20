@@ -1,9 +1,10 @@
+import './styles/main.scss'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 
 //#region imports
 import HomePage from './components/SitePages/HomePage'
-import Navbar from './components/SitePages/Navbar'
+import Header from './components/SitePages/Header'
 import BookIndex from './components/Books/BookIndex'
 import GenreIndex from './components/Genres/GenreIndex'
 import BookShow from './components/Books/BookShow'
@@ -15,14 +16,31 @@ import SupportingCharacterIndex from './components/Characters/SupportingCharacte
 import Profile from './components/Users/Profile'
 import Login from './components/Forms/Users/Login'
 import Register from './components/Forms/Users/Register'
+import ProtagonistSubmit from './components/Forms/ProtagonistSubmit'
+import AntagonistSubmit from './components/Forms/AntagonistSubmit'
+import BookSubmit from './components/Forms/BookSubmit'
+import SupportingCharacterSubmit from './components/Forms/SupportingCharacterSubmit'
 
 //#endregion
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Navbar/>
+      <Header/>
       <Switch>
+        <Route exact path = '/protagform'>
+          <ProtagonistSubmit/>
+        </Route>
+        <Route exact path = '/antagform'>
+          <AntagonistSubmit/>
+        </Route>
+        <Route exact path = '/supform'>
+          <SupportingCharacterSubmit/>
+        </Route>
+        <Route exact path = '/bookform'>
+          <BookSubmit/>
+        </Route>
+
         <Route exact path ='/'>
           <HomePage/>
         </Route>
