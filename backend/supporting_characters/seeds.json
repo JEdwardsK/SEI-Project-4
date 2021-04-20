@@ -9,6 +9,15 @@
     "character_bio": "Ron Weasley is Harry Potters oldest friend, with ginger hair and relaxed attitude to school work",
     "character_archetypes": [
       1
+    ],
+    "books": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
     ]
   }
 },
@@ -22,6 +31,10 @@
     "character_bio": "The young impression of Lord Voldemort, left imprinted on his old diary to one day unlock the chamber of secrets",
     "character_archetypes": [
       1
+    ],
+    "books": [
+      1,
+      7
     ]
   }
 },
@@ -35,6 +48,15 @@
     "character_bio": "With bushy brown hair and buck teeth, Hermione Granger starts off as a friendless bookworm until she forges an unlikely friendship with Ron and Harry",
     "character_archetypes": [
       1
+    ],
+    "books": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
     ]
   }
 },
@@ -48,6 +70,15 @@
     "character_bio": "Rubeus Hagrid is half man half giant, standing at 8ft 6inches, he acts as Harry's mentor and friend through out the series",
     "character_archetypes": [
       1
+    ],
+    "books": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
     ]
   }
 },
@@ -57,11 +88,16 @@
   "fields": {
     "first_name": "Sirius",
     "last_name": "Black",
-    "relationship_to_protagonist": "Companion",
+    "relationship_to_protagonist": "Family Member",
     "character_bio": "Beginning the series as a shadowy threat to Harry's safety. Sirius Black eventually reveals himself, and after much trial and tribulation becomes Harry's protector and mentor.",
     "character_archetypes": [
       1,
       2
+    ],
+    "books": [
+      3,
+      4,
+      5
     ]
   }
 },
@@ -75,6 +111,12 @@
     "character_bio": "The new defence against the dark arts teacher, Alastor Moody joins Hogwarts in Harry's 4th year. But Alastor Moody is not the man he claims to be.",
     "character_archetypes": [
       2
+    ],
+    "books": [
+      4,
+      5,
+      6,
+      7
     ]
   }
 }

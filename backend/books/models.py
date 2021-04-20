@@ -12,9 +12,9 @@ class Book(models.Model):
     published_by =models.CharField(max_length=50)
     pub_date = models.DateField('date published', null=True)
     genre = models.ManyToManyField('genres.Genre', related_name="books")
-    supporting_characters = models.ManyToManyField('supporting_characters.SupportingCharacter', related_name="books")
-    main_protagonist = models.ManyToManyField('protagonists.Protagonist', related_name="books")
-    main_antagonist = models.ManyToManyField('antagonists.Antagonist', related_name="books")
+    # supporting_characters = models.ManyToManyField('supporting_characters.SupportingCharacter', related_name="books")
+    # main_protagonist = models.ManyToManyField('protagonists.Protagonist', related_name="books")
+    # main_antagonist = models.ManyToManyField('antagonists.Antagonist', related_name="books")
     # book_creator = models.ForeignKey(
     #     "jwt_auth.User",
     #     related_name="books_created",

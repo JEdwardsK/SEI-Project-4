@@ -28,7 +28,7 @@ const ProtagonistSubmit = () => {
     character_bio: '',
     //relationship fields, require get request
     character_archetypes: [],
-    //books: [],
+    books: [],
   })
   const [bookFormData, setBookFormData] = useState(
     {
@@ -73,13 +73,6 @@ const ProtagonistSubmit = () => {
     event.preventDefault()
     window.alert(JSON.stringify(formData, null, 2))
     await axios.post('/api/protagonists/', formData)
-    //get response.id
-    bookFormData.array.forEach( async (bookID)  => {
-
-      await axios.put(`/api/books/${bookID}`)
-    })
-
-
 
   }
 

@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$VLYQ6ryaoNeeJzBXpvuSM4$VF+sPMuBebH/JdYm7Fx+WChWEtvCjXZJLgYXay8iAQ4=",
-    "last_login": "2021-04-16T10:11:13.843Z",
+    "last_login": "2021-04-20T15:54:57.952Z",
     "is_superuser": true,
     "username": "Knowledge_Seeker",
     "first_name": "",
@@ -15,6 +15,7 @@
     "is_first_login": true,
     "date_joined": "2021-04-16",
     "profile_image": "",
+    "nationality": "",
     "groups": [],
     "user_permissions": []
   }

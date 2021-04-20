@@ -8,6 +8,8 @@ class Antagonist(models.Model):
     # aliases = models.ArrayField(models.CharField(max_length=50))
     character_bio = models.TextField(max_length=700)
     character_archetypes = models.ManyToManyField('archetypes.Archetype', related_name="main_antagonist")
+    books = models.ManyToManyField('books.Book', related_name="main_antagonist")
+
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
