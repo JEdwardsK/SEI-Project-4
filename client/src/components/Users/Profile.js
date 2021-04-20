@@ -15,7 +15,7 @@ const Profile = () => {
       setUser(data)
     }
     getUser()
-  },[])
+  },[userID])
 
   if (!user) return (
     <Button disabled>
