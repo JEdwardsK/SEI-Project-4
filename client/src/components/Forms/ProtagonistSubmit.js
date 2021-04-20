@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 
-const ProtagonistSubmit = () => {
+const ProtagonistSubmit = ({ characterType }) => {
   //* the following fields are required for a successful post: first name, character bio, character archetype. first name is a string, bio is a string, archetypes is an array of numbers. these numbers are the ids of the archetypes. a get request will be required for the archetypes and then attribute the value of the data as the id
 
   //! all fields with a relationship will require a get all request to populate the form and have a value to return in the POST. for example, for character archetypes make a get request to get all, then map it into the form with each being a checkbox or something, with a value= their own id.
@@ -30,13 +30,9 @@ const ProtagonistSubmit = () => {
     character_archetypes: [],
     books: [],
   })
-  const [bookFormData, setBookFormData] = useState(
-    {
-      main_protoganists: [],
-    }
-  )
 
-  //! book not a part of the character model
+  const [relationshipData, setRelationshipData] = useState('')
+  const characterTypeToSubmit = characterType
 
   useEffect(() => {
     const getArchetypes = async () => {
@@ -72,8 +68,13 @@ const ProtagonistSubmit = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     window.alert(JSON.stringify(formData, null, 2))
-    await axios.post('/api/protagonists/', formData)
+    await axios.post(`/api/${characterType}/`, formData)
 
+  }
+
+  const handleSelectRelationship = (selected, name) => {
+    const selection = selected.value
+    setFormData({ ...formData, [name]: selection })
   }
 
 
@@ -90,6 +91,18 @@ const ProtagonistSubmit = () => {
     const { id, archetype } = trait
     return { value: id , label: archetype }
   })
+
+  const relationshipOptions = [
+    { value: 'Family Member', label: 'Family Member' },
+    { value: 'Rival', label: 'Rival' },
+    { value: 'Love Interest', label: 'Love Interest' },
+    { value: 'Friend', label: 'Friend' },
+    { value: 'Companion', label: 'Companion' },
+    { value: 'Ally', label: 'Ally' },
+    { value: 'Enemy', label: 'Enemy' },
+    { value: 'Servant', label: 'Servant' },
+    { value: 'Mentor', label: 'Mentor' }
+  ]
 
   return (
     <>
@@ -122,6 +135,19 @@ const ProtagonistSubmit = () => {
             {'input user message'}
           </Form.Text>
         </Form.Group>
+
+        { characterType === 'supporting_characters' &&
+          <Form.Group>
+            <Form.Label>Relationship to Protagonist</Form.Label>
+            <Select
+              name="relationship_to_protagonist"
+              options={relationshipOptions}
+              components={makeAnimated()}
+              onChange={(selected) => handleSelectRelationship(selected, 'relationship_to_protagonist')}
+            />
+          </Form.Group>
+        }
+
         <Form.Group>
           <Form.Label>Appears in</Form.Label>
           <Select
@@ -131,23 +157,10 @@ const ProtagonistSubmit = () => {
             components={makeAnimated()}
             onChange={(selected) => handleMultiChange(selected, 'books')}
           />
-
-
-
-          {/* <Form.Control as="select" multiple onChange={handleChange}>
-            {allBooks.map(book => {
-              const { id, title } = book
-              return (
-                <option key={id} value={id}>{title}</option>
-              )
-            })}
-            <option value="">Other Not Listed</option>
-          </Form.Control> */}
         </Form.Group>
+
         <Form.Group>
           <Form.Label>Character Archetypes</Form.Label>
-
-
           <Form.Text className="text-muted">
             Check out {<a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/NarrativeTropes">TVTropes</a>} for an idea on what tropes to pick
           </Form.Text>
@@ -158,22 +171,6 @@ const ProtagonistSubmit = () => {
             components={makeAnimated()}
             onChange={(selected) => handleMultiChange(selected, 'character_archetypes')}
           />
-
-          {/* {allArchetypes.map(trait => {
-            const { id, archetype } = trait
-
-            return (
-              <Form.Check
-                inline
-                type="checkbox"
-                label={archetype}
-                value={id}
-                key={id}
-              />
-            )
-
-          })} */}
-
         </Form.Group>
         <Button variant="primary" type="submit">
     Submit

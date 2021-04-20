@@ -17,7 +17,6 @@ const Header = () => {
       <Link to ="/books"><p className="nav-element">Books</p></Link>
       <Link to="/genres"><p className="nav-element">Genres</p></Link>
       <Link to="/protagonists"><p className="nav-element">Protagonists</p></Link>
-      <Link to="/antagonists"><p className="nav-element">Antagonists</p></Link>
       <Link to="/supporting_characters"><p className="nav-element">Supporting Characters</p></Link>
       <Link to="/search"><p className="nav-element">Search</p></Link>
       <Link to="/protagform"><p className="nav-element">Protagonist Form</p></Link>
