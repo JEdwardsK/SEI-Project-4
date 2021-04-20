@@ -1,13 +1,52 @@
+@import "~bootstrap/scss/bootstrap";
+
+
+
+// Homepage
+
+
+.homepage-container {
+  position: sticky;
+  border: 5px solid black;
+  width: 45%;
+  left: 12%;
+  padding: 2%;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+.homepage-container-sections {
+  border: 4px solid green;
+  margin: auto auto 2%;
+  flex: 1;
+  display: flex;
+}
+
+
+.homepage-wan-shi-image {
+  flex: 1;
+}
+
+.homepage-text {
+  flex: 1;
+  border: 3px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 5%;
+}
+
+.homepage-wan-shi-image {
+  border: 3px solid red;
+}
 
 
 
 
-
-
-
-
-
-
+// book animation
 
 
 .book::after,
@@ -88,7 +127,6 @@ ul {
   left: -6px;
 }
 
-/* Inline #2 | http://localhost:3000/profile */
 
 .profile-container {
   display: flex;
@@ -117,7 +155,6 @@ ul {
 }
 
 
-/* Inline #2 | http://localhost:3000/ */
 
 .navbar {
   display: flex;
@@ -134,7 +171,6 @@ ul {
   justify-content: space-evenly;
 }
 
-/* Element | http://localhost:3000/ */
 
 p.nav-element:nth-child(10) {
   padding-left: -2px;

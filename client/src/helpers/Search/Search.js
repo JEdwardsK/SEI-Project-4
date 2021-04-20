@@ -13,12 +13,13 @@ const Search = () => {
     formAuthor: '',
     formIsFilm: '',
     formSearchPhrases: '',
-    formGenres: '',
+    formGenres: [],
     formFirstName: '',
     formLastName: '',
     formIsSeries: '',
   })
   const [searchResults, setSearchResults] = useState([])
+  const [genreValues, setGenreValues] = useState([])
 
   useEffect(() => {
     const getBooks = async () => {
@@ -39,10 +40,16 @@ const Search = () => {
 
 
   const handleChange = (event) => {
-    console.log('event type>>', typeof(event.target.value))
-    const newFormData = { ...formData, [event.target.name]: event.target.value }
+    console.log('event type>>', (event.target.value))
+    const genrePicks = []
+    event.target.type === 'checkbox' && genrePicks.push(event.target.value)
+    setGenreValues(genrePicks)
+    const value = event.target.type === 'checkbox'
+      ? genreValues
+      : event.target.value
+    const newFormData = { ...formData, [event.target.name]: value }
     setFormData(newFormData)
-    // console.log('🚀 ~ file: Search.js ~ line 74 ~ handleChange ~ newFormData', formData)
+    console.log('🚀 ~ file: Search.js ~ line 74 ~ handleChange ~ newFormData', formData)
   }
 
   const { formTitle, formAuthor, formIsFilm, formSearchPhrases, formGenres, formFirstName, formLastName, formIsSeries } = formData
@@ -117,7 +124,7 @@ const Search = () => {
             <div><input type="text" className="input" placeholder="enter search phrases" name="formSearchPhrases" onChange={handleChange}/></div>
           </div>
           <div className="field">
-            <label className="label" htmlFor="formGenre"> Select Genres</label>
+            <label className="label" htmlFor="formGenres"> Select Genres</label>
             {allGenres
               .sort((a, b) => {
                 const genreA = a.genre.toUpperCase()
@@ -132,7 +139,7 @@ const Search = () => {
                 return (
                   <div key={id}className="genre-form-container">
                     <div>
-                      <input type="checkbox" className="input" name="formGenre" value={genre} onChange={handleChange}/>{genre}
+                      <input type="checkbox" className="input" name="formGenres" value={id} onChange={handleChange}/>{genre}
                     </div>
                   </div>
                 )
