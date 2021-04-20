@@ -1,13 +1,14 @@
 /*eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 import Register from '../Forms/Users/Register'
 import Login from '../Forms/Users/Login'
 
 const HomePage = () => {
   const [pageNumber, setPageNumber] = useState(0)
-
+  const [riddleAnswer, setRiddleAnswer] = useState(0)
 
   const handlePageTurn = (event) => {
     const { value, name } = event.target
@@ -15,16 +16,24 @@ const HomePage = () => {
     setPageNumber(page)
     console.log(pageNumber + 1)
   }
+  const handleRiddle = (event) => {
+    const { value } = event.target
+    const answer = parseInt(value)
+    setRiddleAnswer(answer)
+  }
+
   const entryPages = [4,7,8,9]
   return (
     <>
+      <Button value="0" onClick={handlePageTurn}>Page One</Button>
       <h1>HOME PAGE</h1>
       <div className="homepage-container">
-        <div className="hompage-container-sections">
-          <div>
+        <div className="homepage-container-sections">
+          <div className="homepage-wan-shi-image">
             image of wan shi tong
           </div>
           <div className="homepage-text">
+
             { pageNumber === 0 &&
                 <>
                   <p>
@@ -72,15 +81,31 @@ const HomePage = () => {
 
               </>
             }
-            { pageNumber === 6 &&
+            { pageNumber === 6 && riddleAnswer === 0 &&
               <>
                 <p>You wish to show your knowledge?</p>
                 <p>Very well, riddle me this</p>
                 <p>I make two people out of one, what am I ?</p>
 
               </>
+
             }
-            { pageNumber === 8 || pageNumber === 9 &&
+            { riddleAnswer === 1 ?
+              <>
+                <p>Your not very smart, are you?</p>
+              </>
+              : riddleAnswer === 2 ?
+                <>
+                  <p>No.</p>
+                </>
+                : riddleAnswer === 3 ?
+                  <>
+                    <p>*Sigh*</p>
+                  </>
+                  : null
+
+            }
+            { entryPages.includes(pageNumber) &&
               <>
 
                 <p>
@@ -99,31 +124,32 @@ const HomePage = () => {
             }
 
           </div>
-          { pageNumber === 0 &&
+        </div>
+        { pageNumber === 0 &&
             <>
-              <div className="hompage-container-sections">
-                <button onClick={handlePageTurn} value="1">Provide a book to the Library</button>
-                <button onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</button>
-                <button onClick={handlePageTurn} value="8">Sneak into the Library</button>
-                <button onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</button>
+              <div className="homepage-container-sections buttons-page-0">
+                <Button onClick={handlePageTurn} value="1">Provide a book to the Library</Button>
+                <Button onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</Button>
+                <Button onClick={handlePageTurn} value="8">Sneak into the Library</Button>
+                <Button onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</Button>
               </div>
             </>
-          }
-          { pageNumber === 1 &&
+        }
+        { pageNumber === 1 &&
             <>
               <div className="homepage-container-section">
                 <Register />
               </div>
-              <div className="hompage-container-sections">
+              <div className="homepage-container-sections">
                 <button onClick={handlePageTurn} value="2">answer his questions</button>
                 <p>OR...</p>
-                <button onClick={handlePageTurn} >sneak into the library</button>
+                <button onClick={handlePageTurn} value="8" >sneak into the library</button>
               </div>
             </>
-          }
-        </div>
+        }
+
         { pageNumber === 2 &&
-          <div className="hompage-container-sections">
+          <div className="homepage-container-sections">
             <button value="3"onClick={handlePageTurn}>Water Tribe</button>
             <button value="3"onClick={handlePageTurn}>Earth Kingdom</button>
             <button value="3"onClick={handlePageTurn}>Fire Nation</button>
@@ -132,10 +158,10 @@ const HomePage = () => {
         }
         { pageNumber === 3 &&
           <>
-            <div className="hompage-container-sections">
+            <div className="homepage-container-sections">
               <h2>Book Form part 1</h2>
             </div>
-            <div className="hompage-container-sections">
+            <div className="homepage-container-sections">
               <button onClick={handlePageTurn} value="4">Answer his questions</button>
               <button onClick={handlePageTurn}>Tell him you will talk about it inside after you have settled inside</button>
             </div>
@@ -144,7 +170,7 @@ const HomePage = () => {
         { entryPages.includes(pageNumber) &&
           <>
 
-            <div className="hompage-container-sections">
+            <div className="homepage-container-sections">
               <Link to="/books/"><button>enter the Library</button></Link>
             </div>
           </>
@@ -152,20 +178,20 @@ const HomePage = () => {
         { pageNumber === 5 &&
           <>
 
-            <div className="hompage-container-sections">
+            <div className="homepage-container-sections">
               <Login/>
             </div>
           </>
         }
         { pageNumber === 6 &&
           <>
-            <div className="hompage-container-sections">
-              <button>A Surgeon</button>
-              <button>A Magician</button>
-              <button>A Identity Thief</button>
+            <div className="homepage-container-sections">
+              <button value="1" onClick={handleRiddle}>A Surgeon</button>
+              <button value="2" onClick={handleRiddle}>A Magician</button>
+              <button value="3" onClick={handleRiddle}>A Identity Thief</button>
               <button value="7" onClick={handlePageTurn}>A Mirror</button>
             </div>
-            <div className="hompage-container-sections">
+            <div className="homepage-container-sections">
               <button onClick={handlePageTurn} value="1">Give him a book instead</button>
               <button onClick={handlePageTurn} value="9">Make up an elaborate lie to get into the library for nothing</button>
 
