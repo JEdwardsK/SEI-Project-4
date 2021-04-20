@@ -30,6 +30,13 @@ const ProtagonistSubmit = () => {
     character_archetypes: [],
     //books: [],
   })
+  const [bookFormData, setBookFormData] = useState(
+    {
+      main_protoganists: [],
+    }
+  )
+
+  //! book not a part of the character model
 
   useEffect(() => {
     const getArchetypes = async () => {
@@ -48,8 +55,10 @@ const ProtagonistSubmit = () => {
   }, [])
 
   const handleChange = (event) => {
+
     const { type, value, name } = event.target
     console.log(type)
+
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     console.log(newFormData)
     setFormData(newFormData)
@@ -64,8 +73,17 @@ const ProtagonistSubmit = () => {
     event.preventDefault()
     window.alert(JSON.stringify(formData, null, 2))
     await axios.post('/api/protagonists/', formData)
+    //get response.id
+    bookFormData.array.forEach( async (bookID)  => {
+
+      await axios.put(`/api/books/${bookID}`)
+    })
+
+
 
   }
+
+
 
 
   if (!allBooks || !allArchetypes) return null
