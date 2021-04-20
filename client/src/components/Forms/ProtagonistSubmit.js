@@ -28,7 +28,7 @@ const ProtagonistSubmit = () => {
     character_bio: '',
     //relationship fields, require get request
     character_archetypes: [],
-    books: [],
+    //books: [],
   })
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const ProtagonistSubmit = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     window.alert(JSON.stringify(formData, null, 2))
-    const { data } = await axios.post
+    await axios.post('/api/protagonists/', formData)
 
   }
 

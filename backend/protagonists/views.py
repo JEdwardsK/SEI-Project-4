@@ -16,6 +16,7 @@ class ProtagonistListView(APIView):
 
     def post(self, request):
         protagonist_to_add = ProtagonistSerializer(data=request.data)
+        print('🚨 test', request.data)
         if protagonist_to_add.is_valid():
             protagonist_to_add.save()
             return Response(protagonist_to_add.data, status=status.HTTP_201_CREATED)
