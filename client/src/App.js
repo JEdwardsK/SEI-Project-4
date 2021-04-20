@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 //#region imports
 import HomePage from './components/SitePages/HomePage'
-import Navbar from './components/SitePages/Navbar'
+import Navbar from './components/SitePages/Header'
 import BookIndex from './components/Books/BookIndex'
 import GenreIndex from './components/Genres/GenreIndex'
 import BookShow from './components/Books/BookShow'

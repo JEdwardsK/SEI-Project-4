@@ -1,6 +1,8 @@
 /*eslint-disable no-unused-vars */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated'
 
 // Bootstrap Imports
 import Form from 'react-bootstrap/Form'
@@ -46,35 +48,55 @@ const ProtagonistSubmit = () => {
   }, [])
 
   const handleChange = (event) => {
+    const { type, value, name } = event.target
+    console.log(type)
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     console.log(newFormData)
     setFormData(newFormData)
   }
 
-  const handleSubmit = (event) => {
+  const handleMultiChange = (selected, name) => {
+    const values = selected ? selected.map(item => item.value) : []
+    setFormData({ ...formData, [name]: [...values] })
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    window.alert(JSON.stringify(formData, null, 2))
+    const { data } = await axios.post
+
   }
 
 
   if (!allBooks || !allArchetypes) return null
-  console.log('test')
+
+  const bookOptions = allBooks.map(book => {
+    const { id, title } = book
+    return { value: id , label: title }
+  })
+
+  const archetypeOptions = allArchetypes.map(trait => {
+    const { id, archetype } = trait
+    return { value: id , label: archetype }
+  })
+
   return (
     <>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Row>
           <Col>
-            <Form.Group controlId="formFirstNameProtagonist">
+            <Form.Group>
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="text" placeholder="What is their first name" required name="first_name" onSubmit={handleChange}/>
+              <Form.Control type="text" placeholder="What is their first name" required value={formData.first_name} name="first_name" onChange={handleChange}/>
               <Form.Text className="text-muted">
                 {'for a character with a title or one given name enter here. e.g "Lord Voldemort".'}
               </Form.Text>
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group controlId="formLastNameProtagonist">
+            <Form.Group>
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="What is their last name" name="last_name" onSubmit={handleChange}/>
+              <Form.Control type="text" placeholder="What is their last name" name="last_name" value={formData.last_name} onChange={handleChange}/>
               <Form.Text className="text-muted">
                 {'input user message'}
               </Form.Text>
@@ -82,16 +104,26 @@ const ProtagonistSubmit = () => {
           </Col>
         </Form.Row>
 
-        <Form.Group controlId="formCharacterBioProtagonist">
+        <Form.Group>
           <Form.Label>Character Bio</Form.Label>
-          <Form.Control as="textarea" rows ={5} placeholder="enter info about the character" required onSubmit={handleChange}/>
+          <Form.Control as="textarea" rows ={5} placeholder="enter info about the character" required name="character_bio" value={formData.character_bio} onChange={handleChange}/>
           <Form.Text className="text-muted">
             {'input user message'}
           </Form.Text>
         </Form.Group>
-        <Form.Group controlId="formBooksProtagonist">
+        <Form.Group>
           <Form.Label>Appears in</Form.Label>
-          <Form.Control as="select" multiple onSubmit={handleChange}>
+          <Select
+            name="books"
+            options={bookOptions}
+            isMulti
+            components={makeAnimated()}
+            onChange={(selected) => handleMultiChange(selected, 'books')}
+          />
+
+
+
+          {/* <Form.Control as="select" multiple onChange={handleChange}>
             {allBooks.map(book => {
               const { id, title } = book
               return (
@@ -99,21 +131,37 @@ const ProtagonistSubmit = () => {
               )
             })}
             <option value="">Other Not Listed</option>
-          </Form.Control>
+          </Form.Control> */}
         </Form.Group>
-        <Form.Group controlId="formGenreProtagonist">
+        <Form.Group>
           <Form.Label>Character Archetypes</Form.Label>
+
+
           <Form.Text className="text-muted">
             Check out {<a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/NarrativeTropes">TVTropes</a>} for an idea on what tropes to pick
           </Form.Text>
-          {allArchetypes.map(trait => {
+          <Select
+            name="character_archetypes"
+            options={archetypeOptions}
+            isMulti
+            components={makeAnimated()}
+            onChange={(selected) => handleMultiChange(selected, 'character_archetypes')}
+          />
+
+          {/* {allArchetypes.map(trait => {
             const { id, archetype } = trait
 
             return (
-              <Form.Check inline type="checkbox" label={archetype} value={id} key={id} />
+              <Form.Check
+                inline
+                type="checkbox"
+                label={archetype}
+                value={id}
+                key={id}
+              />
             )
 
-          })}
+          })} */}
 
         </Form.Group>
         <Button variant="primary" type="submit">

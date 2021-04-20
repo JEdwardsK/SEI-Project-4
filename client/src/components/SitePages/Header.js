@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { userIsAuthenticated } from '../../helpers/auth'
 
-const Navbar = () => {
+const Header = () => {
   const history = useHistory()
   const handleLogout = () => {
     window.localStorage.removeItem('token')
@@ -44,4 +44,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Header
