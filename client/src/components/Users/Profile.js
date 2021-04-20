@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { getPayloadFromToken } from '../../helpers/auth'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
-import ProtagonistSubmit from '../Forms/ProtagonistSubmit'
+import CharacterSubmit from '../Forms/CharacterSubmit'
 
 const Profile = () => {
 
@@ -68,7 +68,7 @@ const Profile = () => {
         <p>enter completed searches here</p>
       </div>
 
-      <ProtagonistSubmit characterType='protagonist'/>
+      <CharacterSubmit characterType='protagonist'/>
     </>
 
 
