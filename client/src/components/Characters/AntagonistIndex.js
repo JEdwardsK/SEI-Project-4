@@ -29,7 +29,7 @@ const AntagonistIndex = () => {
     Loading...
     </Button>
   )
-
+  console.log('the data>>>>', allAntagonists)
   return (
     <>
       <h1>Antagonists</h1>
