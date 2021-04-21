@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 //#region imports
 import HomePage from './components/SitePages/HomePage'
-import Navbar from './components/SitePages/Header'
+import Header from './components/SitePages/Header'
 import BookIndex from './components/Books/BookIndex'
 import GenreIndex from './components/Genres/GenreIndex'
 import BookShow from './components/Books/BookShow'
@@ -25,7 +25,7 @@ import Search from './components/Forms/Search'
 const App = () => {
   return (
     <BrowserRouter>
-      <Navbar/>
+      <Header/>
       <Switch>
         <Route exact path = '/bookform'>
           <BookSubmit/>
