@@ -6,6 +6,9 @@ import CharacterSubmit from '../Forms/CharacterSubmit'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { setColourByNation } from '../../helpers/helperFunctions'
+import FormControl from 'react-bootstrap/FormControl'
+import Form from 'react-bootstrap/Form'
+
 
 const Header = () => {
   setColourByNation()
@@ -67,6 +70,12 @@ const Header = () => {
             <NavDropdown.Item className="primary" onClick={handleShow} name="supporting_characters">Submit a Supporting Character</NavDropdown.Item>
             <NavDropdown.Divider className="trim"/>
             <NavDropdown.Item className="primary" href="/bookform">Submit a book</NavDropdown.Item>
+            <NavDropdown.Item>
+              <Form inline>
+                <FormControl type="text" placeholder="Search for a Book" className=" mr-sm-2" />
+                <Button type="submit">Submit</Button>
+              </Form>
+            </NavDropdown.Item>
           </NavDropdown>
           <Nav.Link className="nav-element secondary" href="/profile">Profile</Nav.Link>
           <Button className="nav-element secondary" onClick={handleLogout}>Logout</Button>
@@ -81,6 +90,10 @@ const Header = () => {
 
         </>
           }
+          <Form inline>
+            <FormControl type="text" placeholder="Search for a Book" className=" mr-sm-2" />
+            <Button type="submit">Submit</Button>
+          </Form>
         </Nav>
       </Navbar>
       <Modal show={show} onHide={handleClose} centered>
