@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-// import BookCard from './BookCard'
-// import BooksCarousel from './BooksCarousel'
+import BooksCarousel from './BooksCarousel'
 import axios from 'axios'
-import BookCard3d from './BookCard3d'
+// import BookCard3d from './BookCard3d'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
 
@@ -31,14 +30,16 @@ export const BookIndex = () => {
 
   return (
     <>
-      { books.map( book => {
+      {/* { books.map( book => {
         return (
           <div key = {book.id} >
             <BookCard3d  book={book} />
           </div>
         )
-      })}
-      {/* <BooksCarousel books={books} /> */}
+      })} */}
+      <ul className="books-index-container">
+        <BooksCarousel books={books} />
+      </ul>
     </>
   )
 }

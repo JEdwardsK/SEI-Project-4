@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const BookCard3d = ({ book }) => {
 
-  const { title, author, cover_image: coverImage, id } = book
+  const { title, author, cover_image: coverImage } = book
 
   return (
     <>
@@ -12,7 +12,7 @@ const BookCard3d = ({ book }) => {
         <div className="book-card__cover">
           <div className="book-card__book">
             <div className="book-card__book-front">
-              <Link to={`/books/${id}`}><img className="book-card__img" src={coverImage} alt={`the cover for ${title}, by ${author}`}/></Link>
+              <img className="book-card__img" src={coverImage} alt={`the cover for ${title}, by ${author}`}/>
             </div>
             <div className="book-card__book-back"></div>
             <div className="book-card__book-side"></div>

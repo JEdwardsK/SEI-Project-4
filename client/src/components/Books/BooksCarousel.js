@@ -4,20 +4,24 @@ const BooksCarousel = ( { books } ) => {
 
   return (
 
-    <ul className='list-inline'>
+
+    <>
       {books.map(book => {
         const { title, author, cover_image: coverImage, id } = book
 
         return (
-          <li className='book' key={id}>
-            <Link to={`/books/${id}`}>
+          <Link className="book-link" key={id} to={`/books/${id}`}>
+            <li className='book' >
               <img src={coverImage} alt={`the cover for ${title}, by ${author}`} />
-            </Link>
-          </li>
+            </li>
+          </Link>
         )
       })}
-    </ul>
+    </>
+
   )
+
+
 }
 
 export default BooksCarousel
