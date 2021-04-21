@@ -119,5 +119,228 @@
       7
     ]
   }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 10,
+  "fields": {
+    "first_name": "Dame Primus",
+    "last_name": "",
+    "relationship_to_protagonist": "Mentor",
+    "character_bio": "An entity that results in combination of the Wills that Arthur frees on his journey to reclaim the Kingdom. Each addition increases her power and knowledge, as well as affecting her personality.\r\n\r\nShe is known to lie to Arthur or mislead him to further her agenda. She can also split herself into lesser parts if required",
+    "character_archetypes": [
+      3,
+      4,
+      7,
+      24,
+      34,
+      53,
+      57,
+      62,
+      64,
+      66,
+      74,
+      77
+    ],
+    "books": [
+      8,
+      12,
+      10,
+      11,
+      13,
+      9,
+      14
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 11,
+  "fields": {
+    "first_name": "The Will (First Part)",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "The first Will who escaped its prison and set the plan in motion. it tricked Monday into acknowledging Arthur Penhaligon as Heir and relinquishing part of his Key to him. \r\n\r\nBefore taking the form of Dame Primus, it took the form of a jade frog.\r\n\r\nEach of the Wills embodied a Virtue to combat the Sins of the Morrow Days. Her virtue was Fortitude",
+    "character_archetypes": [
+      3,
+      4,
+      62,
+      64
+    ],
+    "books": [
+      8,
+      9
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 12,
+  "fields": {
+    "first_name": "The Will (Second Part)",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "Also known as 'Claws', this part of the Will took the form of a Bear. \r\n\r\nEach of the Wills embodied a Virtue to combat the Sins of the Morrow Days. Her virtue was Prudence.",
+    "character_archetypes": [
+      62
+    ],
+    "books": [
+      9
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 13,
+  "fields": {
+    "first_name": "The Will (Third Part)",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "This Will took the form of a Carp. Its trustee , Lady Wednesday, sought to execute her clause for the will (albeit not initially), before being betrayed by the other Morrow Days. It embodied the virtue Faith.",
+    "character_archetypes": [
+      67,
+      4,
+      62
+    ],
+    "books": [
+      10
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 14,
+  "fields": {
+    "first_name": "The Will (Fourth Part)",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "This Will takes the form of a snake. It embodies the virtue of Justice, which impacts the behaviour of Dame Primus after their union. After the merge, she becomes more obsessive with justice and coporeal punishment, in addition to acting more suspiciously.",
+    "character_archetypes": [
+      62
+    ],
+    "books": [
+      11
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 15,
+  "fields": {
+    "first_name": "The Will (Fifth Part)",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "Possessing the virtue of Temperance, this Will takes the form of some kind of chimeric beast, worshipped by the Winged Servants of the Night. It informs Arthur that Friday had not abdicated and had laid a trap with a fake Key as bait.",
+    "character_archetypes": [
+      62
+    ],
+    "books": [
+      12
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 16,
+  "fields": {
+    "first_name": "The Will (Sixth Part)",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "Taking the form of a Raven and possessing the Virtue of Charity, it is far kinder than the other Wills Arthur encounters. Saturday split each of its letters into drops of rain, which caused difficulty for Arthur initially. \r\n\r\nIt appears to be the most knowledgable of the Wills, knowing that the Incomparable Gardens were not in fact part of the house proper, it instead being the first thing out of the Void and thus the epicentre of the universe",
+    "character_archetypes": [
+      64,
+      4,
+      62
+    ],
+    "books": [
+      13
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 17,
+  "fields": {
+    "first_name": "The Will (Seventh Part)",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "Representing the virtue of Hope and taking the form of an Apple Tree, Arthur encounters this Will briefly in the Incomparable Gardens",
+    "character_archetypes": [
+      62
+    ],
+    "books": [
+      14
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 18,
+  "fields": {
+    "first_name": "The Complete Will of the Architect",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "Formed when all parts of the Will combine, it possess supreme power over all of Creation.",
+    "character_archetypes": [
+      67,
+      3,
+      73,
+      74,
+      53
+    ],
+    "books": [
+      14
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 19,
+  "fields": {
+    "first_name": "The Old One",
+    "last_name": "",
+    "relationship_to_protagonist": "Ally",
+    "character_bio": "The second being to emerge from Nothing at the creation of the Universe, the father of Lord Sunday, the Piper and the Mariner. \r\n\r\nSimilar to Prometheus, he is chained to a clock which release clockwork creatures that tear out his eyes only for them to regrow. the Architect forged this punishment for him to last until the end of the Universe",
+    "character_archetypes": [
+      67,
+      4,
+      73,
+      74,
+      23,
+      28
+    ],
+    "books": [
+      8,
+      14
+    ]
+  }
+},
+{
+  "model": "supporting_characters.supportingcharacter",
+  "pk": 20,
+  "fields": {
+    "first_name": "Suzy",
+    "last_name": "Turqoise Blue",
+    "relationship_to_protagonist": "Companion",
+    "character_bio": "One of Piper's Children, her original name was Suzanna Dyer. she was born during the Black Death. \r\n\r\nShe accompanies Arthur throughout his journeys. Arthur promotes her to Monday's Tierce, assistant to Monday's Noon",
+    "character_archetypes": [
+      43,
+      13,
+      14,
+      15,
+      16,
+      45,
+      24
+    ],
+    "books": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  }
 }
 ]

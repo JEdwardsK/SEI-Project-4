@@ -163,5 +163,143 @@
       6
     ]
   }
+},
+{
+  "model": "books.book",
+  "pk": 8,
+  "fields": {
+    "title": "Mister Monday",
+    "author": "Garth Nix",
+    "cover_image": "https://rukkola.hu/system/hd_covers/000/169/939/original/81FV3m3WIQL._SL1500_.jpg?1414940847",
+    "ISBN": "0-439-55123-4",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "After a mysterious encouter with a pair of men whilst at school, Arthur Penhaligon is given a relic in the shape of a clock hand and is named Heir to the House, a strange otherworld realm.\r\n\r\nAided by the strange child Suzy Turqoise Blue and the Will of the Architect, he battles against the Denizens of the House to claim the second clock hand relic and defeats its owner and ruler of the first floor of the House, Mister Monday",
+    "page_count": 445,
+    "published_by": "HaperCollins",
+    "pub_date": "2003-01-06",
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 9,
+  "fields": {
+    "title": "Grim Tuesday",
+    "author": "Garth Nix",
+    "cover_image": "https://www.fantasybookreview.co.uk/images/grim-tuesday.jpg",
+    "ISBN": "000715035",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Returning back to the House moments after he left, Arthur must battle against another Trustee, Lord Tuesday,  ruler of the far reaches, who has seized control of Arthur's domain in his absence",
+    "page_count": 390,
+    "published_by": "Harper Collins",
+    "pub_date": "2004-01-01",
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 10,
+  "fields": {
+    "title": "Drowned Wednesday",
+    "author": "Garth Nix",
+    "cover_image": "https://www.bibdsl.co.uk/imagegallery/bookdata/cd214/9780007175055.JPG",
+    "ISBN": "0439700868",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Whilst recovering at hospital, Arthur and his friend Leaf are transported to the Border Se, the domain of Duchess Wednesday,  tasked with finding her Key and curing her of her afflictions",
+    "page_count": 390,
+    "published_by": "Harper Collins",
+    "pub_date": "2005-02-01",
+    "genre": [
+      7,
+      37,
+      39
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 11,
+  "fields": {
+    "title": "Sir Thursday",
+    "author": "Garth Nix",
+    "cover_image": "https://d3fa68hw0m2vcc.cloudfront.net/3d5/136765905.jpeg",
+    "ISBN": "043970087",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "A doppelgänger has replaced Arthur and is prevening him from leaving the House. Forcefully conscripted into the Army of the Great Maze in their war against the Piper, one of the Architect's children, Arthur has his memory wiped and must somehow regain his memory, defeat both Piper and Sir Thursday, Trustee of the Great Maze, and not die in the process.\r\n\r\nIn his absence, Leaf fights against the 'Skinless Boy', Arthur's doppelgänger, who is spreading disease known as the 'Greyspot'",
+    "page_count": 427,
+    "published_by": "Harper Collins",
+    "pub_date": "2006-03-01",
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 12,
+  "fields": {
+    "title": "Lady Friday",
+    "author": "Garth Nix",
+    "cover_image": "https://www.booklya.ua/content/upload/product/196k/196772/800x800/610211/lady-friday.jpg",
+    "ISBN": "007175094",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "When it comes to Lady Friday, the beautiful and refined Trustee of the Middle House, there's more than meets the eye. Abidcating her throne and Key, she declared that whomever could find her Key would become the next ruler of her mountainous demense. \r\n\r\nCompeting against Arthur is the Piper, whom he battled with during his conscription, and Saturday, the powerful ruler of the Upper House one of the remaining Trustees of the Architect's Will",
+    "page_count": 278,
+    "published_by": "Harper Collins",
+    "pub_date": "2007-08-12",
+    "genre": [
+      3,
+      4,
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 13,
+  "fields": {
+    "title": "Superior Saturday",
+    "author": "Garth Nix",
+    "cover_image": "https://i.pinimg.com/originals/41/c8/08/41c80838adf769d0a6d645a0ddaa44df.jpg",
+    "ISBN": "0439700892",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Envious over the domain of Sunday held above her, Saturday has been slowly destroying the House so she can invade and usurp control! With the House sinking into Nothing, Arthur must claim her Key to repair the damage done before it is too late...\r\n\r\nWhat's more,  his adventures have slowly transformed him into something more than human, making him unable to return to his world without negative effect",
+    "page_count": 323,
+    "published_by": "Harper Collins",
+    "pub_date": "2008-07-01",
+    "genre": [
+      4,
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 14,
+  "fields": {
+    "title": "Lord Sunday",
+    "author": "Garth Nix",
+    "cover_image": "https://4.bp.blogspot.com/-nLUD6aMGbHY/Tt5c51kQuLI/AAAAAAAAASE/yQ1TtLGx2eA/s1600/Lord+Sunday.jpg",
+    "ISBN": "9781741145915",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "As the series reaches the finale, Arthur must compete with Saturday, Lord Sunday and the Piper for the fate of the collapsing House, to save it and as a result the Univers",
+    "page_count": 336,
+    "published_by": "Harper Collins",
+    "pub_date": "2010-03-04",
+    "genre": [
+      7
+    ]
+  }
 }
 ]
