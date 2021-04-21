@@ -236,5 +236,9 @@ ul {
   opacity: 1;
 }
 
-
+body.darkMode{
+  .navbar{
+    background-color: red;
+  }
+}
 
