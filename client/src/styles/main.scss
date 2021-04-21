@@ -70,26 +70,6 @@
   border-bottom-right-radius: 5px;
 }
 
-ul {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.list-inline > li {
-  display: inline-block;
-  margin-left: 2em;
-}
-.list-inline > li:first-child {
-  margin-left: 0;
-}
-
 .book {
   cursor: pointer;
   display: block;
@@ -168,7 +148,7 @@ ul {
 }
 
 
-//Navbar ---
+//? ////////////////////// NAVBAR STYLING
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -187,7 +167,7 @@ ul {
 
 
 
-
+//! //////////////////// 3D BOOK ANIMATION - NOT IN USE
 .book-card {
   width: 280px;
   padding: 16px;
@@ -250,7 +230,7 @@ ul {
 .book-card:hover .book-card__book-side {
   opacity: 1;
 }
-
+//! ///////////////////////////// 3D ANIMATION END - NOT IN USE ///////////////////
 body.darkMode{
   .navbar{
     background-color: red;
