@@ -105,7 +105,7 @@ const BookSubmit = () => {
     await axios.post('/api/books/', formData)
 
   }
-  const handlePageTurn = (event) => {
+  const handlePageTurnBookForm = (event) => {
     const { value, name } = event.target
     const page = parseInt(value)
     setPageNumber(page)
@@ -179,7 +179,7 @@ const BookSubmit = () => {
                 components={makeAnimated()}
                 onChange={(selected) => handleMultiChange(selected, 'genre')}
               />
-              <Button value="1" onClick={handlePageTurn}>Move to next page</Button>
+              <Button value="1" onClick={handlePageTurnBookForm}>Move to next page</Button>
 
             </Form.Group>
           </>
@@ -236,8 +236,8 @@ const BookSubmit = () => {
               </Form.Text>
             </Form.Group>
             <Form.Group>
-              <Button value="2" onClick={handlePageTurn}>Move to final page</Button>
-              <Button value="0" onClick={handlePageTurn}>Go Back</Button>
+              <Button value="2" onClick={handlePageTurnBookForm}>Move to final page</Button>
+              <Button value="0" onClick={handlePageTurnBookForm}>Go Back</Button>
             </Form.Group>
           </>
 
@@ -306,7 +306,7 @@ const BookSubmit = () => {
             <Button variant="primary" type="submit">
       Submit
             </Button>
-            <Button value="1" onClick={handlePageTurn}>Go Back</Button>
+            <Button value="1" onClick={handlePageTurnBookForm}>Go Back</Button>
 
           </>
       }

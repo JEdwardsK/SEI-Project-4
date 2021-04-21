@@ -166,7 +166,10 @@ const HomePage = () => {
 
 
                   <p>*Sigh... you may enter</p>
-                  <p>However, you will receive no assistance until you tell me who you are</p>
+
+                  { pageNumber !== 4 &&
+                    <p>However, you will receive no assistance until you tell me who you are</p>
+                  }
 
                 </>
             }
@@ -237,17 +240,16 @@ const HomePage = () => {
               <div className="homepage-container-sections">
                 <BookSubmit/>
               </div>
-              <div className="homepage-container-sections">
-                <Button onClick={handlePageTurn} value="4">Answer his questions</Button>
-                <Button onClick={handlePageTurn}>Tell him you will talk about it inside after you have settled inside</Button>
+              <div className="homepage-container-sections buttons-page-0">
+                <Button onClick={handlePageTurn} value="4">Tell him you will talk about it inside after you have settled inside</Button>
               </div>
             </>
           }
           { entryPages.includes(pageNumber) &&
             <>
 
-              <div className="homepage-container-sections">
-                <Link to="/books/"><Button>enter the Library</Button></Link>
+              <div className="homepage-container-sections enter-library">
+                <Link to="/books/"><Button>Enter the Library</Button></Link>
               </div>
             </>
           }
