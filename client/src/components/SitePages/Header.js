@@ -6,7 +6,26 @@ import CharacterSubmit from '../Forms/CharacterSubmit'
 import Modal from 'react-bootstrap/Modal'
 
 const Header = () => {
+
   const history = useHistory()
+
+  const handleNationChange = (event) => {
+    console.log('the props>>>>', event.target.checked)
+
+    if (userIsAuthenticated() === true){
+      console.log('IS AUTHENTICATED HERE IS THE CLASSLIST', document.body.classList)
+      if ([...document.body.classList].includes('defaultMode') === true){
+        document.body.classList.remove('defaultMode')
+        document.body.classList.add(`${localStorage.getItem('nation')}Mode`)
+      } else if ([...document.body.classList].includes(`${localStorage.getItem('nation')}Mode`) === true){
+        document.body.classList.remove(`${localStorage.getItem('nation')}Mode`)
+        document.body.classList.add('defaultMode')
+      }
+    } else if (userIsAuthenticated() === false){
+      console.log('NOT AUTHENTICATED')
+    }
+  }
+
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     window.alert('you have logged out, returning to homepage')
@@ -23,38 +42,39 @@ const Header = () => {
   const handleClose = () => setShow(false)
   return (
     <>
-      <Navbar expand="xl" className="nav-element">
+      <Navbar expand="xl" className="navbar background">
         <Nav className="mr=auto">
-          <Navbar.Brand href="/">Home</Navbar.Brand>
-          <Nav.Link className="nav-element" href="/books">Books</Nav.Link>
-          <Nav.Link className="nav-element" href="/genres">Genres</Nav.Link>
-          <Nav.Link className="nav-element" href="/protagonists">Protagonists</Nav.Link>
-          <Nav.Link className="nav-element" href="/antagonists">Antagonists</Nav.Link>
-          <Nav.Link className="nav-element" href="/supporting_characters">Supporting Characters</Nav.Link>
-          <Nav.Link className="nav-element" href="/search">Search</Nav.Link>
+          <Navbar.Brand className="nav-element secondary" href="/">Home</Navbar.Brand>
+          <Nav.Link className="nav-element secondary" href="/books">Books</Nav.Link>
+          <Nav.Link className="nav-element secondary" href="/genres">Genres</Nav.Link>
+          <Nav.Link className="nav-element secondary" href="/protagonists">Protagonists</Nav.Link>
+          <Nav.Link className="nav-element secondary" href="/antagonists">Antagonists</Nav.Link>
+          <Nav.Link className="nav-element secondary" href="/supporting_characters">Supporting Characters</Nav.Link>
+          <Nav.Link className="nav-element secondary" href="/search">Search</Nav.Link>
           {
             userIsAuthenticated() &&
-          <>
-            <NavDropdown className="nav-element" title="Forms" id="basic-nav-dropdown">
-              <NavDropdown.Item onClick={handleShow} name="protagonists">Submit a Protagonist</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item onClick={handleShow} name="antagonists">Submit a Antagonist</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item onClick={handleShow} name="supporting_characters">Submit a Supporting Character</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/bookform">Submit a book</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link className="nav-element" href="/profile">Profile</Nav.Link>
-            <button className="nav-element" onClick={handleLogout}>Logout</button>
-          </>
+        <>
+          <NavDropdown className="nav-element secondary" title="Forms" id="basic-nav-dropdown">
+            <NavDropdown.Item className="primary" onClick={handleShow} name="protagonists">Submit a Protagonist</NavDropdown.Item>
+            <NavDropdown.Divider className="trim"/>
+            <NavDropdown.Item className="primary" onClick={handleShow} name="antagonists">Submit a Antagonist</NavDropdown.Item>
+            <NavDropdown.Divider className="trim"/>
+            <NavDropdown.Item className="primary" onClick={handleShow} name="supporting_characters">Submit a Supporting Character</NavDropdown.Item>
+            <NavDropdown.Divider className="trim"/>
+            <NavDropdown.Item className="primary" href="/bookform">Submit a book</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link className="nav-element secondary" href="/profile">Profile</Nav.Link>
+          <button className="nav-element secondary" onClick={handleLogout}>Logout</button>
+          <switch className="nav-element secondary" type="toggle" onClick={handleNationChange}  data-toggle="toggle" data-on="Nation" data-off="Default"></switch>
+        </>
           }
           {
             !userIsAuthenticated() &&
-          <>
-            <Nav.Link className="nav-element" href="/login">Log In</Nav.Link>
-            <Nav.Link className="nav-element" href="/register">Register</Nav.Link>
+        <>
+          <Nav.Link className="nav-element" href="/login">Log In</Nav.Link>
+          <Nav.Link className="nav-element" href="/register">Register</Nav.Link>
 
-          </>
+        </>
           }
         </Nav>
       </Navbar>
@@ -62,7 +82,6 @@ const Header = () => {
         <CharacterSubmit characterType={characterToSubmit}/>
       </Modal>
     </>
-
   )
 }
 

@@ -23,6 +23,7 @@ import Search from './components/Forms/Search'
 //#endregion
 
 const App = () => {
+
   return (
     <BrowserRouter>
       <Header/>

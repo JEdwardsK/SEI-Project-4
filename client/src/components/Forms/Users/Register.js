@@ -32,6 +32,8 @@ const Register = () => {
       const response = await axios.post('/api/auth/register/', formData)
       console.log(response)
       history.push('/login')
+      console.log('SETTING LOCAL STORAGE>>>>>>', formData.nationality)
+      localStorage.setItem('nation', formData.nationality )
     } catch (err) {
       console.log(err.response)
     }
@@ -49,9 +51,6 @@ const Register = () => {
   }
   return (
     <>
-
-
-
       <Form onSubmit={handleSubmit}>
         <Form.Label>Register Form</Form.Label>
         <Form.Group>
