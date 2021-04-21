@@ -55,8 +55,6 @@
   border-bottom-right-radius: 5px;
 }
 
-
-
 ul {
   display: table-cell;
   vertical-align: middle;
@@ -163,7 +161,8 @@ ul {
 }
 
 .nav-element {
-  background-color: aqua;
+  margin-left: 7px;
+  margin-right: 7px;
 }
 
 .navbar {
@@ -172,17 +171,12 @@ ul {
 }
 
 
-p.nav-element:nth-child(10) {
-  padding-left: -2px;
-}
-
 
 
 .book-card {
   width: 280px;
   padding: 16px;
   border-radius: 5px;
-
 }
 .book-card .book-card__cover {
   position: relative;
@@ -241,4 +235,6 @@ p.nav-element:nth-child(10) {
 .book-card:hover .book-card__book-side {
   opacity: 1;
 }
+
+
 

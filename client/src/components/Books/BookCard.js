@@ -16,7 +16,7 @@ const BookCard = ( { title, author, cover_image, genre, id, is_made_into_film, i
       <h1>
         Genre:
         {genre.map(item => {
-          return(
+          return (
             <div className="genre" key={item.id}>
               {item.genre}
             </div>
