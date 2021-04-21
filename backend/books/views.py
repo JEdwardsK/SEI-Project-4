@@ -16,8 +16,8 @@ class BookListView(APIView):
         return Response(serialized_books.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        print('request.user>>>>>', request.user)
-        request.data["book_creator"] = request.user.username
+        # print('request.user>>>>>', request.user)
+        # request.data["book_creator"] = request.user.username
         book_to_add = BookSerializer(data=request.data)
         if book_to_add.is_valid():
             book_to_add.save()

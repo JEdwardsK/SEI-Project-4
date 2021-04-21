@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 
 import Register from '../Forms/Users/Register'
 import Login from '../Forms/Users/Login'
+import BookSubmit from '../Forms/BookSubmit'
+import { ReactComponent as WanShi } from '../../styles/assets/images/wan-shi.svg'
 
 const HomePage = () => {
   const [pageNumber, setPageNumber] = useState(0)
@@ -30,7 +32,7 @@ const HomePage = () => {
       <div className="homepage-container">
         <div className="homepage-container-sections">
           <div className="homepage-wan-shi-image">
-            image of wan shi tong
+            <WanShi/>
           </div>
           <div className="homepage-text">
 
@@ -159,7 +161,7 @@ const HomePage = () => {
         { pageNumber === 3 &&
           <>
             <div className="homepage-container-sections">
-              <h2>Book Form part 1</h2>
+              <BookSubmit/>
             </div>
             <div className="homepage-container-sections">
               <button onClick={handlePageTurn} value="4">Answer his questions</button>

@@ -15,11 +15,10 @@ import SupportingCharacterIndex from './components/Characters/SupportingCharacte
 import Profile from './components/Users/Profile'
 import Login from './components/Forms/Users/Login'
 import Register from './components/Forms/Users/Register'
-import ProtagonistSubmit from './components/Forms/ProtagonistSubmit'
-import AntagonistSubmit from './components/Forms/AntagonistSubmit'
 import BookSubmit from './components/Forms/BookSubmit'
-import SupportingCharacterSubmit from './components/Forms/SupportingCharacterSubmit'
+import ModalTest from './helpers/ModalTest'
 import Search from './components/Forms/Search'
+
 
 //#endregion
 
@@ -28,17 +27,11 @@ const App = () => {
     <BrowserRouter>
       <Navbar/>
       <Switch>
-        <Route exact path = '/protagform'>
-          <ProtagonistSubmit/>
-        </Route>
-        <Route exact path = '/antagform'>
-          <AntagonistSubmit/>
-        </Route>
-        <Route exact path = '/supform'>
-          <SupportingCharacterSubmit/>
-        </Route>
         <Route exact path = '/bookform'>
           <BookSubmit/>
+        </Route>
+        <Route exact path='/create-chars/'>
+          <ModalTest/>
         </Route>
 
         <Route exact path ='/'>
