@@ -1,7 +1,13 @@
 /*eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+
+
+import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated'
 
 import Register from '../Forms/Users/Register'
 import Login from '../Forms/Users/Login'
@@ -11,6 +17,43 @@ import { ReactComponent as WanShi } from '../../styles/assets/images/wan-shi.svg
 const HomePage = () => {
   const [pageNumber, setPageNumber] = useState(0)
   const [riddleAnswer, setRiddleAnswer] = useState(0)
+  const [registerFormData, setRegisterFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+    nationality: '',
+  })
+
+  const handleChange = (event) => {
+    console.log(event.target.value)
+    const newFormData = { ...registerFormData, [event.target.name]: event.target.value }
+    setRegisterFormData(newFormData)
+    console.log(registerFormData)
+  }
+  const handleSubmitRegister = (event) => {
+    event.preventDefault()
+    window.alert(JSON.stringify(registerFormData, null, 2))
+    handlePageTurn(event)
+    // try {
+    //   const response = await axios.post('/api/auth/register/', registerFormData)
+    //   console.log(response)
+    //   history.push('/login')
+    // } catch (err) {
+    //   console.log(err.response)
+    // }
+  }
+  const nationalityOptions = [
+    { value: 'fire', label: 'Fire Nation' },
+    { value: 'earth', label: 'Earth Kingdom' },
+    { value: 'air', label: 'Air Nomads' },
+    { value: 'water', label: 'Water Tribes' }
+  ]
+
+  const handleSelect = (selected, name) => {
+    const selection = selected.value
+    setRegisterFormData({ ...registerFormData, [name]: selection })
+  }
 
   const handlePageTurn = (event) => {
     const { value, name } = event.target
@@ -30,9 +73,10 @@ const HomePage = () => {
       <Button value="0" onClick={handlePageTurn}>Page One</Button>
       <h1>HOME PAGE</h1>
       <div className="homepage-container">
-        <div className="homepage-container-sections">
+        <div className="homepage-container-sections-left">
           <div className="homepage-wan-shi-image">
-            <WanShi/>
+            {/* <WanShi className="homepage-wan-shi"/> */}
+            {/* <img src="../../styles/assets/images/knowledge_seeker.png" alt="wan-shi"/> */}
           </div>
           <div className="homepage-text">
 
@@ -108,99 +152,130 @@ const HomePage = () => {
 
             }
             { entryPages.includes(pageNumber) &&
-              <>
+                <>
 
-                <p>
-                  {'If you\'re going to'}
-                  {pageNumber === 9 ? <> lie to </> : <> try to sneak past </> }
-                  <>
-                    an All-Knowing spirit being, you should should at least put some effort into it
-                  </>
-                </p>
+                  { pageNumber !== 4 &&
+                    <p>
+                      {'If you\'re going to'}
+                      {pageNumber === 9 ? <> lie to </> : <> try to sneak past </> }
+                      <>
+                      an All-Knowing spirit being, you should should at least put some effort into it
+                      </>
+                    </p>
+                  }
 
 
-                <p>*Sigh... you may enter</p>
-                <p>However, you will receive no assistance until you tell me who you are</p>
+                  <p>*Sigh... you may enter</p>
+                  <p>However, you will receive no assistance until you tell me who you are</p>
 
-              </>
+                </>
             }
 
           </div>
         </div>
-        { pageNumber === 0 &&
+        <div className="homepage-container-sections-right">
+          { pageNumber === 0 &&
+              <>
+                <div className="homepage-container-sections buttons-page-0">
+                  <Button className= "page-zero-button" onClick={handlePageTurn} value="1">Provide a book to the Library</Button>
+                  <Button className= "page-zero-button" onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</Button>
+                  <Button className= "page-zero-button" onClick={handlePageTurn} value="8">Sneak into the Library</Button>
+                  <Button className= "page-zero-button" onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</Button>
+                </div>
+              </>
+          }
+          { pageNumber === 1 &&
+              <>
+                <div className="homepage-container-sections">
+
+                  <Form>
+                    <Form.Label>Register Form</Form.Label>
+                    <Form.Group>
+                      <Form.Label>Username</Form.Label>
+                      <Form.Control type="text" placeholder="enter your username" name="username" value={registerFormData.username} onChange={handleChange} required/>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Email</Form.Label>
+                      <Form.Control type="email" placeholder="enter your email" name="email"  value={registerFormData.email} onChange={handleChange} required/>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Nation</Form.Label>
+                      <Select
+                        name="nationality"
+                        options={nationalityOptions}
+                        components={makeAnimated()}
+                        onChange={(selected) => handleSelect(selected, 'nationality')}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control type="password" placeholder="enter your password" name="password"  value={registerFormData.password} onChange={handleChange} required/>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Password Confirmation</Form.Label>
+                      <Form.Control type="password" placeholder="re-enter your password" name="password_confirmation" value={registerFormData.password_confirmation}  onChange={handleChange} required/>
+                      <Button onClick={handleSubmitRegister} value="3">Answer his questions</Button>
+                      <p>OR...</p>
+                      <Button onClick={handlePageTurn} value="8" >sneak into the library</Button>
+                    </Form.Group>
+                  </Form>
+
+                </div>
+              </>
+          }
+
+          { pageNumber === 2 &&
+            <div className="homepage-container-sections">
+              <Button value="3"onClick={handlePageTurn}>Water Tribe</Button>
+              <Button value="3"onClick={handlePageTurn}>Earth Kingdom</Button>
+              <Button value="3"onClick={handlePageTurn}>Fire Nation</Button>
+              <Button value="3"onClick={handlePageTurn}>Air Nomad</Button>
+            </div>
+          }
+          { pageNumber === 3 &&
             <>
-              <div className="homepage-container-sections buttons-page-0">
-                <Button onClick={handlePageTurn} value="1">Provide a book to the Library</Button>
-                <Button onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</Button>
-                <Button onClick={handlePageTurn} value="8">Sneak into the Library</Button>
-                <Button onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</Button>
-              </div>
-            </>
-        }
-        { pageNumber === 1 &&
-            <>
-              <div className="homepage-container-section">
-                <Register />
+              <div className="homepage-container-sections">
+                <BookSubmit/>
               </div>
               <div className="homepage-container-sections">
-                <button onClick={handlePageTurn} value="2">answer his questions</button>
-                <p>OR...</p>
-                <button onClick={handlePageTurn} value="8" >sneak into the library</button>
+                <Button onClick={handlePageTurn} value="4">Answer his questions</Button>
+                <Button onClick={handlePageTurn}>Tell him you will talk about it inside after you have settled inside</Button>
               </div>
             </>
-        }
+          }
+          { entryPages.includes(pageNumber) &&
+            <>
 
-        { pageNumber === 2 &&
-          <div className="homepage-container-sections">
-            <button value="3"onClick={handlePageTurn}>Water Tribe</button>
-            <button value="3"onClick={handlePageTurn}>Earth Kingdom</button>
-            <button value="3"onClick={handlePageTurn}>Fire Nation</button>
-            <button value="3"onClick={handlePageTurn}>Air Nomad</button>
-          </div>
-        }
-        { pageNumber === 3 &&
-          <>
-            <div className="homepage-container-sections">
-              <BookSubmit/>
-            </div>
-            <div className="homepage-container-sections">
-              <button onClick={handlePageTurn} value="4">Answer his questions</button>
-              <button onClick={handlePageTurn}>Tell him you will talk about it inside after you have settled inside</button>
-            </div>
-          </>
-        }
-        { entryPages.includes(pageNumber) &&
-          <>
+              <div className="homepage-container-sections">
+                <Link to="/books/"><Button>enter the Library</Button></Link>
+              </div>
+            </>
+          }
+          { pageNumber === 5 &&
+            <>
 
-            <div className="homepage-container-sections">
-              <Link to="/books/"><button>enter the Library</button></Link>
-            </div>
-          </>
-        }
-        { pageNumber === 5 &&
-          <>
+              <div className="homepage-container-sections">
+                <Login/>
+              </div>
+            </>
+          }
+          { pageNumber === 6 &&
+            <>
+              <div className="homepage-container-sections riddle-buttons">
+                <Button value="1" onClick={handleRiddle}>A Surgeon</Button>
+                <Button value="2" onClick={handleRiddle}>A Magician</Button>
+                <Button value="3" onClick={handleRiddle}>A Identity Thief</Button>
+                <Button value="7" onClick={handlePageTurn}>A Mirror</Button>
+              </div>
+              <div className="homepage-container-sections">
+                <Button onClick={handlePageTurn} value="1">Give him a book instead</Button>
+                <Button onClick={handlePageTurn} value="9">Make up an elaborate lie to get into the library for nothing</Button>
 
-            <div className="homepage-container-sections">
-              <Login/>
-            </div>
-          </>
-        }
-        { pageNumber === 6 &&
-          <>
-            <div className="homepage-container-sections">
-              <button value="1" onClick={handleRiddle}>A Surgeon</button>
-              <button value="2" onClick={handleRiddle}>A Magician</button>
-              <button value="3" onClick={handleRiddle}>A Identity Thief</button>
-              <button value="7" onClick={handlePageTurn}>A Mirror</button>
-            </div>
-            <div className="homepage-container-sections">
-              <button onClick={handlePageTurn} value="1">Give him a book instead</button>
-              <button onClick={handlePageTurn} value="9">Make up an elaborate lie to get into the library for nothing</button>
+              </div>
+            </>
 
-            </div>
-          </>
-
-        }
+          }
+        </div>
       </div>
     </>
 
