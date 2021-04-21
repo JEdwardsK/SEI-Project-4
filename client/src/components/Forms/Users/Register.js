@@ -1,6 +1,13 @@
+/*eslint-disable no-unused-vars */
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated'
+
+
 
 const Register = () => {
   const history = useHistory()
@@ -9,7 +16,7 @@ const Register = () => {
     email: '',
     password: '',
     password_confirmation: '',
-    nationality: 'earth',
+    nationality: '',
   })
 
   const handleChange = (event) => {
@@ -20,6 +27,7 @@ const Register = () => {
   }
   const handleSubmit = async (event) => {
     event.preventDefault()
+    window.alert(JSON.stringify(formData, null, 2))
     try {
       const response = await axios.post('/api/auth/register/', formData)
       console.log(response)
@@ -28,40 +36,53 @@ const Register = () => {
       console.log(err.response)
     }
   }
+  const nationalityOptions = [
+    { value: 'fire', label: 'Fire Nation' },
+    { value: 'earth', label: 'Earth Kingdom' },
+    { value: 'air', label: 'Air Nomads' },
+    { value: 'water', label: 'Water Tribes' }
+  ]
 
+  const handleSelect = (selected, name) => {
+    const selection = selected.value
+    setFormData({ ...formData, [name]: selection })
+  }
   return (
-    <div>
-      <form action="" onSubmit={handleSubmit}>
-        <h2>Register Form</h2>
-        <div className="register-input-container">
-          <h4>Username</h4>
-          <input type="text" placeholder="enter your username" name="username" value={formData.value} onChange={handleChange} required/>
-        </div>
-        <div className="register-input-container">
-          <h4>Email</h4>
-          <input type="email" placeholder="enter your email" name="email"  onChange={handleChange} required/>
-        </div>
-        <div className="register-input-container">
-          <h4>Password</h4>
-          <input type="password" placeholder="enter your password" name="password"  onChange={handleChange} required/>
-        </div>
-        {/* <div className="register-input-container">
-          <h4>Nation</h4>
-          <select name="nationality" required>
-            <option value="fire">Fire Nation</option>
-            <option value="earth">Earth Kingdom</option>
-            <option value="air">Air Nomads</option>
-            <option value="water">Water Tribes</option>
-          </select>
-        </div> */}
-        <div className="register-input-container">
-          <h4>Password Confirmation</h4>
-          <input type="password" placeholder="re-enter your password" name="password_confirmation"  onChange={handleChange} required/>
-        </div>
-        <button type="submit">Register</button>
+    <>
 
-      </form>
-    </div>
+
+
+      <Form onSubmit={handleSubmit}>
+        <Form.Label>Register Form</Form.Label>
+        <Form.Group>
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="text" placeholder="enter your username" name="username" value={formData.value} onChange={handleChange} required/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="enter your email" name="email"  onChange={handleChange} required/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="enter your password" name="password"  onChange={handleChange} required/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Nation</Form.Label>
+          <Select
+            name="nationality"
+            options={nationalityOptions}
+            components={makeAnimated()}
+            onChange={(selected) => handleSelect(selected, 'nationality')}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Password Confirmation</Form.Label>
+          <Form.Control type="password" placeholder="re-enter your password" name="password_confirmation"  onChange={handleChange} required/>
+        </Form.Group>
+        <Button type="submit">Register</Button>
+
+      </Form>
+    </>
   )
 }
 

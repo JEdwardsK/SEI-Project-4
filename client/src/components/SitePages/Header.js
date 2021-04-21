@@ -10,23 +10,21 @@ const Header = () => {
     window.alert('you have logged out, returning to homepage')
     history.push('/')
     window.location.reload()
-
   }
   return (
-    <Navbar expand="lg" className="nav-element">
-      
+    <Navbar expand="xl" className="nav-element">
       <Nav className="mr=auto">
         <Navbar.Brand href="/">Home</Navbar.Brand>
-        <Nav.Link href="/books">Books</Nav.Link>
-        <Nav.Link href="/genres">Genres</Nav.Link>
-        <Nav.Link href="/protagonists">Protagonists</Nav.Link>
-        <Nav.Link href="/antagonists">Antagonists</Nav.Link>
-        <Nav.Link href="/supporting_characters">Supporting Characters</Nav.Link>
-        <Nav.Link href="/search">Search</Nav.Link>
+        <Nav.Link className="nav-element" href="/books">Books</Nav.Link>
+        <Nav.Link className="nav-element" href="/genres">Genres</Nav.Link>
+        <Nav.Link className="nav-element" href="/protagonists">Protagonists</Nav.Link>
+        <Nav.Link className="nav-element" href="/antagonists">Antagonists</Nav.Link>
+        <Nav.Link className="nav-element" href="/supporting_characters">Supporting Characters</Nav.Link>
+        <Nav.Link className="nav-element" href="/search">Search</Nav.Link>
         {
           userIsAuthenticated() &&
         <>
-          <NavDropdown title="Forms" id="basic-nav-dropdown">
+          <NavDropdown className="nav-element" title="Forms" id="basic-nav-dropdown">
             <NavDropdown.Item href="/protagform">Submit a Protagonist</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="/antagform">Submit a Antagonist</NavDropdown.Item>
@@ -35,15 +33,15 @@ const Header = () => {
             <NavDropdown.Divider />
             <NavDropdown.Item href="/bookform">Submit a book</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="/profile">Profile</Nav.Link>
+          <Nav.Link className="nav-element" href="/profile">Profile</Nav.Link>
           <button className="nav-element" onClick={handleLogout}>Logout</button>
         </>
         }
         {
           !userIsAuthenticated() &&
         <>
-          <Nav.Link href="/login">Log In</Nav.Link>
-          <Nav.Link href="/register">Register</Nav.Link>
+          <Nav.Link className="nav-element" href="/login">Log In</Nav.Link>
+          <Nav.Link className="nav-element" href="/register">Register</Nav.Link>
           
         </>
         }

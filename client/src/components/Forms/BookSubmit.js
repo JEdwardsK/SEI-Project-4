@@ -37,8 +37,8 @@ const BookSubmit = () => {
     author: '',
     cover_image: '',
     genre: [],
-    is_made_into_film: '',
-    is_made_into_series: '',
+    is_made_into_film: false,
+    is_made_into_series: false,
     page_count: '',
     published_by: '',
     pub_date: '',
@@ -59,7 +59,7 @@ const BookSubmit = () => {
       setAllAntagonists(data)
     }
     getAntagonists()
-  })
+  }, [])
   useEffect(() => {
     const getProtagonists = async () => {
       const { data } = await axios.get('/api/protagonists')
@@ -76,11 +76,19 @@ const BookSubmit = () => {
   }, [])
 
   const handleChange = (event) => {
-    console.log(event.target.value)
+    const { type, name, checked, value } = event.target
+    const values = type === 'checkbox'
+      ? checked
+      : value
+    console.log(values)
+    setFormData({ ...formData, [name]: values })
+    console.log(formData)
   }
 
   const handelSubmit = (event) => {
     event.preventDefault()
+    window.alert(JSON.stringify(formData, null, 2))
+
   }
 
   if (!allAntagonists || !allProtagonists || !allSupportingCharacters) return (
@@ -98,7 +106,7 @@ const BookSubmit = () => {
 
   return (
 
-    <Form>
+    <Form onSubmit={handelSubmit}>
       <Form.Row>
         <Col>
           <Form.Group controlId="formBookTitle">
@@ -133,10 +141,19 @@ const BookSubmit = () => {
         <Form.Group controlId="filmSeriesPages">
           <Form.Row>
             <Col>
-              <Form.Check name="is_made_into_film" label="Has it been made into a Film?"/>
+              <Form.Check
+                name="is_made_into_film"
+                label="Has it been made into a Film?"
+                checked={formData.is_made_into_film}
+                onChange={handleChange}
+              />
             </Col>
             <Col>
-              <Form.Check name="is_made_into_series" label="Has it been made into a Series?"/>
+              <Form.Check
+                name="is_made_into_series"
+                label="Has it been made into a Series?"
+                checked={formData.is_made_into_series}
+                onChange={handleChange}/>
             </Col>
             <Col>
               <Form.Control type="number" name="page_count" label="No. Pages"/>
@@ -195,6 +212,9 @@ const BookSubmit = () => {
           <option>None Listed</option>
         </Form.Control>
       </Form.Group>
+      <Button variant="primary" type="submit">
+    Submit
+      </Button>
     </Form>
   )
 }
