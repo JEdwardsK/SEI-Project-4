@@ -2,6 +2,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import Select from 'react-select'
 
 
 const Search = () => {
@@ -98,33 +102,60 @@ const Search = () => {
 
   return (
     <>
-      <section>
-        <form className="form search-form" onSubmit={handleSubmit}>
-          <div className="field">
-            <label className="label" htmlFor="formTitle">Enter Book Title</label>
-            <div>
-              <input type="text" className="input" placeholder="enter book title here" name="formTitle" onChange={handleChange}/>
-            </div>
-          </div>
-          <div className="field">
-            <label  className="label" htmlFor="formAuthor">Enter Author</label>
+      <Modal>
+        <Form className="form search-form" onSubmit={handleSubmit}>
 
-            <input type="text" className="input" placeholder="enter authors full name" name="formAuthor" onChange={handleChange}/>
-          </div>
+          <Form.Group className="field">
+            <Form.Label className="label" htmlFor="formTitle">Enter Book Title</Form.Label>
+            <Form.Control
+              type="text"
+              className="input"
+              placeholder="enter book title here"
+              name="formTitle" onChange={handleChange}/>
+          </Form.Group>
+
+          <Form.Group className="field">
+            <Form.Label className="label" htmlFor="formAuthor">
+              Enter Author
+            </Form.Label>
+            <Form.Control
+              type="text"
+              className="input"
+              placeholder="enter authors full name"
+              name="formAuthor"
+              onChange={handleChange}/>
+          </Form.Group>
+
+          <Form.Group className="field">
+            <Form.Label className="label" htmlFor="formIsFilm">
+              Has it been made into a Film?
+            </Form.Label>
+            <Form.Control
+              type="checkbox"
+              value={true}
+              className="input"
+              placeholder=""
+              name="formIsFilm"
+              onChange={handleChange}/>
+          </Form.Group>
+
+          <Form.Group className="field">
+            <Form.Label className="label" htmlFor="formIsSeries">
+              Has it been made into a TV Series?
+            </Form.Label>
+            <Form.Control
+              type="checkbox"
+              value={true}
+              className="input"
+              name="formIsSeries"
+              onChange={handleChange}/>
+          </Form.Group>
+          <Form.Group className="field">
+            <Form.Label className="label" htmlFor="is"> Search by Keyword (separate each word by comma i.e Mudblood, Dragon, Scar. Do not use punctuation and avoid common words like and the etc.</Form.Label>
+            <div><Form.Control type="text" className="input" placeholder="enter search phrases" name="formSearchPhrases" onChange={handleChange}/></div>
+          </Form.Group>
           <div className="field">
-            <label className="label" htmlFor="formIsFilm">Has it been made into a Film?</label>
-            <div><input type="checkbox" value={true} className="input" placeholder="" name="formIsFilm" onChange={handleChange}/></div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="formIsSeries">Has it been made into a TV Series?</label>
-            <div><input type="checkbox" value={true} className="input" placeholder="" name="formIsSeries" onChange={handleChange}/></div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="is"> Search by Keyword (separate each word by comma i.e Mudblood, Dragon, Scar. Do not use punctuation and avoid common words like and the etc.</label>
-            <div><input type="text" className="input" placeholder="enter search phrases" name="formSearchPhrases" onChange={handleChange}/></div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="formGenres"> Select Genres</label>
+            <Form.Label className="label" htmlFor="formGenres"> Select Genres</Form.Label>
             {allGenres
               .sort((a, b) => {
                 const genreA = a.genre.toUpperCase()
@@ -139,28 +170,38 @@ const Search = () => {
                 return (
                   <div key={id}className="genre-form-container">
                     <div>
-                      <input type="checkbox" className="input" name="formGenres" value={id} onChange={handleChange}/>{genre}
+                      <Form.Control type="checkbox" className="input" name="formGenres" value={id} onChange={handleChange}/>{genre}
                     </div>
                   </div>
                 )
               })}
           </div>
-          <div className="field">
-            <label className="label" htmlFor="formFirstName">Enter Character First Name</label>
-            <div><input type="text" className="input" placeholder="" name="formFirstName" onChange={handleChange}/></div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor="formLastName">Enter Character Last Name</label>
-            <div><input type="text" className="input" placeholder="" name="formLastName" onChange={handleChange}/></div>
-          </div>
-          <div className="field">
-            <div className="control"><button className="submit">Search</button></div>
-            <div className="control"><button className="button" type="reset">Reset Form</button></div>
-            <div className="control"><button className="button">Cancel and Leave</button></div>
-          </div>
-        </form>
+          <Form.Group className="field">
+            <Form.Label className="label" htmlFor="formFirstName">Enter Character First Name</Form.Label>
+            <Form.Control
+              type="text"
+              className="input"
+              placeholder=""
+              name="formFirstName"
+              onChange={handleChange}/>
+          </Form.Group>
+          <Form.Group className="field">
+            <Form.Label className="label" htmlFor="formLastName">Enter Character Last Name</Form.Label>
+            <Form.Control
+              type="text"
+              className="input"
+              placeholder=""
+              name="formLastName"
+              onChange={handleChange}/>
+          </Form.Group>
+          <Form.Group className="field">
+            <Button className="submit">Search</Button>
+            <Button className="button" type="reset">Reset Form</Button>
+            <Button className="button">Cancel and Leave</Button>
+          </Form.Group>
+        </Form>
 
-      </section>
+      </Modal>
       <section>
         <h2>Search Results</h2>
         <p>{'if we\'ve found the book you were looking for, click on it below'}</p>

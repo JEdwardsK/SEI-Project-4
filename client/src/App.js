@@ -10,7 +10,6 @@ import GenreIndex from './components/Genres/GenreIndex'
 import BookShow from './components/Books/BookShow'
 import ProtagonistIndex from './components/Characters/ProtagonistIndex'
 import Footer from './components/SitePages/Footer'
-import Search from './helpers/Search/Search'
 import AntagonistIndex from './components/Characters/AntagonistIndex'
 import SupportingCharacterIndex from './components/Characters/SupportingCharacterIndex'
 import Profile from './components/Users/Profile'
@@ -20,6 +19,7 @@ import ProtagonistSubmit from './components/Forms/ProtagonistSubmit'
 import AntagonistSubmit from './components/Forms/AntagonistSubmit'
 import BookSubmit from './components/Forms/BookSubmit'
 import SupportingCharacterSubmit from './components/Forms/SupportingCharacterSubmit'
+import Search from './components/Forms/Search'
 
 //#endregion
 
