@@ -144,102 +144,102 @@ const BookSubmit = () => {
 
     <Form onSubmit={handleSubmit}>
       { pageNumber === 0 &&
-         <>
-           <Form.Group controlId="bookFormPartOne">
-             <Form.Row>
-               <Col>
-                 <Form.Group controlId="formBookTitle">
-                   <Form.Label>Title</Form.Label>
-                   <Form.Control type="text" placeholder="Enter Book Title" required name="title" value={formData.title}onChange={handleChange}/>
-                 </Form.Group>
-               </Col>
-               <Col>
-                 <Form.Group controlId="forBookAuthor">
-                   <Form.Label>Author</Form.Label>
-                   <Form.Control type="text" placeholder="Enter Author name" name="author"  onChange={handleChange}/>
-                   <Form.Text className="text-muted">
-                     {'Avoid punctuation e.g instead of "J.K. Rowling", enter "JK Rowling"'}
-                   </Form.Text>
-                 </Form.Group>
-               </Col>
-             </Form.Row>
-           </Form.Group>
-           <Form.Group controlId="formCharacterBioProtagonist">
-             <Form.Label>Synopsis</Form.Label>
-             <Form.Control as="textarea" rows ={4} placeholder="enter info about the story" value={formData.story_overview} name="story_overview" required onChange={handleChange}/>
-             <Form.Text className="text-muted">
-               {'input user message'}
-             </Form.Text>
-             <Form.Label>Select Genre</Form.Label>
+          <>
+            <Form.Group controlId="bookFormPartOne">
+              <Form.Row>
+                <Col>
+                  <Form.Group controlId="formBookTitle">
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control type="text" placeholder="Enter Book Title" required name="title" value={formData.title}onChange={handleChange}/>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group controlId="forBookAuthor">
+                    <Form.Label>Author</Form.Label>
+                    <Form.Control type="text" placeholder="Enter Author name" name="author"  onChange={handleChange}/>
+                    <Form.Text className="text-muted">
+                      {'Avoid punctuation e.g instead of "J.K. Rowling", enter "JK Rowling"'}
+                    </Form.Text>
+                  </Form.Group>
+                </Col>
+              </Form.Row>
+            </Form.Group>
+            <Form.Group controlId="formCharacterBioProtagonist">
+              <Form.Label>Synopsis</Form.Label>
+              <Form.Control as="textarea" rows ={4} placeholder="enter info about the story" value={formData.story_overview} name="story_overview" required onChange={handleChange}/>
+              <Form.Text className="text-muted">
+                {'input user message'}
+              </Form.Text>
+              <Form.Label>Select Genre</Form.Label>
 
-             <Select
-               name="genre"
-               options={genreOptions}
-               isMulti
-               components={makeAnimated()}
-               onChange={(selected) => handleMultiChange(selected, 'genre')}
-             />
-             <Button value="1" onClick={handlePageTurn}>Move to next page</Button>
+              <Select
+                name="genre"
+                options={genreOptions}
+                isMulti
+                components={makeAnimated()}
+                onChange={(selected) => handleMultiChange(selected, 'genre')}
+              />
+              <Button value="1" onClick={handlePageTurn}>Move to next page</Button>
 
-           </Form.Group>
-         </>
+            </Form.Group>
+          </>
       }
 
       {/** end of required forms i.e part one of form
          * cover_image: '',
-         genre: [],
-         published_by: '',
-         pub_date: '',
-         story_overview: '',
+          genre: [],
+          published_by: '',
+          pub_date: '',
+          story_overview: '',
         */}
       { pageNumber === 1 &&
-         <>
-           <Form.Group controlId="filmSeriesPages">
-             <Form.Row>
-               <Col>
-                 <Form.Check
-                   name="is_made_into_film"
-                   label="Has it been made into a Film?"
-                   checked={formData.is_made_into_film}
-                   onChange={handleChange}
-                 />
-               </Col>
-               <Col>
-                 <Form.Check
-                   name="is_made_into_series"
-                   label="Has it been made into a Series?"
-                   checked={formData.is_made_into_series}
-                   onChange={handleChange}/>
-               </Col>
-               <Col>
-                 <Form.Control type="number" name="page_count" value={formData.page_count} label="No. Pages" onChange={handleChange}/>
-               </Col>
-             </Form.Row>
-           </Form.Group>
-           <Form.Group controlId="publisherInfo">
-             <Form.Row>
-               <Col>
-                 <Form.Label>Publisher</Form.Label>
-                 <Form.Control type="text" value={formData.published_by} placeholder="enter publisher" name="published_by" onChange={handleChange}/>
-               </Col>
-               <Col>
-                 <Form.Label>Date Published</Form.Label>
-                 <Form.Control type="date" name="pub_date" value={formData.pub_date} onChange={handleChange}/>
-               </Col>
-             </Form.Row>
-           </Form.Group>
-           <Form.Group>
-             <Form.Label>ISBN</Form.Label>
-             <Form.Control type="text" value={formData.ISBN} placeholder="enter ISBN" name="ISBN" onChange={handleChange}/>
-             <Form.Text className="text-muted">
-               {'Enter in format ""'}
-             </Form.Text>
-           </Form.Group>
-           <Form.Group>
-             <Button value="2" onClick={handlePageTurn}>Move to final page</Button>
-             <Button value="0" onClick={handlePageTurn}>Go Back</Button>
-           </Form.Group>
-         </>
+          <>
+            <Form.Group controlId="filmSeriesPages">
+              <Form.Row>
+                <Col>
+                  <Form.Check
+                    name="is_made_into_film"
+                    label="Has it been made into a Film?"
+                    checked={formData.is_made_into_film}
+                    onChange={handleChange}
+                  />
+                </Col>
+                <Col>
+                  <Form.Check
+                    name="is_made_into_series"
+                    label="Has it been made into a Series?"
+                    checked={formData.is_made_into_series}
+                    onChange={handleChange}/>
+                </Col>
+                <Col>
+                  <Form.Control type="number" name="page_count" value={formData.page_count} label="No. Pages" onChange={handleChange}/>
+                </Col>
+              </Form.Row>
+            </Form.Group>
+            <Form.Group controlId="publisherInfo">
+              <Form.Row>
+                <Col>
+                  <Form.Label>Publisher</Form.Label>
+                  <Form.Control type="text" value={formData.published_by} placeholder="enter publisher" name="published_by" onChange={handleChange}/>
+                </Col>
+                <Col>
+                  <Form.Label>Date Published</Form.Label>
+                  <Form.Control type="date" name="pub_date" value={formData.pub_date} onChange={handleChange}/>
+                </Col>
+              </Form.Row>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>ISBN</Form.Label>
+              <Form.Control type="text" value={formData.ISBN} placeholder="enter ISBN" name="ISBN" onChange={handleChange}/>
+              <Form.Text className="text-muted">
+                {'Enter in format ""'}
+              </Form.Text>
+            </Form.Group>
+            <Form.Group>
+              <Button value="2" onClick={handlePageTurn}>Move to final page</Button>
+              <Button value="0" onClick={handlePageTurn}>Go Back</Button>
+            </Form.Group>
+          </>
 
       }
       {/** final form section, give user otion to fill forms based on wheter there is no character they wish to select */}

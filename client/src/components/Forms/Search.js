@@ -6,6 +6,12 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Select from 'react-select'
+import Spinner from 'react-bootstrap/Spinner'
+import Col from 'react-bootstrap/Col'
+import { genreFormOptions } from '../../helpers/helperFunctions'
+import makeAnimated from 'react-select/animated'
+
+
 
 
 const Search = () => {
@@ -24,6 +30,7 @@ const Search = () => {
   })
   const [searchResults, setSearchResults] = useState([])
   const [genreValues, setGenreValues] = useState([])
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     const getBooks = async () => {
@@ -44,16 +51,13 @@ const Search = () => {
 
 
   const handleChange = (event) => {
-    console.log('event type>>', (event.target.value))
-    const genrePicks = []
-    event.target.type === 'checkbox' && genrePicks.push(event.target.value)
-    setGenreValues(genrePicks)
-    const value = event.target.type === 'checkbox'
-      ? genreValues
-      : event.target.value
-    const newFormData = { ...formData, [event.target.name]: value }
-    setFormData(newFormData)
-    console.log('🚀 ~ file: Search.js ~ line 74 ~ handleChange ~ newFormData', formData)
+    const { type, name, checked, value } = event.target
+    const values = type === 'checkbox'
+      ? checked
+      : value
+    console.log(values)
+    setFormData({ ...formData, [name]: values })
+    console.log(formData)
   }
 
   const { formTitle, formAuthor, formIsFilm, formSearchPhrases, formGenres, formFirstName, formLastName, formIsSeries } = formData
@@ -98,136 +102,168 @@ const Search = () => {
 
   }
 
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+  const handleMultiChange = (selected, name) => {
+    const values = selected ? selected.map(item => item.value) : []
+    setFormData({ ...formData, [name]: [...values] })
+  }
+
   if (!allBooks || !allGenres) return null
+
+  const sortedGenres = allGenres.sort((a, b) => {
+    const genreA = a.genre.toUpperCase()
+    const genreB = b.genre.toUpperCase()
+    return genreA < genreB
+      ? -1 : genreA > genreB
+        ? 1 : 0
+  })
+  const genreOptions = genreFormOptions(sortedGenres)
 
   return (
     <>
-      <Modal>
+      <Button variant="primary" onClick={handleShow}>
+        New Search
+      </Button>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+        size="lg"
+        centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Enter Search Information Below</Modal.Title>
+        </Modal.Header>
         <Form className="form search-form" onSubmit={handleSubmit}>
 
-          <Form.Group className="field">
-            <Form.Label className="label" htmlFor="formTitle">Enter Book Title</Form.Label>
-            <Form.Control
-              type="text"
-              className="input"
-              placeholder="enter book title here"
-              name="formTitle" onChange={handleChange}/>
+
+          <Form.Group controlId="bookFormPartOne">
+            <Form.Row>
+              <Col>
+                <Form.Group controlId="formBookTitle">
+                  <Form.Label>Title</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Book Title" name="formTitle" value={formData.title} onChange={handleChange}/>
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group controlId="forBookAuthor">
+                  <Form.Label>Author</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Author name" name="formAuthor" value={FormData.formAuthor} onChange={handleChange}/>
+                  <Form.Text className="text-muted">
+                    {'Avoid punctuation e.g instead of "J.K. Rowling", enter "JK Rowling"'}
+                  </Form.Text>
+                </Form.Group>
+              </Col>
+            </Form.Row>
           </Form.Group>
 
-          <Form.Group className="field">
-            <Form.Label className="label" htmlFor="formAuthor">
-              Enter Author
-            </Form.Label>
-            <Form.Control
-              type="text"
-              className="input"
-              placeholder="enter authors full name"
-              name="formAuthor"
-              onChange={handleChange}/>
+          <Form.Group controlId="formCharacterBioProtagonist">
+            <Form.Label>Search by Keyword</Form.Label>
+            <Form.Control as="textarea" rows ={4} placeholder="enter info about the story" value={formData.formSearchPhrases} name="formSearchPhrases" onChange={handleChange}/>
+            <Form.Text className="text-muted">
+              {'separate each word by comma i.e Mudblood, Dragon, Scar. Do not use punctuation and avoid common words like and the etc.'}
+            </Form.Text>
+            <Form.Label>Select Genre</Form.Label>
+
+            <Select
+              name="formGenres"
+              options={genreOptions}
+              isMulti
+              components={makeAnimated()}
+              onChange={(selected) => handleMultiChange(selected, 'formGenres')}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Col>
+              <Form.Group>
+                <Form.Label>First Name</Form.Label>
+                <Form.Control type="text" placeholder="What is their first name" value={formData.formFirstName} name="formFirstName" onChange={handleChange}/>
+                <Form.Text className="text-muted">
+                  {'for a character with a title or one given name enter here. e.g "Lord Voldemort".'}
+                </Form.Text>
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group>
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control type="text" placeholder="What is their last name" name="formLastName" value={formData.formLastName} onChange={handleChange}/>
+                <Form.Text className="text-muted">
+                  {'input user message'}
+                </Form.Text>
+              </Form.Group>
+            </Col>
           </Form.Group>
 
-          <Form.Group className="field">
-            <Form.Label className="label" htmlFor="formIsFilm">
-              Has it been made into a Film?
-            </Form.Label>
-            <Form.Control
-              type="checkbox"
-              value={true}
-              className="input"
-              placeholder=""
-              name="formIsFilm"
-              onChange={handleChange}/>
-          </Form.Group>
-
-          <Form.Group className="field">
-            <Form.Label className="label" htmlFor="formIsSeries">
-              Has it been made into a TV Series?
-            </Form.Label>
-            <Form.Control
-              type="checkbox"
-              value={true}
-              className="input"
-              name="formIsSeries"
-              onChange={handleChange}/>
-          </Form.Group>
-          <Form.Group className="field">
-            <Form.Label className="label" htmlFor="is"> Search by Keyword (separate each word by comma i.e Mudblood, Dragon, Scar. Do not use punctuation and avoid common words like and the etc.</Form.Label>
-            <div><Form.Control type="text" className="input" placeholder="enter search phrases" name="formSearchPhrases" onChange={handleChange}/></div>
-          </Form.Group>
-          <div className="field">
-            <Form.Label className="label" htmlFor="formGenres"> Select Genres</Form.Label>
-            {allGenres
-              .sort((a, b) => {
-                const genreA = a.genre.toUpperCase()
-                const genreB = b.genre.toUpperCase()
-
-                return genreA < genreB ? -1
-                  : genreA > genreB ? 1
-                    : 0
-              })
-              .map(item => {
-                const { genre, id } = item
-                return (
-                  <div key={id}className="genre-form-container">
-                    <div>
-                      <Form.Control type="checkbox" className="input" name="formGenres" value={id} onChange={handleChange}/>{genre}
-                    </div>
-                  </div>
-                )
-              })}
-          </div>
-          <Form.Group className="field">
-            <Form.Label className="label" htmlFor="formFirstName">Enter Character First Name</Form.Label>
-            <Form.Control
-              type="text"
-              className="input"
-              placeholder=""
-              name="formFirstName"
-              onChange={handleChange}/>
-          </Form.Group>
-          <Form.Group className="field">
-            <Form.Label className="label" htmlFor="formLastName">Enter Character Last Name</Form.Label>
-            <Form.Control
-              type="text"
-              className="input"
-              placeholder=""
-              name="formLastName"
-              onChange={handleChange}/>
-          </Form.Group>
-          <Form.Group className="field">
-            <Button className="submit">Search</Button>
-            <Button className="button" type="reset">Reset Form</Button>
-            <Button className="button">Cancel and Leave</Button>
+          <Form.Group controlId="filmSeriesPages">
+            <Form.Row>
+              <Col>
+                <Form.Check
+                  name="formIsFilm"
+                  label="Has it been made into a Film?"
+                  checked={formData.formIsFilm}
+                  onChange={handleChange}
+                />
+              </Col>
+              <Col>
+                <Form.Check
+                  name="formIsSeries"
+                  label="Has it been made into a Series?"
+                  checked={formData.formIsSeries}
+                  onChange={handleChange}/>
+              </Col>
+            </Form.Row>
           </Form.Group>
         </Form>
+        <Form.Group className="field">
+          <Button type="submit">Search</Button>
+          <Button className="button" onClick={handleClose}>Cancel and Leave</Button>
+        </Form.Group>
 
       </Modal>
       <section>
         <h2>Search Results</h2>
-        <p>{'if we\'ve found the book you were looking for, click on it below'}</p>
-        <ul className="list-inline">
-          {console.log('validBooksSearchArray', searchResults)}
-          {
-            searchResults
-              .sort((a, b) => b.searchHits - a.searchHits)
-              .map(result => {
-                const { searchHits, resultBook } = result
-                const { cover_image: coverImage, id, title, author } = resultBook
+        {
+          searchResults.length === 0 ?
+            <>
+              <Button disabled>
+                <Spinner
+                  as="span"
+                  animation="border"
+                  role="status"
+                  aria-hidden="true"
+                />
+      Loading...
+              </Button>
+            </> :
+            <>
+              <p>{'if we\'ve found the book you were looking for, click on it below'}</p>
+              <ul className="list-inline">
+                {console.log('validBooksSearchArray', searchResults)}
+                {
+                  searchResults
+                    .sort((a, b) => b.searchHits - a.searchHits)
+                    .map(result => {
+                      const { searchHits, resultBook } = result
+                      const { cover_image: coverImage, id, title, author } = resultBook
 
-                return (
-                  <>
-                    <Link to= {`/books/${id}`}>
-                      <li className='book'>
-                        <img src={coverImage} alt={`the cover for ${title}, by ${author}`} value={id}/>
-                      </li>
-                    </Link>
+                      return (
+                        <>
+                          <Link to= {`/books/${id}`}>
+                            <li className='book'>
+                              <img src={coverImage} alt={`the cover for ${title}, by ${author}`} value={id}/>
+                            </li>
+                          </Link>
 
-                    <p>search hits: {searchHits}</p>
-                  </>
-                )
-              })
-          }
-        </ul>
+                          <p>search hits: {searchHits}</p>
+                        </>
+                      )
+                    })
+                }
+              </ul>
+            </>
+        }
+
       </section>
 
     </>
