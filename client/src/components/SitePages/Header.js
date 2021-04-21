@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { userIsAuthenticated } from '../../helpers/auth'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 const Header = () => {
   const history = useHistory()
@@ -9,38 +10,43 @@ const Header = () => {
     window.alert('you have logged out, returning to homepage')
     history.push('/')
     window.location.reload()
-
   }
   return (
-    <div className="navbar">
-      <Link to="/"><p className="nav-element">Home</p></Link>
-      <Link to ="/books"><p className="nav-element">Books</p></Link>
-      <Link to="/genres"><p className="nav-element">Genres</p></Link>
-      <Link to="/protagonists"><p className="nav-element">Protagonists</p></Link>
-      <Link to="/antagonists"><p className="nav-element">Antagonists</p></Link>
-      <Link to="/supporting_characters"><p className="nav-element">Supporting Characters</p></Link>
-      <Link to="/search"><p className="nav-element">Search</p></Link>
-      <Link to="/protagform"><p className="nav-element">Protagonist Form</p></Link>
-      <Link to="/antagform"><p className="nav-element">Antagonist Form</p></Link>
-      <Link to="/supform"><p className="nav-element">Support Char Form</p></Link>
-      <Link to="/bookform"><p className="nav-element">Book Form</p></Link>
-
-      {
-        userIsAuthenticated() &&
+    <Navbar expand="xl" className="nav-element">
+      <Nav className="mr=auto">
+        <Navbar.Brand href="/">Home</Navbar.Brand>
+        <Nav.Link className="nav-element" href="/books">Books</Nav.Link>
+        <Nav.Link className="nav-element" href="/genres">Genres</Nav.Link>
+        <Nav.Link className="nav-element" href="/protagonists">Protagonists</Nav.Link>
+        <Nav.Link className="nav-element" href="/antagonists">Antagonists</Nav.Link>
+        <Nav.Link className="nav-element" href="/supporting_characters">Supporting Characters</Nav.Link>
+        <Nav.Link className="nav-element" href="/search">Search</Nav.Link>
+        {
+          userIsAuthenticated() &&
         <>
-          <Link to="/profile"><p className="nav-element">Profile</p></Link>
+          <NavDropdown className="nav-element" title="Forms" id="basic-nav-dropdown">
+            <NavDropdown.Item href="/protagform">Submit a Protagonist</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/antagform">Submit a Antagonist</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/supform">Submit a Supporting Character</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/bookform">Submit a book</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link className="nav-element" href="/profile">Profile</Nav.Link>
           <button className="nav-element" onClick={handleLogout}>Logout</button>
         </>
-      }
-      {
-        !userIsAuthenticated() &&
+        }
+        {
+          !userIsAuthenticated() &&
         <>
-          <Link to="/login"><p className="nav-element">Log In</p></Link>
-          <Link to="/register"><p className="nav-element">Register</p></Link>
+          <Nav.Link className="nav-element" href="/login">Log In</Nav.Link>
+          <Nav.Link className="nav-element" href="/register">Register</Nav.Link>
+          
         </>
-      }
-
-    </div>
+        }
+      </Nav>
+    </Navbar>
   )
 }
 

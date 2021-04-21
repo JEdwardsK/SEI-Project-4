@@ -1,10 +1,14 @@
 import React from 'react'
-
+import { Container, ListGroup, ListGroupItem } from 'react-bootstrap'
 const Footer = () => {
   return (
-    <div>
-      this is the footer
-    </div>
+    <Container className="">
+      <ListGroup>
+        <ListGroupItem>
+          Website created by Jesse Edwards and George Shaw
+        </ListGroupItem>
+      </ListGroup>
+    </Container>
   )
 }
 
