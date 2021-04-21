@@ -1,5 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
-
+@font-face {
+  font-family: 'herculanum';
+  src: url('../styles/assets/Fonts/herculanum.ttf');
+}
 
 
 // Homepage
@@ -155,23 +158,16 @@ ul {
 
 //Navbar ---
 .navbar {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .nav-element {
   margin-left: 7px;
   margin-right: 7px;
+  padding:5px;
+  border-radius: 10px;
+  text-align: center;
 }
-
-.navbar {
-  /* justify-content: space-between; */
-  justify-content: space-evenly;
-}
-
-
-
 
 .book-card {
   width: 280px;
@@ -236,9 +232,80 @@ ul {
   opacity: 1;
 }
 
-body.darkMode{
-  .navbar{
-    background-color: red;
+body.defaultMode{
+  font-family: 'herculanum';
+  .primary{
+    background-color:deepskyblue;
+  }
+  .secondary{
+    background-color:sandybrown;
+  }
+  .trim{
+    background-color:#fcdc7b;
+  }
+  .background{
+    background-color:rgb(94, 52, 0);
   }
 }
 
+body.fireMode{
+  font-family: 'herculanum';
+  .primary{
+    background-color: #962828;
+  }
+  .secondary{
+    background-color: #601515;
+  }
+  .trim{
+    background-color: #400b0e;
+  }
+  .background{
+    background-color: #2f172c;
+  }
+}
+body.earthMode{
+  font-family: 'herculanum';
+  .primary{
+    background-color: #2D3F2F;
+  }
+  .secondary{
+    background-color: #213A27;
+  }
+  .trim{
+    background-color: #A5A986;
+  }
+  .background{
+    background-color: #54544A;
+  }
+}
+
+body.airMode{
+  font-family: 'herculanum';
+  .primary{
+    background-color: #c0ddcf;
+  }
+  .secondary{
+    background-color: #b5cec7;
+  }
+  .trim{
+    background-color: #7094b7;
+  }
+  .background{
+    background-color: #99a9a3;
+  }
+}
+body.waterMode{
+  .primary{
+    background-color: #5D78AB;
+  }
+  .secondary{
+    background-color: #87A6BD;
+  }
+  .trim{
+    background-color: #705D4B;
+  }
+  .background{
+    background-color: #B7CEDF;
+  }
+
+}

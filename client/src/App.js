@@ -24,6 +24,7 @@ import SupportingCharacterSubmit from './components/Forms/SupportingCharacterSub
 //#endregion
 
 const App = () => {
+
   return (
     <BrowserRouter>
       <Header/>
