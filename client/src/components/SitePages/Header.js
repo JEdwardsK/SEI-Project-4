@@ -4,27 +4,32 @@ import { userIsAuthenticated } from '../../helpers/auth'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import CharacterSubmit from '../Forms/CharacterSubmit'
 import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import { setColourByNation } from '../../helpers/helperFunctions'
 
 const Header = () => {
-
+  setColourByNation()
   const history = useHistory()
 
-  const handleNationChange = (event) => {
-    console.log('the props>>>>', event.target.checked)
+  // const handleNationChange = (event) => {
+  //   console.log('the props>>>>', event.target.checked)
+  //   if (event.target.name === 'toggle') {
+  //     if (userIsAuthenticated() === true){
+  //       console.log('IS AUTHENTICATED HERE IS THE CLASSLIST', document.body.classList)
+  //       if ([...document.body.classList].includes('defaultMode') === true){
+  //         document.body.classList.remove('defaultMode')
+  //         document.body.classList.add(`${localStorage.getItem('nation')}Mode`)
+  //       } else if ([...document.body.classList].includes(`${localStorage.getItem('nation')}Mode`) === true){
+  //         document.body.classList.remove(`${localStorage.getItem('nation')}Mode`)
+  //         document.body.classList.add('defaultMode')
+  //       }
+  //     } else if (userIsAuthenticated() === false){
+  //       console.log('NOT AUTHENTICATED')
 
-    if (userIsAuthenticated() === true){
-      console.log('IS AUTHENTICATED HERE IS THE CLASSLIST', document.body.classList)
-      if ([...document.body.classList].includes('defaultMode') === true){
-        document.body.classList.remove('defaultMode')
-        document.body.classList.add(`${localStorage.getItem('nation')}Mode`)
-      } else if ([...document.body.classList].includes(`${localStorage.getItem('nation')}Mode`) === true){
-        document.body.classList.remove(`${localStorage.getItem('nation')}Mode`)
-        document.body.classList.add('defaultMode')
-      }
-    } else if (userIsAuthenticated() === false){
-      console.log('NOT AUTHENTICATED')
-    }
-  }
+  //     }
+  //   }
+
+  // }
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
@@ -64,15 +69,15 @@ const Header = () => {
             <NavDropdown.Item className="primary" href="/bookform">Submit a book</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link className="nav-element secondary" href="/profile">Profile</Nav.Link>
-          <button className="nav-element secondary" onClick={handleLogout}>Logout</button>
-          <switch className="nav-element secondary" type="toggle" onClick={handleNationChange}  data-toggle="toggle" data-on="Nation" data-off="Default"></switch>
+          <Button className="nav-element secondary" onClick={handleLogout}>Logout</Button>
+          {/* <Button className="nav-element secondary" type="toggle" onClick={handleNationChange}  name="toggle" data-toggle="toggle" data-on="Nation" data-off="Default"></Button> */}
         </>
           }
           {
             !userIsAuthenticated() &&
         <>
-          <Nav.Link className="nav-element" href="/login">Log In</Nav.Link>
-          <Nav.Link className="nav-element" href="/register">Register</Nav.Link>
+          <Nav.Link className="nav-element secondary" href="/login">Log In</Nav.Link>
+          <Nav.Link className="nav-element secondary" href="/register">Register</Nav.Link>
 
         </>
           }

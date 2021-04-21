@@ -19,7 +19,7 @@ const Login = () => {
     const response = await axios.post('/api/auth/login/', formData)
     window.localStorage.setItem('token', response.data.token)
     history.push('/profile/')
-    window.location.reload()
+    // window.location.reload()
     console.log(response)
   }
 

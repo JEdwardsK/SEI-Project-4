@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react'
 import CharacterCard from './CharacterCard'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
+import { setColourByNation } from '../../helpers/helperFunctions'
 
 
 
 const ProtagonistIndex = () => {
+  setColourByNation()
   const [allProtagonists, setAllProtagonists] = useState(null)
   useEffect(() => {
     const getProtagonists = async () => {
