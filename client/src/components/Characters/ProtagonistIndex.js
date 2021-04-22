@@ -4,9 +4,12 @@ import CharacterCard from './CharacterCard'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
 import CardColumns from 'react-bootstrap/CardColumns'
+import { setColourByNation } from '../../helpers/helperFunctions'
+
 
 
 const ProtagonistIndex = () => {
+  setColourByNation()
   const [allProtagonists, setAllProtagonists] = useState(null)
   useEffect(() => {
     const getProtagonists = async () => {
@@ -31,7 +34,7 @@ const ProtagonistIndex = () => {
   console.log(allProtagonists)
   return (
     <>
-      <h1 className='character-header'>Supporting Characters</h1>
+      <h1 className='character-header'>Protagonists</h1>
       <CardColumns>
         {allProtagonists.map(character => {
           return (

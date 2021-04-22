@@ -4,9 +4,12 @@ import CharacterCard from './CharacterCard'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
 import CardColumns from 'react-bootstrap/CardColumns'
+import { setColourByNation } from '../../helpers/helperFunctions'
+
 
 
 const AntagonistIndex = () => {
+  setColourByNation()
   const [allAntagonists, setAllAntagonists] = useState(null)
 
   useEffect(() => {
@@ -32,7 +35,7 @@ const AntagonistIndex = () => {
   console.log('the data>>>>', allAntagonists)
   return (
     <>
-      <h1 className='character-header'>Supporting Characters</h1>
+      <h1 className='character-header'>Antagonists</h1>
       <CardColumns>
         {allAntagonists.map(character => {
           return (

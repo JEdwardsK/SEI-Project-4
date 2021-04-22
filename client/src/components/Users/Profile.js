@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { getPayloadFromToken } from '../../helpers/auth'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
-import CharacterSubmit from '../Forms/CharacterSubmit'
+import { setColourByNation } from '../../helpers/helperFunctions'
 
 const Profile = () => {
-
+  setColourByNation()
   const [user, setUser] = useState(null)
 
   const userID = getPayloadFromToken().sub
@@ -67,8 +67,6 @@ const Profile = () => {
         <h2>Completed Searches</h2>
         <p>enter completed searches here</p>
       </div>
-
-      <CharacterSubmit characterType='protagonist'/>
     </>
 
 

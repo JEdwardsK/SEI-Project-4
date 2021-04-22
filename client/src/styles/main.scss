@@ -1,9 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
+
+
 @font-face {
   font-family: 'herculanum';
   src: url('../styles/assets/Fonts/herculanum.ttf');
 }
-
+$background-colour: black;
 
 //? /////////// HOMEPAGE STYLING
 
@@ -327,6 +329,7 @@ body.defaultMode{
   .background{
     background-color:rgb(94, 52, 0);
   }
+  background-color: pink;
 }
 
 body.fireMode{
@@ -343,6 +346,7 @@ body.fireMode{
   .background{
     background-color: #2f172c;
   }
+  background-color: blue;
 }
 
 body.earthMode{
@@ -364,6 +368,7 @@ body.earthMode{
   .background{
     background-color: #54544A;
   }
+
 }
 
 body.airMode{
@@ -380,9 +385,12 @@ body.airMode{
   .background{
     background-color: #99a9a3;
   }
+
+
 }
 
 body.waterMode{
+  font-family: 'herculanum';
   .primary{
     background-color: #5D78AB;
   }
@@ -395,4 +403,6 @@ body.waterMode{
   .background{
     background-color: #B7CEDF;
   }
+
 }
+

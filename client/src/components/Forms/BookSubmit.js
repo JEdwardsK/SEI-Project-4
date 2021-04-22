@@ -9,6 +9,7 @@ import Card from 'react-bootstrap/Card'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 import { characterFormOptions, genreFormOptions } from '../../helpers/helperFunctions'
+import { useHistory } from 'react-router'
 
 const BookSubmit = () => {
   // * the following fields are required for a successful post: title, author, ISBN, published by, genre, supporting characters, protagonist and antagonist. will change these later to only require title author and synopsis.
@@ -59,7 +60,7 @@ const BookSubmit = () => {
   const [allGenres, setAllGenres] = useState(null)
   const [pageNumber, setPageNumber] = useState(0)
 
-
+  const history = useHistory()
   useEffect(() => {
     const getAntagonists = async () => {
       const { data } = await axios.get('/api/antagonists')
@@ -102,7 +103,10 @@ const BookSubmit = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     window.alert(JSON.stringify(formData, null, 2))
-    await axios.post('/api/books/', formData)
+    const response = await axios.post('/api/books/', formData)
+    console.log(response.data)
+    const postedBookID = response.data.id
+    history.push(`/books/${postedBookID}`)
 
   }
   const handlePageTurnBookForm = (event) => {
@@ -156,7 +160,7 @@ const BookSubmit = () => {
                 <Col>
                   <Form.Group controlId="forBookAuthor">
                     <Form.Label>Author</Form.Label>
-                    <Form.Control type="text" placeholder="Enter Author name" name="author"  onChange={handleChange}/>
+                    <Form.Control type="text" placeholder="Enter Author name" name="author"  onChange={handleChange} value={formData.author}/>
                     <Form.Text className="text-muted">
                       {'Avoid punctuation e.g instead of "J.K. Rowling", enter "JK Rowling"'}
                     </Form.Text>
@@ -225,6 +229,10 @@ const BookSubmit = () => {
                 <Col>
                   <Form.Label>Date Published</Form.Label>
                   <Form.Control type="date" name="pub_date" value={formData.pub_date} onChange={handleChange}/>
+                </Col>
+                <Col>
+                  <Form.Label>Book Cover</Form.Label>
+                  <Form.Control type="text" placeholder="enter publisher" name="cover_image"  value={formData.cover_image} onChange={handleChange}/>
                 </Col>
               </Form.Row>
             </Form.Group>
