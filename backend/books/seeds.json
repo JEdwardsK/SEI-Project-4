@@ -1,7 +1,7 @@
 [
 {
   "model": "books.book",
-  "pk": 1,
+  "pk": 2,
   "fields": {
     "title": "Harry Potter and the Chamber of Secrets",
     "author": "J.K. Rowling",
@@ -24,7 +24,7 @@
 },
 {
   "model": "books.book",
-  "pk": 2,
+  "pk": 1,
   "fields": {
     "title": "Harry Potter and the Philosophers Stone",
     "author": "J.K. Rowling",
@@ -40,7 +40,8 @@
       1,
       2,
       3,
-      6
+      6,
+      75
     ]
   }
 },
@@ -299,6 +300,479 @@
     "pub_date": "2010-03-04",
     "genre": [
       7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 23,
+  "fields": {
+    "title": "Storm Breaker",
+    "author": "Anthony Horowitz",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/1c/Stormbreakerbook.jpg",
+    "ISBN": "",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "A young boy becomes a spy",
+    "page_count": 240,
+    "published_by": "Walker Books",
+    "pub_date": "2000-09-04",
+    "genre": [
+      42
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 24,
+  "fields": {
+    "title": "Point Blanc",
+    "author": "Anthony Horowitz",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/4/41/Pointblanc.JPG",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Alex rider returns to investigate the mysterious deaths of wealthy billionaires",
+    "page_count": 50288,
+    "published_by": "Walker Books",
+    "pub_date": "2001-09-01",
+    "genre": [
+      42
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 25,
+  "fields": {
+    "title": "Skeleton Key",
+    "author": "Anthony Horowitz",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/b/bf/Skeletonkey.JPG",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Rider sent to investigate the island Skeleton Key",
+    "page_count": 324,
+    "published_by": "Walker Books",
+    "pub_date": "2002-07-08",
+    "genre": [
+      42
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 26,
+  "fields": {
+    "title": "Eagle Strike",
+    "author": "Anthony Horowitz",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/4/43/Eaglestrike.JPG",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Eagle Strike follows Alex Rider as he goes rogue from MI6 to stop a madman celebrity from launching the United States' arsenal of nuclear missile at drug-producing countries across the world in an attempt to stop the drug trade.",
+    "page_count": 388,
+    "published_by": "",
+    "pub_date": "2003-09-04",
+    "genre": [
+      42
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 27,
+  "fields": {
+    "title": "Scorpia",
+    "author": "Anthony Horowitz",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/d/de/Scorpia.JPG",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "The plot concerns the plans of a criminal organisation attempting to disrupt the \"Special Relationship\" between the United Kingdom and the United States, which Alex foils by infiltrating the organisation.",
+    "page_count": 50,
+    "published_by": "Walker Books",
+    "pub_date": "2004-04-01",
+    "genre": [
+      42
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 28,
+  "fields": {
+    "title": "Ark Angel",
+    "author": "Anthony Horowitz",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/17/Anthony_Horowitz_Arkangel_Cover.JPG",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Alex foils the plot of another billionaire, venturing into space",
+    "page_count": 326,
+    "published_by": "",
+    "pub_date": "2005-04-01",
+    "genre": [
+      42
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 29,
+  "fields": {
+    "title": "Snakehead",
+    "author": "Anthony Horowitz",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/9/96/Snakehead_britishcover.png",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "after landing from space, alex works for the austrialian secret service",
+    "page_count": 398,
+    "published_by": "Walker Books",
+    "pub_date": "2012-12-12",
+    "genre": [
+      42
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 30,
+  "fields": {
+    "title": "Crocodile Tears",
+    "author": "Anthony Horowitz",
+    "cover_image": "https://en.wikipedia.org/wiki/Crocodile_Tears#/media/File:Crocodile_Tears_(novel).png",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "While staying with Sabina’s family in Scotland, Alex Rider meets international do-gooder Desmond McCain. But a simple card game between them rapidly leads to a duel to the death – one that could result in the destruction of an entire country.",
+    "page_count": 50,
+    "published_by": "Walker Books",
+    "pub_date": "2012-12-12",
+    "genre": [
+      42
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 31,
+  "fields": {
+    "title": "The Last Wish",
+    "author": "Andrzej Sapkowski",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/14/Andrzej_Sapkowski_-_The_Last_Wish.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": true,
+    "story_overview": "A collection of short stories concerning Geralt, a superhuman monster hunter known as a 'witcher'",
+    "page_count": 288,
+    "published_by": "",
+    "pub_date": "1993-12-12",
+    "genre": [
+      2,
+      3,
+      7,
+      15
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 32,
+  "fields": {
+    "title": "Season of Storms",
+    "author": "Andrzej Sapkowski",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/84/Season_of_Storms_Orion.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "More chronicles of the witheer Geralt of Rivia",
+    "page_count": 384,
+    "published_by": "",
+    "pub_date": "2013-01-01",
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 33,
+  "fields": {
+    "title": "Sword of Destiny",
+    "author": "Andrzej Sapkowski",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/6/6b/Sword_of_Destiny_UK.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "chronicles of the witcher Geralt of Rivia and his relationship with Yennefer of Vengerberg",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 34,
+  "fields": {
+    "title": "Blood of Elves",
+    "author": "Andrzej Sapkowski",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/6/61/Blood_of_Elves_UK.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Follows the events following the fall of Cintra, as powers vie for the control of Ciri, a child of the Elder Blood",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 35,
+  "fields": {
+    "title": "Time of Contempt",
+    "author": "Andrzej Sapkowski",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/4/48/Time_of_Contempt_UK.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 36,
+  "fields": {
+    "title": "Baptism of Fire",
+    "author": "Andrzej Sapkowski",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/35/Baptism_of_Fire_UK.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 37,
+  "fields": {
+    "title": "The Lady of the Lake",
+    "author": "Andrzej Sapkowski",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/a/aa/The_Lady_of_the_Lake_Orion.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      2
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 38,
+  "fields": {
+    "title": "A Time to Kill",
+    "author": "John Grisham",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/d/de/A_Time_To_Kill_%28Grisham_novel%29_cover.jpg",
+    "ISBN": "",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      46,
+      47
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 39,
+  "fields": {
+    "title": "The Runaway Jury",
+    "author": "John Grisham",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/7/7c/The_Runaway_Jury.JPG",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      46,
+      47
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 40,
+  "fields": {
+    "title": "Along Came a Spider",
+    "author": "James Patterson",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/5/53/Along_Came_A_Spider_1993_cover.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      46
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 41,
+  "fields": {
+    "title": "Kiss the Girls",
+    "author": "James Patterson",
+    "cover_image": "https://en.wikipedia.org/wiki/Kiss_the_Girls_(novel)#/media/File:Kiss_The_Girls_book_cover.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      46
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 42,
+  "fields": {
+    "title": "One Piece",
+    "author": "Oda Eiirchiro",
+    "cover_image": "https://d28hgpri8am2if.cloudfront.net/book_images/cvr9781569319017_9781569319017_hr.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Wealth. Fame. Power. The world had it all obtained by one man - The Pirate King, Gold Roger. At his death, the words he spoke drove countles men to the sea. \r\n\r\n\"My Treasure, you ask? If you want it, I'll give it to you... Go find it! Everything the world has, I left it in that place!\"",
+    "page_count": 100000000,
+    "published_by": "Shueisha",
+    "pub_date": "1997-07-22",
+    "genre": [
+      4,
+      6,
+      7,
+      13,
+      14,
+      37,
+      39,
+      69
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 43,
+  "fields": {
+    "title": "Tower of God",
+    "author": "SIU",
+    "cover_image": "https://s2982.pcdn.co/wp-content/uploads/2020/07/Tower_of_God_Volume_1_Cover.jpg.optimal.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": true,
+    "story_overview": "What do you desire? Fortune? Glory? Power? Revenge? Or info on the Tower of God characters and storyline? If it's the latter, then all you desire is here.",
+    "page_count": 50,
+    "published_by": "Naver",
+    "pub_date": "2010-07-06",
+    "genre": [
+      7,
+      70,
+      71
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 44,
+  "fields": {
+    "title": "The Shining",
+    "author": "Stephen King",
+    "cover_image": "https://cdn.wallpapersafari.com/35/57/iUfZRE.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      3
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 45,
+  "fields": {
+    "title": "The Magician",
+    "author": "Raymond Feist",
+    "cover_image": "https://i.pinimg.com/736x/e9/ee/a6/e9eea6eeb4025a6563595a7f83cbee18.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "The first novel in the Riftwar Saga, an orphan boy Pug becomes the apprentice of his lord's magician. The Kingdom is rife with uncertainty towards the throne, when they are attacked by invaders from another world crossing through a rift in space and time",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      7,
+      14,
+      53
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 46,
+  "fields": {
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Dracula-First-Edition-1897_%28cropped%29.jpg",
+    "ISBN": "",
+    "is_made_into_film": true,
+    "is_made_into_series": true,
+    "story_overview": "The Original Dracula",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      57,
+      3
     ]
   }
 }

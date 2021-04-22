@@ -20,5 +20,28 @@
       7
     ]
   }
+},
+{
+  "model": "protagonists.protagonist",
+  "pk": 6,
+  "fields": {
+    "first_name": "Monkey D Luffy",
+    "last_name": "",
+    "character_bio": "A young boy who dreamed of being a pirate. He ate the Gomu-Gomu Devil fruit which turned him in to a 'Rubber Man' and gave him super stretching abilities. All Devil fruit users are unable to swim and lose their powers in the sea. As he makes his way across the Grand Line, the infamous sea of adventure he builds a crew of companions named the 'Straw Hat Pirates', named after the straw hat he wears,  a gift from his childhood idol.",
+    "character_archetypes": [
+      1,
+      75,
+      44,
+      76,
+      14,
+      15,
+      16,
+      17,
+      20
+    ],
+    "books": [
+      42
+    ]
+  }
 }
 ]
