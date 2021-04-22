@@ -30,7 +30,8 @@ const Search = () => {
   })
   const [searchResults, setSearchResults] = useState([])
   const [genreValues, setGenreValues] = useState([])
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
+  const [showResults, setShowResults] = useState(false)
 
   useEffect(() => {
     const getBooks = async () => {
@@ -66,6 +67,7 @@ const Search = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    setShow(false)
     allBooks.forEach(book => {
       let matchCount = 0
       const { title, author, is_made_into_film: isFilm, is_made_into_series: isSeries, story_overview: synopsis, genre: genres, supporting_characters: supChars } = book
@@ -122,9 +124,7 @@ const Search = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        New Search
-      </Button>
+
       <Modal
         show={show}
         onHide={handleClose}
@@ -214,55 +214,60 @@ const Search = () => {
               </Col>
             </Form.Row>
           </Form.Group>
+          <Form.Group className="field">
+            <Button type="submit">Search</Button>
+            <Button className="button" onClick={handleClose}>Cancel and Leave</Button>
+          </Form.Group>
         </Form>
-        <Form.Group className="field">
-          <Button type="submit">Search</Button>
-          <Button className="button" onClick={handleClose}>Cancel and Leave</Button>
-        </Form.Group>
 
       </Modal>
       <section>
-        <h2>Search Results</h2>
-        {
-          searchResults.length === 0 ?
-            <>
-              <Button disabled>
-                <Spinner
-                  as="span"
-                  animation="border"
-                  role="status"
-                  aria-hidden="true"
-                />
-      Loading...
-              </Button>
-            </> :
-            <>
-              <p>{'if we\'ve found the book you were looking for, click on it below'}</p>
-              <ul className="list-inline">
-                {console.log('validBooksSearchArray', searchResults)}
-                {
-                  searchResults
-                    .sort((a, b) => b.searchHits - a.searchHits)
-                    .map(result => {
-                      const { searchHits, resultBook } = result
-                      const { cover_image: coverImage, id, title, author } = resultBook
+        { !show &&
+          <>
+            <h2 className="search-h2">Search Results</h2>
+            {searchResults.length === 0 ?
+              <p>{'Sorry we\'ve not found a match... please try again'}</p>
+            //       <>
+            //         <Button disabled>
+            //           <Spinner
+            //             as="span"
+            //             animation="border"
+            //             role="status"
+            //             aria-hidden="true"
+            //           />
+            // Loading...
+            //         </Button>
+            //       </> :
+            // <>
+            //   <p>{'if we\'ve found the book you were looking for, click on it below'}</p>
+            //   {console.log('validBooksSearchArray', searchResults)}
+            //   < className="books-index-container" >
+              : <div className="book-search-container">
+                {searchResults
+                  .sort((a, b) => b.searchHits - a.searchHits)
+                  .map(result => {
+                    const { searchHits, resultBook } = result
+                    const { cover_image: coverImage, id, title, author } = resultBook
 
-                      return (
-                        <>
-                          <Link to= {`/books/${id}`}>
-                            <li className='book'>
-                              <img src={coverImage} alt={`the cover for ${title}, by ${author}`} value={id}/>
-                            </li>
-                          </Link>
-
-                          <p>search hits: {searchHits}</p>
-                        </>
-                      )
-                    })
-                }
-              </ul>
-            </>
+                    return (
+                      <div className="book-search-result"key={id}>
+                        <Link to= {`/books/${id}`}>
+                          <div className='book'>
+                            <img src={coverImage} alt={`the cover for ${title}, by ${author}`} value={id}/>
+                          </div>
+                        </Link>
+                        <p>search hits: {searchHits}</p>
+                      </div>
+                    )
+                  })}
+              </div>
+            }
+            <Button variant="primary" onClick={handleShow}>
+              New Search
+            </Button>
+          </>
         }
+
 
       </section>
 

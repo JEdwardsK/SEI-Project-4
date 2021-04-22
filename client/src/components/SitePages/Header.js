@@ -58,29 +58,25 @@ const Header = () => {
           <Nav.Link className="nav-element secondary" href="/protagonists">Protagonists</Nav.Link>
           <Nav.Link className="nav-element secondary" href="/antagonists">Antagonists</Nav.Link>
           <Nav.Link className="nav-element secondary" href="/supporting_characters">Supporting Characters</Nav.Link>
-          <Nav.Link className="nav-element secondary" href="/search">Search</Nav.Link>
           {
             userIsAuthenticated() &&
-        <>
-          <NavDropdown className="nav-element secondary" title="Forms" id="basic-nav-dropdown">
-            <NavDropdown.Item  className="primary" onClick={handleShow} name="protagonists">Submit a Protagonist</NavDropdown.Item>
-            
-            <NavDropdown.Item className="secondary" onClick={handleShow} name="antagonists">Submit a Antagonist</NavDropdown.Item>
-            
-            <NavDropdown.Item className="primary" onClick={handleShow} name="supporting_characters">Submit a Supporting Character</NavDropdown.Item>
-            <NavDropdown.Divider className="trim"/>
-            <NavDropdown.Item className="primary" href="/bookform">Submit a book</NavDropdown.Item>
-            <NavDropdown.Item>
-              <Form inline>
-                <FormControl type="text" placeholder="Search for a Book" className=" mr-sm-2" />
-                <Button type="submit">Submit</Button>
-              </Form>
-            </NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link className="nav-element secondary" href="/profile">Profile</Nav.Link>
-          <Button className="nav-element secondary" onClick={handleLogout}>Logout</Button>
-          {/* <Button className="nav-element secondary" type="toggle" onClick={handleNationChange}  name="toggle" data-toggle="toggle" data-on="Nation" data-off="Default"></Button> */}
-        </>
+            <>
+              <Nav.Link className="nav-element secondary" href="/search">Search</Nav.Link>
+              <NavDropdown className="nav-element secondary" title="Forms" id="basic-nav-dropdown">
+                <NavDropdown.Item  className="primary" onClick={handleShow} name="protagonists">Submit a Protagonist</NavDropdown.Item>
+
+                <NavDropdown.Item className="secondary" onClick={handleShow} name="antagonists">Submit a Antagonist</NavDropdown.Item>
+
+                <NavDropdown.Item className="primary" onClick={handleShow} name="supporting_characters">Submit a Supporting Character</NavDropdown.Item>
+                <NavDropdown.Divider className="trim"/>
+                <NavDropdown.Item className="primary" href="/bookform">Submit a book</NavDropdown.Item>
+                <NavDropdown.Item>
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link className="nav-element secondary" href="/profile">Profile</Nav.Link>
+              <Button className="nav-element secondary" onClick={handleLogout}>Logout</Button>
+              {/* <Button className="nav-element secondary" type="toggle" onClick={handleNationChange}  name="toggle" data-toggle="toggle" data-on="Nation" data-off="Default"></Button> */}
+            </>
           }
           {
             !userIsAuthenticated() &&

@@ -1,4 +1,4 @@
-/*eslint-disable no-unused-vars */
+/*eslint-disable no-unused-vars, indent */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -6,6 +6,7 @@ import axios from 'axios'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 
@@ -69,9 +70,8 @@ const HomePage = () => {
 
   const entryPages = [4,7,8,9]
   return (
-    <>
-      <Button value="0" onClick={handlePageTurn}>Page One</Button>
-      <h1>HOME PAGE</h1>
+      // <Button value="0" onClick={handlePageTurn}>Page One</Button>
+    <Card>
       <div className="homepage-container">
         <div className="homepage-container-sections-left">
           <div className="homepage-wan-shi-image">
@@ -179,12 +179,12 @@ const HomePage = () => {
         <div className="homepage-container-sections-right">
           { pageNumber === 0 &&
               <>
-                <div className="homepage-container-sections buttons-page-0">
+
                   <Button className= "page-zero-button" onClick={handlePageTurn} value="1">Provide a book to the Library</Button>
                   <Button className= "page-zero-button" onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</Button>
                   <Button className= "page-zero-button" onClick={handlePageTurn} value="8">Sneak into the Library</Button>
                   <Button className= "page-zero-button" onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</Button>
-                </div>
+
               </>
           }
           { pageNumber === 1 &&
@@ -192,7 +192,6 @@ const HomePage = () => {
                 <div className="homepage-container-sections">
 
                   <Form>
-                    <Form.Label>Register Form</Form.Label>
                     <Form.Group>
                       <Form.Label>Username</Form.Label>
                       <Form.Control type="text" placeholder="enter your username" name="username" value={registerFormData.username} onChange={handleChange} required/>
@@ -279,7 +278,7 @@ const HomePage = () => {
           }
         </div>
       </div>
-    </>
+    </Card>
 
   )
 }

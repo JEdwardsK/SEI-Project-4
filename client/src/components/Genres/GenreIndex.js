@@ -1,3 +1,4 @@
+/*eslint-disable no-unused-vars */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { setColourByNation } from '../../helpers/helperFunctions'
@@ -16,9 +17,9 @@ const GenreIndex = () => {
     getGenres()
   },[])
 
-  const toggleShowBooks = () => {
-    setShowBooks(!showBooks)
-  }
+  // const toggleShowBooks = () => {
+  //   setShowBooks(!showBooks)
+  // }
   //!use bootstraps accordion for collapsing the genres!!
   if (!allGenres) return null
   return (
@@ -37,11 +38,12 @@ const GenreIndex = () => {
           const { id, books, genre } = item
           return (
             <>
+
               <div className="genre" key={id}>
-                <button onClick={ toggleShowBooks }>{genre}</button>
-                {showBooks &&
-              <BooksCarousel books={ books } />
-                }
+                <p>{genre}</p>
+                <div className="books-index-container">
+                  <BooksCarousel books={ books } />
+                </div>
               </div>
             </>
           )

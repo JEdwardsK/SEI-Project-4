@@ -5,13 +5,13 @@ import Card from 'react-bootstrap/Card'
 import Modal from 'react-bootstrap/Modal'
 const CharacterCard = ({ character, characterType }) => {
 
-  
-  const { books, character_archetypes: archetypes, first_name: firstName, last_name: lastName, character_bio: bio, relationship_to_protagonist: relationship } = character
+
+  const { books, character_archetypes: archetypes, first_name: firstName, last_name: lastName, character_bio: bio, relationship_to_protagonist: relationship, quote } = character
   //* id not used, removed to prevent linter issues, add back when required
   console.log(archetypes)
   const [show, setShow] = useState(false)
   const handleShow = () => setShow(true)
-  
+
   const handleClose = () => setShow(false)
   console.log('first>>',books)
   return (
@@ -25,19 +25,35 @@ const CharacterCard = ({ character, characterType }) => {
           <Card.Text>{relationship}</Card.Text>
         </>
         }
-        
+        {quote &&
+        <>
+          <Card.Subtitle className="mb-2 text-muted">Memorable Quote:</Card.Subtitle>
+          <Card.Text>{`"${quote}"`}</Card.Text>
+        </>
+        }
+
         <Card.Text>
           {bio}
         </Card.Text>
-        
+
       </Card.Body>
+      {/* <Card.Link  href={`/books/${books[0].id}`}>{books[0].title}</Card.Link> */}
       <Card.Footer className='secondary'>
-        <Card.Link href={`/books/${books}`}>Popular book</Card.Link>
-        
+        {'Appears In: '}
+
+        {books.map(book => {
+          const { title, id } = book
+          return (
+            <Card.Link key={id} href={`/books/${id}`}>{title}</Card.Link>
+          )
+        })
+        }
+
+
       </Card.Footer>
     </Card>
-      
-    
+
+
   )
 }
 

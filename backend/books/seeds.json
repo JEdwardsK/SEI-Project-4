@@ -1,6 +1,29 @@
 [
 {
   "model": "books.book",
+  "pk": 1,
+  "fields": {
+    "title": "Harry Potter and the Philosophers Stone",
+    "author": "J.K. Rowling",
+    "cover_image": "https://www.techrora.com/wp-content/uploads/harry-potter-and-the-sorcerer%E2%80%99s-stone-book-cover-original.jpg",
+    "ISBN": "9780747532743",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "Harry Potter receives his first letters from Hogwarts School of Witchcraft and Wizardry, much to the dismay of his abusive aunt and uncle.",
+    "page_count": 233,
+    "published_by": "Bloomsbury",
+    "pub_date": "1997-06-26",
+    "genre": [
+      75,
+      1,
+      2,
+      3,
+      6
+    ]
+  }
+},
+{
+  "model": "books.book",
   "pk": 2,
   "fields": {
     "title": "Harry Potter and the Chamber of Secrets",
@@ -16,32 +39,8 @@
     "genre": [
       1,
       2,
-      3,
       4,
       5
-    ]
-  }
-},
-{
-  "model": "books.book",
-  "pk": 1,
-  "fields": {
-    "title": "Harry Potter and the Philosophers Stone",
-    "author": "J.K. Rowling",
-    "cover_image": "https://www.techrora.com/wp-content/uploads/harry-potter-and-the-sorcerer%E2%80%99s-stone-book-cover-original.jpg",
-    "ISBN": "9780747532743",
-    "is_made_into_film": true,
-    "is_made_into_series": false,
-    "story_overview": "Harry Potter receives his first letters from Hogwarts School of Witchcraft and Wizardry, much to the dismay of his abusive aunt and uncle.",
-    "page_count": 233,
-    "published_by": "Bloomsbury",
-    "pub_date": "1997-06-26",
-    "genre": [
-      1,
-      2,
-      3,
-      6,
-      75
     ]
   }
 },
@@ -62,7 +61,6 @@
     "genre": [
       1,
       2,
-      3,
       4,
       5,
       6
@@ -86,7 +84,6 @@
     "genre": [
       1,
       2,
-      3,
       4,
       5,
       6
@@ -110,7 +107,6 @@
     "genre": [
       1,
       2,
-      3,
       4,
       5,
       6
@@ -134,7 +130,6 @@
     "genre": [
       1,
       2,
-      3,
       4,
       5,
       6
@@ -158,7 +153,6 @@
     "genre": [
       1,
       2,
-      3,
       4,
       5,
       6
@@ -442,7 +436,7 @@
   "fields": {
     "title": "Crocodile Tears",
     "author": "Anthony Horowitz",
-    "cover_image": "https://en.wikipedia.org/wiki/Crocodile_Tears#/media/File:Crocodile_Tears_(novel).png",
+    "cover_image": "https://covers.booktopia.com.au/big/9781406316988/alex-rider-crocodile-tears.jpg",
     "ISBN": "",
     "is_made_into_film": false,
     "is_made_into_series": false,
@@ -656,7 +650,7 @@
   "fields": {
     "title": "Kiss the Girls",
     "author": "James Patterson",
-    "cover_image": "https://en.wikipedia.org/wiki/Kiss_the_Girls_(novel)#/media/File:Kiss_The_Girls_book_cover.jpg",
+    "cover_image": "https://jamespattersonbooklist.com/wp-content/uploads/2014/03/James-Patterson-Kiss-The-Girls.jpg",
     "ISBN": "",
     "is_made_into_film": false,
     "is_made_into_series": false,
@@ -685,13 +679,13 @@
     "pub_date": "1997-07-22",
     "genre": [
       4,
+      37,
       6,
       7,
-      13,
-      14,
-      37,
       39,
-      69
+      69,
+      13,
+      14
     ]
   }
 },
@@ -710,8 +704,8 @@
     "published_by": "Naver",
     "pub_date": "2010-07-06",
     "genre": [
-      7,
       70,
+      7,
       71
     ]
   }
@@ -722,7 +716,7 @@
   "fields": {
     "title": "The Shining",
     "author": "Stephen King",
-    "cover_image": "https://cdn.wallpapersafari.com/35/57/iUfZRE.jpg",
+    "cover_image": "https://1.bp.blogspot.com/-R-p5wrzUW5s/T3p5GPB0avI/AAAAAAAAFt8/RdTNOtMOeIM/s1600/shining%2Buk.jpg",
     "ISBN": "",
     "is_made_into_film": false,
     "is_made_into_series": false,
@@ -771,8 +765,252 @@
     "published_by": "",
     "pub_date": "2012-12-12",
     "genre": [
-      57,
-      3
+      3,
+      57
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 47,
+  "fields": {
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "cover_image": "https://mir-s3-cdn-cf.behance.net/project_modules/disp/824cc522721681.560469fe4bad7.png",
+    "ISBN": "",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "A young girl named alice falls down a rabbit hole into a nonsensical world",
+    "page_count": 50,
+    "published_by": "Macmillan",
+    "pub_date": "1865-11-26",
+    "genre": [
+      4,
+      5,
+      7,
+      12
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 48,
+  "fields": {
+    "title": "Red Dragon",
+    "author": "Thomas Harris",
+    "cover_image": "https://cdn2.penguin.com.au/covers/original/9781446439722.jpg",
+    "ISBN": "9780099532934",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "Will Graham was a brilliant profiler of criminals for the FBI - until he suffered terrible injuries in the process of capturing Dr Hannibal 'the Cannibal' Lecter.\r\n\r\nYears later, a serial killer nicknamed 'the Tooth Fairy' is massacring entire families each full moon. With the FBI desperate for progress, Will reluctantly agrees to consult. But he soon realises that he alone can't crack the case; he needs the help of the only mind even better than his own at understanding the mentalities of psychopaths.",
+    "page_count": 432,
+    "published_by": "Penguin",
+    "pub_date": "2009-06-01",
+    "genre": [
+      42,
+      44,
+      46,
+      48,
+      50
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 49,
+  "fields": {
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "cover_image": "https://cdn2.penguin.com.au/covers/original/9780224101936.jpg",
+    "ISBN": "9780224101936",
+    "is_made_into_film": false,
+    "is_made_into_series": true,
+    "story_overview": "\"Everything Handmaids wear is red: the colour of blood, which defines us.\" Offred is a Handmaid in the Republic of Gilead, where women are prohibited from holding jobs, reading, and forming friendships. She serves in the household of the Commander and his wife, and under the new social order she has only one purpose: once a month, she must lie on her back and pray that the Commander makes her pregnant, ecause in an age of declining births, Offred and the other Handmaids are valued only if they are fertile. But Offred remembers the years before Gilead, when she was an independent woman who had a job, a family, and a name of her own. Now, her memories and her will to survive are acts of rebellion.",
+    "page_count": 240,
+    "published_by": "Penguin",
+    "pub_date": "2019-04-02",
+    "genre": [
+      7,
+      10,
+      32
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 50,
+  "fields": {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "cover_image": "https://cdn2.penguin.com.au/covers/original/9781784752637.jpg",
+    "ISBN": "9781784752637",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "'Shoot all the bluejays you want, if you can hit 'em, but remember it's a sin to kill a mockingbird.'\r\n\r\nA lawyer's advice to his children as he defends the real mockingbird of Harper Lee's classic novel - a black man falsely charged with the rape of a white girl. Through the young eyes of Scout and Jem Finch, Harper Lee explores with exuberant humour the irrationality of adult attitudes to race and class in the Deep South of the 1930s. The conscience of a town steeped in prejudice, violence and hypocrisy is pricked by the stamina of one man's struggle for justice. But the weight of history will only tolerate so much.",
+    "page_count": 320,
+    "published_by": "",
+    "pub_date": "2012-12-12",
+    "genre": [
+      5,
+      13,
+      17,
+      46,
+      47
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 51,
+  "fields": {
+    "title": "The Lord of the Rings",
+    "author": "JRR Tolkein",
+    "cover_image": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2016/07/the-lord-of-the-rings-book-cover.jpg",
+    "ISBN": "",
+    "is_made_into_film": true,
+    "is_made_into_series": true,
+    "story_overview": "\"One Ring to rule them all, One Ring to find them, One Ring to bring them all, and in the darkness bind them. In the Land of Mordor, where the Shadows lie...\"\r\n\r\nA high-fantasy epic detailing the journey of a group of companions from their village in the Shire to the depths of Mount Doom, the seat of the greatest evil of the Third Age, the Dark Lord Sauron. Join Sam, on his quest to assist his hapless traitor of a friend on their journey to destroy the One Ring",
+    "page_count": 400,
+    "published_by": "Allen & Unwin",
+    "pub_date": "1968-09-09",
+    "genre": [
+      76,
+      5,
+      7,
+      14,
+      52
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 52,
+  "fields": {
+    "title": "Full Metal Alchemist",
+    "author": "Arakawa Hiromu",
+    "cover_image": "https://d28hgpri8am2if.cloudfront.net/book_images/cvr9781591169208_9781591169208_hr.jpg",
+    "ISBN": "",
+    "is_made_into_film": true,
+    "is_made_into_series": true,
+    "story_overview": "After an attempt to use alchemy to bring their mother back to life, the Elric  brother's transmutation backfires, Edward losing his left leg and Alphonse hsi entire body. In their journey to return their bodies to normal Edward becomes a State Alchemist, bestowed the title Full Metal Alchemist. He and his brother search for the Philosopher's Stone, a mythical object that can break the laws of alchemy",
+    "page_count": 50,
+    "published_by": "Enix",
+    "pub_date": "2003-02-28",
+    "genre": [
+      69,
+      7,
+      72,
+      73,
+      74,
+      75,
+      44,
+      13,
+      58,
+      59,
+      41
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 53,
+  "fields": {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "cover_image": "https://i.pinimg.com/originals/35/8b/5c/358b5c40df1c008eeefdad5c2d972c2a.jpg",
+    "ISBN": "",
+    "is_made_into_film": true,
+    "is_made_into_series": false,
+    "story_overview": "\"Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me.\"\r\n\r\nDune tells the story of young Paul Atreides, whose family accepts the stewardship of the planet Arrakis. While the planet is an inhospitable and sparsely populated desert wasteland, it is the only source of melange, or \"the spice,\" a drug that extends life and enhances mental abilities.",
+    "page_count": 412,
+    "published_by": "Chilton Books",
+    "pub_date": "1965-08-01",
+    "genre": [
+      2,
+      66,
+      38,
+      7,
+      10,
+      42,
+      74,
+      14,
+      17,
+      25
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 54,
+  "fields": {
+    "title": "Dune Messiah",
+    "author": "Frank Herbert",
+    "cover_image": "https://ia803000.us.archive.org/BookReader/BookReaderPreview.php?id=dunemessiah00fran&itemPath=%2F26%2Fitems%2Fdunemessiah00fran&server=ia803000.us.archive.org&page=cover_w500_h500.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": false,
+    "story_overview": "Twelve years after the events described in Dune, Paul \"Muad'Dib\" Atreides rules as Emperor. By accepting the role of messiah to the Fremen, Paul had unleashed a jihad which conquered most of the known universe. \r\n\r\nPaul is the most powerful emperor ever known, but is powerless to stop the lethal excesses of the religious juggernaut he has created. Although 61 billion people have perished, Paul's prescient visions indicate that this is far from the worst possible outcome for humanity. \r\n\r\nMotivated by this knowledge, Paul hopes to set humanity on a course that will not inevitably lead to stagnation and destruction, while at the same time acting as ruler of the empire and focal point of the Fremen religion.",
+    "page_count": 256,
+    "published_by": "Chilton Books",
+    "pub_date": "1969-01-01",
+    "genre": [
+      66,
+      10,
+      74,
+      14,
+      17,
+      25,
+      59
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 55,
+  "fields": {
+    "title": "Boku no Hero Academia",
+    "author": "Horikoshi Kōhei",
+    "cover_image": "https://prodimage.images-bn.com/pimages/9781421582696_p0_v1_s550x406.jpg",
+    "ISBN": "",
+    "is_made_into_film": true,
+    "is_made_into_series": true,
+    "story_overview": "In a world where everyone is born with Quirks(superpowers), Midoriya Izuku is born quirkless, but aims to be a hero. His opportunity comes when his idol, the number one hero All Might, offers him a chance to obtain his quirk and a position at the prestigious UA Academy. This is the story of how Deku becomes the Number One Hero.",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2014-07-07",
+    "genre": [
+      4,
+      69,
+      72,
+      75,
+      17,
+      54
+    ]
+  }
+},
+{
+  "model": "books.book",
+  "pk": 56,
+  "fields": {
+    "title": "Tokyo Ghoul",
+    "author": "Ishida Sui",
+    "cover_image": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421580364/tokyo-ghoul-vol-1-9781421580364_hr.jpg",
+    "ISBN": "",
+    "is_made_into_film": false,
+    "is_made_into_series": true,
+    "story_overview": "An alternate world where humans live alongside 'Ghouls', creatures who look like humans but possess strength and abilities can only survive of human flesh. after an attack by one of them hospitalise him, Kaneki Ken is transformed into a half-ghoul via a tissue transplant",
+    "page_count": 50,
+    "published_by": "",
+    "pub_date": "2011-09-08",
+    "genre": [
+      3,
+      69,
+      72,
+      43,
+      75,
+      17,
+      56,
+      61
     ]
   }
 }

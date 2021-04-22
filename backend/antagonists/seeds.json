@@ -6,6 +6,7 @@
     "first_name": "Lord Voldemort",
     "last_name": "",
     "character_bio": "He Who Must Not Be Named",
+    "quote": "There is no good and evil. There is only power... and those too weak to seek it.",
     "character_archetypes": [
       33,
       3,
@@ -30,6 +31,7 @@
     "first_name": "Mister Monday",
     "last_name": "",
     "character_bio": "One of the seven Trustees of the House. When the Architect left and intrusted her Keys and instructions to carry out her Will and find an Heir, they instead broke it into several parts and retained power over their domains. As a result, Monday was afflicted with the sin of Sloth, leaving him incapacitated for the majority of the time. He split his Key into two parts to handle lesser tasks, which later fell into Arthur's hands set him on the path of the Heir",
+    "quote": "Hello, my boy. Let's have a bow for Mister Monday",
     "character_archetypes": [
       33,
       54
@@ -47,6 +49,7 @@
     "first_name": "Lord Tuesday",
     "last_name": "",
     "character_bio": "Also known as 'Grim' Tuesday, he is one of the 'Morrow Days', trustees of the House who betrayed the Will of the Architect to keep the power vested in them. Lord of the Far Reaches, he was afflicted with the sin of Greed; unable to make unique creations of his own, he plagirises arts from other worlds.\r\n\r\nHe merged his servants Dawn, Noon and Dusk, forming them into seven lesser beings known as the Grotesques to carry out his will.",
+    "quote": "I understand Nothing as no one else does!",
     "character_archetypes": [
       33,
       34,
@@ -65,6 +68,7 @@
     "first_name": "Elishar",
     "last_name": "Feverfew",
     "character_bio": "Originally a mortal pirate, Feverfew crossed through into the Border Sea. After learning House sorcery, he became something neither, man, Nithling, nor Denizen. \r\n\r\nEmployed by the other Morrow Days, he stole Wednesday's Will to guard it from the Heir.",
+    "quote": "Let Nothing Remain!",
     "character_archetypes": [
       48,
       57,
@@ -83,6 +87,7 @@
     "first_name": "Sir Thursday",
     "last_name": "",
     "character_bio": "Commander of the Glorious Army of the Architect, and Overlord of the Great Maze. Afflicted by the sin of Wrath, he frequently succumbs to his rage, mercilessly beating his subordinates",
+    "quote": "",
     "character_archetypes": [
       33,
       34,
@@ -101,6 +106,7 @@
     "first_name": "Lord Sunday",
     "last_name": "",
     "character_bio": "Master of the Incomparable Gardens his key is paromount and retains its full power, even outside of his domain. He is the eldest son of of the Architect and the Old One, and is afflicted with the sin of Pride. his domain is revealed to be  the epicentre of the universe",
+    "quote": "",
     "character_archetypes": [
       33,
       34,
@@ -119,6 +125,7 @@
     "first_name": "'Superior' Saturday",
     "last_name": "",
     "character_bio": "Saturday, self-styled the 'Superior Soceror of the House' is the first Denizen created by the Architect, and therefore the oldest denizen of the House. despite this, it was Sunday who received dominion over the Incomparable Garden, which possibly contributed to her sin of Envy. \r\n\r\nThe overall mastermind of the series, she undertook actions to pursue her goal of reaching the Garden, building a tower to reach its floor. However the  Drasiltrees holding it up grew faster than her tower could be built. To combat this she destroyed the foundations of the House and sink it into Nothing.",
+    "quote": "",
     "character_archetypes": [
       33,
       34,
@@ -141,6 +148,7 @@
     "first_name": "Lady Friday",
     "last_name": "",
     "character_bio": "Afflicted with the sin off Lust, Friday abducted thousands of mortals to drain them of their experiences; as a Denizen she cannot experience emotions of her own and must resort to this vampiric practice.\r\n\r\nShe prepares a trap for her enemies, pretending to abdicate whilst she left with her Key, a mirror which she uses to extract the experiences of others.",
+    "quote": "",
     "character_archetypes": [
       25,
       34,
