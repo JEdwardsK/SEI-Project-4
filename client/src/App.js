@@ -25,60 +25,62 @@ import Search from './components/Forms/Search'
 const App = () => {
 
   return (
-    <BrowserRouter>
-      <Header/>
-      <Switch>
-        <Route exact path = '/bookform'>
-          <BookSubmit/>
-        </Route>
-        <Route exact path='/create-chars/'>
-          <ModalTest/>
-        </Route>
+    <div className='browserRouter background'>
+      <BrowserRouter >
+        <Header/>
+        <Switch>
+          <Route exact path = '/bookform'>
+            <BookSubmit/>
+          </Route>
+          <Route exact path='/create-chars/'>
+            <ModalTest/>
+          </Route>
 
-        <Route exact path ='/'>
-          <HomePage/>
-        </Route>
-        <Route exact path ='/books'>
-          <BookIndex/>
-        </Route>
-        <Route exact path ='/books/:id'>
-          <BookShow/>
-        </Route>
-        <Route exact path ='/genres'>
-          <GenreIndex/>
-        </Route>
-        {/* The three fields below will all use CharacterCard to display the data */}
-        <Route exact path ='/protagonists'>
-          <ProtagonistIndex/>
-        </Route>
-        <Route exact path ='/antagonists'>
-          <AntagonistIndex/>
-        </Route>
-        <Route exact path ='/supporting_characters'>
-          <SupportingCharacterIndex/>
-        </Route>
-        {/* Use a : to display either login/register or as sign out button based on a users login status */}
-        <Route exact path ='/login'>
-          <Login/>
-        </Route>
-        <Route exact path ='/register'>
-          <Register/>
-        </Route>
-        {/* once someone has logged in show the profile button in navbar */}
-        <Route exact path ='/profile'>
-          <Profile/>
-        </Route>
-        {/* If the User is a superUser or admin send them to the auth profile page with additional options */}
-        {/** no need for separate page, can conditionally render on same page based on status
+          <Route exact path ='/'>
+            <HomePage/>
+          </Route>
+          <Route exact path ='/books'>
+            <BookIndex/>
+          </Route>
+          <Route exact path ='/books/:id'>
+            <BookShow/>
+          </Route>
+          <Route exact path ='/genres'>
+            <GenreIndex/>
+          </Route>
+          {/* The three fields below will all use CharacterCard to display the data */}
+          <Route exact path ='/protagonists'>
+            <ProtagonistIndex/>
+          </Route>
+          <Route exact path ='/antagonists'>
+            <AntagonistIndex/>
+          </Route>
+          <Route exact path ='/supporting_characters'>
+            <SupportingCharacterIndex/>
+          </Route>
+          {/* Use a : to display either login/register or as sign out button based on a users login status */}
+          <Route exact path ='/login'>
+            <Login/>
+          </Route>
+          <Route exact path ='/register'>
+            <Register/>
+          </Route>
+          {/* once someone has logged in show the profile button in navbar */}
+          <Route exact path ='/profile'>
+            <Profile/>
+          </Route>
+          {/* If the User is a superUser or admin send them to the auth profile page with additional options */}
+          {/** no need for separate page, can conditionally render on same page based on status
       <Route exact path ='/profile/auth'>
       </Route>
       */}
-        <Route exact path='/search'>
-          <Search />
-        </Route>
-      </Switch>
-      <Footer/>
-    </BrowserRouter>
+          <Route exact path='/search'>
+            <Search />
+          </Route>
+        </Switch>
+        <Footer/>
+      </BrowserRouter>
+    </div>
   )
 }
 

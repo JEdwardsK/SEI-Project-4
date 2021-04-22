@@ -25,7 +25,6 @@ const Login = () => {
 
   return (
     <>
-
       <form className="login-box" onSubmit={handleSubmit}>
         <h2>Login Form</h2>
         <div className="login-input-box">

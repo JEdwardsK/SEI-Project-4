@@ -71,8 +71,8 @@ const HomePage = () => {
   const entryPages = [4,7,8,9]
   return (
       // <Button value="0" onClick={handlePageTurn}>Page One</Button>
-    <Card>
-      <div className="homepage-container">
+    <Card className='trim'>
+      <div className="homepage-container secondary">
         <div className="homepage-container-sections-left">
           <div className="homepage-wan-shi-image">
             {/* <WanShi className="homepage-wan-shi"/> */}
@@ -180,10 +180,10 @@ const HomePage = () => {
           { pageNumber === 0 &&
               <>
 
-                  <Button className= "page-zero-button" onClick={handlePageTurn} value="1">Provide a book to the Library</Button>
-                  <Button className= "page-zero-button" onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</Button>
-                  <Button className= "page-zero-button" onClick={handlePageTurn} value="8">Sneak into the Library</Button>
-                  <Button className= "page-zero-button" onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</Button>
+                  <Button className= "page-zero-button primary" onClick={handlePageTurn} value="1">Provide a book to the Library</Button>
+                  <Button className= "page-zero-button primary" onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</Button>
+                  <Button className= "page-zero-button primary" onClick={handlePageTurn} value="8">Sneak into the Library</Button>
+                  <Button className= "page-zero-button primary" onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</Button>
 
               </>
           }

@@ -34,8 +34,8 @@ const ProtagonistIndex = () => {
   console.log(allProtagonists)
   return (
     <>
-      <h1 className='character-header'>Protagonists</h1>
-      <CardColumns>
+      <h1 className='character-header background'>Protagonists</h1>
+      <CardColumns className='background'>
         {allProtagonists.map(character => {
           return (
             <CharacterCard characterType='protagonist' key={character.id} character={character} />

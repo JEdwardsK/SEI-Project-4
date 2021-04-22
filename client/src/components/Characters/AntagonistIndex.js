@@ -35,8 +35,8 @@ const AntagonistIndex = () => {
   console.log('the data>>>>', allAntagonists)
   return (
     <>
-      <h1 className='character-header'>Antagonists</h1>
-      <CardColumns>
+      <h1 className='character-header background'>Antagonists</h1>
+      <CardColumns className='background'>
         {allAntagonists.map(character => {
           return (
             <CharacterCard characterType='protagonist' key={character.id} character={character} />

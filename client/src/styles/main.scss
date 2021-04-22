@@ -7,6 +7,12 @@
 }
 $background-colour: black;
 
+.login-box{
+  display: flex;
+  flex-direction: column;
+  justify-self:center;
+  align-items: center;
+}
 
 h1 {
   color: black;
@@ -192,14 +198,13 @@ h1 {
   justify-content: start;
 }
 
-.profile-info-left {
-  border: 2px dotted red;
-}
+
 
 
 //? ////////////////////// NAVBAR STYLING
 .navbar {
   justify-content: space-between;
+  justify-content: center;
 }
 
 .nav-element {
@@ -288,8 +293,28 @@ h1 {
 
 
 //! ///////////////////////////////////////////
+
+.browserRouter{
+height: 100vh;
+min-height: 100vh;
+}
+
 body.defaultMode{
   font-family: 'herculanum';
+  .profile-container{
+    background-image: url('./assets/images/AirTile.png');
+  }
+  .homepage-container{
+    border-color:rgb(94, 52, 0);
+  }
+  .profile-image {
+    border-radius: 15px;
+    border: 10px solid  rgb(94, 52, 0) !important;
+    background-color: sandybrown;
+  }
+  .form-styling{
+    color: beige;
+  }
   .primary{
     background-color:deepskyblue;
   }
@@ -306,16 +331,31 @@ body.defaultMode{
 
 body.fireMode{
   font-family: 'herculanum';
-  color: beige;
+  .profile-container{
+    background-image: url('./assets/images/FireTile.png');
+  }
+  .homepage-container{
+    border-color:#43203f;
+  }
+  .profile-image {
+    border-radius: 15px;
+    border: 10px solid  #43203f !important;
+    background-color:#601515;
+  }
+  
+  .form-styling{
+    color: beige;
+  }
   h1 {
     color: black;
   }
   .nav-element, .nav-link {
-    color: beige;
+    color: beige !important;
   }
   .dropdown-menu, .dropdown-menu *{
     margin: 0;
     color: beige;
+    background-color: #962828 !important;
   }
   .primary{
     background-color: #962828;
@@ -327,14 +367,27 @@ body.fireMode{
     background-color: #400b0e;
   }
   .background{
-    background-color: #2f172c;
+    background-color: #43203f;
   }
 
 }
 
 body.earthMode{
   font-family: 'herculanum';
-  color: beige;
+  .profile-container{
+    background-image: url('./assets/images/EarthTile.png');
+  }
+  .profile-image {
+    border-radius: 15px;
+    border: 10px solid #54544A !important;
+    background-color:#213A27;
+  }
+  .form-styling{
+    color: beige;
+  }
+  .nav-element, .nav-link{
+    color: beige !important;
+  }
   .dropdown-menu, .dropdown-menu *{
     background-color: #54544A !important;
     margin: 0;
@@ -355,7 +408,26 @@ body.earthMode{
 }
 
 body.airMode{
+  .profile-container{
+    background-image: url('./assets/images/AirTile.png');
+  }
+  .profile-image {
+    border-radius: 15px;
+    border: 10px solid  #99a9a3 !important;
+    background-color: #99a9a3;
+  }
   font-family: 'herculanum';
+  .form-styling{
+    color: beige;
+  }
+  .nav-element, .nav-link{
+    color: darkslategrey !important;
+  }
+
+  .dropdown-menu, .dropdown-menu *{
+    background-color: #54544A !important;
+    margin: 0;
+  }
   .primary{
     background-color: #c0ddcf;
   }
@@ -368,44 +440,31 @@ body.airMode{
   .background{
     background-color: #99a9a3;
   }
-
-
 }
-.profile-image{
-  background-image: url('./assets/images/avatar-3.svg');
-  background-color: white;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 100%;
-  height: 100%;
-}
-.profile-info-right-sections {
-  background-color: white;
-  display: flex;
-  color: black;
-}
-
-.profile-info-right{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.profile-info-left{
-  margin:30px;
-
-}
-
-.profile-container {
-  background-image: url('./assets/images/AirTile.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 500px;
-}
-
-
 body.waterMode{
+  .profile-container{
+    background-image: url('./assets/images/IceTile.png');
+  }
+  .nav-element, .nav-link{
+    color: darkslategrey !important;
+  }
+  .profile-image {
+    border-radius: 15px;
+    border: 10px solid   #B7CEDF !important;
+    background-color: #87A6BD;
+  }
   font-family: 'herculanum';
+  .form-styling{
+    color: beige;
+  }
+  .dropdown-menu, .dropdown-menu *{
+    background-color: #B7CEDF !important;
+    margin: 0;
+  }
+  .profile-h3-right{
+    background-color:#B7CEDF ;
+    bac
+  }
   .primary{
     background-color: #5D78AB;
   }
@@ -420,4 +479,37 @@ body.waterMode{
   }
 
 }
+.profile-image{
+  background-image: url('./assets/images/avatar-3.svg');
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+.profile-info-right-sections {
+  display: flex;
+  
+}
+
+.profile-info-right{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.profile-info-left{
+  margin:30px;
+
+}
+
+.profile-container {
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+
+
+
 
