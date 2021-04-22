@@ -18,7 +18,9 @@ const Login = () => {
     event.preventDefault()
     const response = await axios.post('/api/auth/login/', formData)
     window.localStorage.setItem('token', response.data.token)
-    history.push('/profile/')
+    history.push('/books/')
+    localStorage.setItem('nation', response.data.nationality )
+    console.log('🚀 ~ file: Login.js ~ line 24 ~ handleSubmit ~ esponse.data.nationality', response.data.nationality)
     window.location.reload()
     console.log(response)
   }

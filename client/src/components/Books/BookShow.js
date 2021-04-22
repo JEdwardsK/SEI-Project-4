@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable no-unused-vars*/
 
 import axios from 'axios'
@@ -9,6 +10,7 @@ import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import { getTokenFromLocalStorage } from '../../helpers/auth'
 import Card from 'react-bootstrap/Card'
+import { Col, Container, ListGroup, Row } from 'react-bootstrap'
 
 const BookShow = () => {
   const { id: bookID } = useParams()
@@ -70,78 +72,101 @@ const BookShow = () => {
   const handleClose = () => setShow(false)
 
   return (
-    <>
-      <div className="book-show-info-container">
-        <div className="book-show-info-left book-card">
-          <BookCard3d book={singleBook}/>
-        </div>
-        <div className="book-show-info-right">
-          <div className="book-info">
-            <h4>Title</h4>
-            <p>{title}</p>
-          </div>
-          <div className="book-info">
-            <h4>Author</h4>
-            <a href={`https://en.wikipedia.org/wiki/${author}`}>
-              {author}
-            </a>
-          </div>
-          <div className="book-info">
-            <h4>Protagonist</h4>
+    <div className="book-show-card-container">
+      <Card className="book-show-card" style={{ width: '40rem' }}>
+        <Card.Body>
+          <Card.Title>{`${title}, by ${author}`}</Card.Title>
+        </Card.Body>
+        <Row>
+          <Col className="book-show-info-left book-card">
+            <BookCard3d book={singleBook}/>
+          </Col>
+          </Row>
+          <Row>
+            <Col>Book Title</Col>
+            <Col>{title}</Col>
+
+          </Row>
+          <Row>
+            <Col>Author</Col>
+            <Col><a href={`https://en.wikipedia.org/wiki/${author}`}>
+                  {author}
+                </a></Col>
+          </Row>
+          <Row>
+            <Col>Synopsis</Col>
+            <Col>
+            <p>{synopsis}</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>Protagonist</Col>
+            <Col>
             {
               protag.length > 0 &&
 
-              <p>{`${protag[0].first_name} ${protag[0].last_name}`}</p>
+                <p>{`${protag[0].first_name} ${protag[0].last_name}`}</p>
             }
-          </div>
-          <div className="book-info">
-            <h4>Antagonist</h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col>Antagonist</Col>
+            <Col>
             {
               antag.length > 0 &&
 
-              <p>{`${antag[0].first_name} ${antag[0].last_name}`}</p>
+                <p>{`${antag[0].first_name} ${antag[0].last_name}`}</p>
             }
-          </div>
-          <div className="book-info">
-            <h4>Supporting Characters</h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col>Supporting Characters</Col>
+            <Col>
             <p>{supCharsString}</p>
-          </div>
-          <div className="book-info">
-            <h4>Synopsis</h4>
-            <p>{synopsis}</p>
-          </div>
-          <div className="book-info">
-            <h4>Genres</h4>
-            <p>{genreString}</p>
-          </div>
-          <div className="book-info">
-            <h4>Made into Film(s)?</h4>
-            <p>{isFilm ? 'Yes' : 'No'}</p>
-          </div>
-          <div className="book-info">
-            <h4>Made into Series?</h4>
-            <p>{isSeries ? 'Yes' : 'No'}</p>
-          </div>
-          <div className="book-info">
-            <h4>Publisher</h4>
-            <p>{publisher}</p>
-          </div>
-          <div className="book-info">
-            <h4>Date Published</h4>
-            <p>{pubDate}</p>
-          </div>
-          <div className="book-info">
-            <h4>Number of Pages</h4>
-            <p>{pageCount}</p>
-          </div>
-          <div className="book-info">
-            <h4>ISBN</h4>
-            <p>{ISBN}</p>
-          </div>
-        </div>
-      </div>
-      <div className="reviews">
-        <h2>Reviews</h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col>Genre</Col>
+            <Col>{genreString}</Col>
+          </Row>
+          <Row>
+            <Col>Has it Been Made Into a Film?</Col>
+            <Col>
+            {isFilm ? 'Yes' : 'No'}
+            </Col>
+          </Row>
+          <Row>
+            <Col>Has it Been Made into a Series</Col>
+            <Col>
+            {isSeries ? 'Yes' : 'No'}
+            </Col>
+          </Row>
+          <Row>
+            <Col>Publisher</Col>
+            <Col></Col>
+          </Row>
+
+          <Row>
+            <Col>Publication Date</Col>
+            <Col></Col>
+          </Row>
+          <Row>
+            <Col>ISBN</Col>
+            <Col></Col>
+          </Row>
+          <Row>
+            <Col>Number of Pages</Col>
+            <Col></Col>
+          </Row>
+
+        <Card.Body>
+          <Container>
+
+          </Container>
+        </Card.Body>
+      </Card>
+
+        {/* <h2>Reviews</h2>
         <Button onClick={handleModal}>Add a review</Button>
         {reviews.map(review => {
           const { id, review_text: text, created_at: createdAt, reviewOwner } = review
@@ -154,7 +179,7 @@ const BookShow = () => {
 
           )
         })}
-      </div>
+       */}
 
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
@@ -173,7 +198,7 @@ const BookShow = () => {
         </Card>
       </Modal>
 
-    </>
+    </div>
   )
 }
 

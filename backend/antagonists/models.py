@@ -7,7 +7,7 @@ class Antagonist(models.Model):
     last_name = models.CharField(max_length= 50, default="", blank=True)
     # aliases = models.ArrayField(models.CharField(max_length=50))
     character_bio = models.TextField(max_length=700)
-    quote = models.CharField(max_length= 500, default="")
+    quote = models.CharField(max_length= 500, default="", blank=True)
     character_archetypes = models.ManyToManyField('archetypes.Archetype', related_name="main_antagonist")
     books = models.ManyToManyField('books.Book', related_name="main_antagonist")
 
