@@ -38,10 +38,9 @@ const GenreIndex = () => {
           const { id, books, genre } = item
           return (
             <>
-
-              <div className="genre" key={id}>
-                <p>{genre}</p>
-                <div className="books-index-container">
+              <div className="genre background" key={id}>
+                <p className='character-header'>{genre}</p>
+                <div className="books-index-container background">
                   <BooksCarousel books={ books } />
                 </div>
               </div>

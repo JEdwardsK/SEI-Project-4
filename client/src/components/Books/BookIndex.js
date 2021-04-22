@@ -41,7 +41,7 @@ export const BookIndex = () => {
           </div>
         )
       })} */}
-      <ul className="books-index-container">
+      <ul className="books-index-container background">
         <BooksCarousel books={books} />
       </ul>
     </>

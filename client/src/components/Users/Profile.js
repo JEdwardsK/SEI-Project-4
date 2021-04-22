@@ -33,29 +33,25 @@ const Profile = () => {
   const { username, email, date_joined: dateJoined, nationality } = user
   return (
     <>
-      <h1>User Profile Page</h1>
+      <h1 className='character-header'>User Profile Page</h1>
       <div className="profile-container">
         <div className="profile-info-left"><div className="profile-image"></div></div>
         <div className="profile-info-right">
           <div className="profile-info-right-sections">
-            <h3>Username</h3>
-            <p>{username}</p>
+            <h3 className='profile-h3-right'>Username: {username}</h3>
           </div>
           <div className="profile-info-right-sections">
-            <h3>Email</h3>
-            <p>{email}</p>
+            <h3 className='profile-h3-right'>Email: {email}</h3>
           </div>
           <div className="profile-info-right-sections">
-            <h3>Member Since</h3>
-            <p>{dateJoined}</p>
+            <h3 className='profile-h3-right'>Member Since: {dateJoined}</h3>
           </div>
           <div className="profile-info-right-sections">
-            <h3>Nation</h3>
-            <p>{nationality}</p>
+            <h3 className='profile-h3-right'> Nation: {nationality}</h3>
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <h2>Reviews</h2>
         <p>input reviews here if desired</p>
       </div>
@@ -66,7 +62,7 @@ const Profile = () => {
       <div>
         <h2>Completed Searches</h2>
         <p>enter completed searches here</p>
-      </div>
+      </div> */}
     </>
 
 

@@ -34,8 +34,8 @@ const SupportingCharacterIndex = () => {
 
   return (
     <>
-      <h1 className='character-header'>Supporting Characters</h1>
-      <CardColumns>
+      <h1 className='character-header background'>Supporting Characters</h1>
+      <CardColumns className='background'>
         {allSupportingCharacters.map(character => {
           return (
             <CharacterCard characterType='supporting' key={character.id} character={character} />
