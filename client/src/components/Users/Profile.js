@@ -30,12 +30,12 @@ const Profile = () => {
     </Button>
   )
   console.log('🚀 ~ file: Profile.js ~ line 18 ~ Profile ~ user', user)
-  const { username, email, profile_image: profileImage, date_joined: dateJoined, nationality } = user
+  const { username, email, date_joined: dateJoined, nationality } = user
   return (
     <>
       <h1>User Profile Page</h1>
       <div className="profile-container">
-        <div className="profile-info-left"><img className="profile-pic" src={profileImage} alt={`user profile pic for ${username}`}/></div>
+        <div className="profile-info-left"><div className="profile-image"></div></div>
         <div className="profile-info-right">
           <div className="profile-info-right-sections">
             <h3>Username</h3>
