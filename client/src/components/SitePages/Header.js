@@ -55,17 +55,17 @@ const Header = () => {
             userIsAuthenticated() &&
         <>
           <NavDropdown className="nav-element secondary" title="Forms" id="basic-nav-dropdown">
-            <NavDropdown.Item className="primary" onClick={handleShow} name="protagonists">Submit a Protagonist</NavDropdown.Item>
-            <NavDropdown.Divider className="trim"/>
-            <NavDropdown.Item className="primary" onClick={handleShow} name="antagonists">Submit a Antagonist</NavDropdown.Item>
-            <NavDropdown.Divider className="trim"/>
+            <NavDropdown.Item  className="primary" onClick={handleShow} name="protagonists">Submit a Protagonist</NavDropdown.Item>
+            
+            <NavDropdown.Item className="secondary" onClick={handleShow} name="antagonists">Submit a Antagonist</NavDropdown.Item>
+            
             <NavDropdown.Item className="primary" onClick={handleShow} name="supporting_characters">Submit a Supporting Character</NavDropdown.Item>
-            <NavDropdown.Divider className="trim"/>
-            <NavDropdown.Item className="primary" href="/bookform">Submit a book</NavDropdown.Item>
+            
+            <NavDropdown.Item className="secondary" href="/bookform">Submit a book</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link className="nav-element secondary" href="/profile">Profile</Nav.Link>
           <button className="nav-element secondary" onClick={handleLogout}>Logout</button>
-          <switch className="nav-element secondary" type="toggle" onClick={handleNationChange}  data-toggle="toggle" data-on="Nation" data-off="Default"></switch>
+          <button className="nav-element secondary" type="toggle" onClick={handleNationChange}  data-toggle="toggle" data-on="Nation" data-off="Default"></button>
         </>
           }
           {

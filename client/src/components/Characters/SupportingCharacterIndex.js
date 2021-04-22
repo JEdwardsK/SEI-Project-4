@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import CharacterCard from './CharacterCard'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
+import CardColumns from 'react-bootstrap/CardColumns'
 
 
 const SupportingCharacterIndex = () => {
@@ -10,7 +11,7 @@ const SupportingCharacterIndex = () => {
 
   useEffect(() => {
     const getSupportingCharacters = async () => {
-      const { data } = await axios.get('/api/supporting_characters')
+      const { data } = await axios.get('/api/supporting_characters/')
       setAllSupportingCharacters(data)
     }
     getSupportingCharacters()
@@ -32,10 +33,15 @@ const SupportingCharacterIndex = () => {
 
   return (
     <>
-      <h1>Supporting Characters</h1>
-      {allSupportingCharacters.map(character => {
-        return <CharacterCard key={character.id} character={character} />
-      })}
+      <h1 className='character-header'>Supporting Characters</h1>
+      <CardColumns>
+        {allSupportingCharacters.map(character => {
+          return (
+            <CharacterCard characterType='supporting' key={character.id} character={character} />
+          )
+        })}
+      </CardColumns>
+      
     </>
   )
 }

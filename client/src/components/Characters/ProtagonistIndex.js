@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import CharacterCard from './CharacterCard'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
-
+import CardColumns from 'react-bootstrap/CardColumns'
 
 
 const ProtagonistIndex = () => {
@@ -31,10 +31,15 @@ const ProtagonistIndex = () => {
   console.log(allProtagonists)
   return (
     <>
-      <h1>Protagonists</h1>
-      {allProtagonists.map(character => {
-        return <CharacterCard key={character.index} character={character} />
-      })}
+      <h1 className='character-header'>Supporting Characters</h1>
+      <CardColumns>
+        {allProtagonists.map(character => {
+          return (
+            <CharacterCard characterType='protagonist' key={character.id} character={character} />
+          )
+        })}
+      </CardColumns>
+      
     </>
 
   )

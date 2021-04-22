@@ -16,7 +16,7 @@ python_version = "3.9"
 
 [scripts]
 flush = "python manage.py flush"
-seedall = "python manage.py loaddata jwt_auth/seeds.json archetypes/seeds.json genres/seeds.json supporting_characters/seeds.json protagonists/seeds.json antagonists/seeds.json reviews/seeds.json books/seeds.json "
+seedall = "python manage.py loaddata jwt_auth/seeds.json archetypes/seeds.json genres/seeds.json supporting_characters/seeds.json protagonists/seeds.json antagonists/seeds.json reviews/seeds.json books/seeds.json"
 mm = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
 serve = "python manage.py runserver"

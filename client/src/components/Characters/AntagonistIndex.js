@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import CharacterCard from './CharacterCard'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
-
+import CardColumns from 'react-bootstrap/CardColumns'
 
 
 const AntagonistIndex = () => {
@@ -32,10 +32,15 @@ const AntagonistIndex = () => {
   console.log('the data>>>>', allAntagonists)
   return (
     <>
-      <h1>Antagonists</h1>
-      {allAntagonists.map(character => {
-        return <CharacterCard key={character.id} character={character} />
-      })}
+      <h1 className='character-header'>Supporting Characters</h1>
+      <CardColumns>
+        {allAntagonists.map(character => {
+          return (
+            <CharacterCard characterType='protagonist' key={character.id} character={character} />
+          )
+        })}
+      </CardColumns>
+      
     </>
   )
 }

@@ -1,42 +1,43 @@
-import React from 'react'
+/* eslint-disable no-unused-vars */
+import React, { useState  } from 'react'
 import BooksCarousel from '../Books/BooksCarousel'
+import Card from 'react-bootstrap/Card'
+import Modal from 'react-bootstrap/Modal'
+const CharacterCard = ({ character, characterType }) => {
 
-const CharacterCard = ({ character }) => {
-
-  console.log(character)
+  
   const { books, character_archetypes: archetypes, first_name: firstName, last_name: lastName, character_bio: bio, relationship_to_protagonist: relationship } = character
   //* id not used, removed to prevent linter issues, add back when required
+  console.log(archetypes)
+  const [show, setShow] = useState(false)
+  const handleShow = () => setShow(true)
+  
+  const handleClose = () => setShow(false)
+  console.log('first>>',books)
   return (
-    <div>
-      <div className="character-info-right">
-        <h3>Name</h3>
-        <p>{`${firstName} ${lastName}`}</p>
-      </div>
-      <div className="character-info-right">
-        <h3>Character Bio</h3>
-        <p>{bio}</p>
-      </div>
-      {relationship &&
-        <div className="character-info-right">
-          <h3>Relation to Protagonist</h3>
-          <p>{relationship}</p>
-        </div>
-      }
-      <div className="character-info-right">
-        <h3>Archetypes</h3>
-        <p>{archetypes.map(item => ` ${item.archetype}`).toString()
+    <Card className='character-card background' style={{ width: 'auto' }}>
+      <Card.Header className='secondary'>{`${firstName} ${lastName}`}</Card.Header>
+      <Card.Body className='trim' >
+        <Card.Title></Card.Title>
+        {relationship &&
+        <>
+          <Card.Subtitle className="mb-2 text-muted">Relationship to Protagonist</Card.Subtitle>
+          <Card.Text>{relationship}</Card.Text>
+        </>
         }
-        </p>
-      </div>
-      <div className="character-info-right">
-        <h3>Appears In</h3>
-        {
-          books.length > 0
-            ? <BooksCarousel books={books} />
-            : <p>{'We Don\'t Know! Maybe you can help us...'}</p>
-        }
-      </div>
-    </div>
+        
+        <Card.Text>
+          {bio}
+        </Card.Text>
+        
+      </Card.Body>
+      <Card.Footer className='secondary'>
+        <Card.Link href={`/books/${books}`}>Popular book</Card.Link>
+        
+      </Card.Footer>
+    </Card>
+      
+    
   )
 }
 
