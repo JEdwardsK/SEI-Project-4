@@ -4,11 +4,20 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import BookCard3d from './BookCard3d'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import Form from 'react-bootstrap/Form'
+import { getTokenFromLocalStorage } from '../../helpers/auth'
+import Card from 'react-bootstrap/Card'
 
 const BookShow = () => {
   const { id: bookID } = useParams()
   const [singleBook, setSingleBook] = useState(null)
-
+  const [show, setShow] = useState(false)
+  const [formData, setFormData] = useState({
+    book: bookID,
+    review_text: '',
+  })
   useEffect(() => {
     const getSingleBook = async () => {
       const { data } = await axios.get(`/api/books/${bookID}`)
@@ -24,12 +33,41 @@ const BookShow = () => {
   const genreString = genres.map(item => ` ${item.genre}`).toString()
   const supCharsString = supChars.map(item => ` ${item.first_name} ${item.last_name}`).toString()
 
+
+
   //* remember the following data structures:
   //* Arrays of objects = supChars, genres, protag, antag, reviews
   //* Booleans = isFilm, isSeries
   //* Strings = title, author, coverImage, ISBN, synopsis, publisher
   //* Numbers = id, pageCount
   //* pubDate is a string in format "yyyy-mm-dd"
+  const handleChange = (event) => {
+    const newFormData = { ...formData, [event.target.name]: event.target.value }
+    console.log(newFormData)
+    setFormData(newFormData)
+  }
+
+  const handleSubmit = async (event) => {
+    console.log(formData)
+    event.preventDefault()
+    window.alert(JSON.stringify(formData, null, 2))
+    try {
+      const response = await axios.post('/api/reviews/', formData, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+      })
+      console.log(response)
+      history.push(`/pubs/${id}`)
+    } catch (err){
+      console.log(err.message)
+    }
+  }
+
+  const handleModal = () => setShow(true)
+
+
+  const handleClose = () => setShow(false)
 
   return (
     <>
@@ -104,6 +142,7 @@ const BookShow = () => {
       </div>
       <div className="reviews">
         <h2>Reviews</h2>
+        <Button onClick={handleModal}>Add a review</Button>
         {reviews.map(review => {
           const { id, review_text: text, created_at: createdAt, reviewOwner } = review
           return (
@@ -116,6 +155,23 @@ const BookShow = () => {
           )
         })}
       </div>
+
+      <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Book Review for {title} by {author}</Modal.Title>
+        </Modal.Header>
+        <Card>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group>
+              <Form.Control as="textarea" rows={3} placeholder="Enter your review here" name="review_text" value={formData.review_text} onChange={handleChange}/>
+            </Form.Group>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>Close</Button>
+              <Button variant="primary" type="submit">Submit</Button>
+            </Modal.Footer>
+          </Form>
+        </Card>
+      </Modal>
 
     </>
   )
