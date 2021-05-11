@@ -40,7 +40,7 @@ const BookSubmit = () => {
   const [formData, setFormData] = useState({
     title: '',
     author: '',
-    cover_image: '',
+    cover_image: 'https://cdn.wallpapersafari.com/35/57/iUfZRE.jpg',
     genre: [],
     is_made_into_film: false,
     is_made_into_series: false,
@@ -172,7 +172,7 @@ const BookSubmit = () => {
               <Form.Label>Synopsis</Form.Label>
               <Form.Control as="textarea" rows ={4} placeholder="enter info about the story" value={formData.story_overview} name="story_overview" required onChange={handleChange}/>
               <Form.Text className="text-muted">
-                {'input user message'}
+                {'Max length 2000 characters'}
               </Form.Text>
               <Form.Label>Select Genre</Form.Label>
 
@@ -183,6 +183,9 @@ const BookSubmit = () => {
                 components={makeAnimated()}
                 onChange={(selected) => handleMultiChange(selected, 'genre')}
               />
+              <Form.Text className="text-muted">
+                {'Select all/any genres that apply'}
+              </Form.Text>
               <Button value="1" onClick={handlePageTurnBookForm}>Move to next page</Button>
 
             </Form.Group>
@@ -216,6 +219,7 @@ const BookSubmit = () => {
                     onChange={handleChange}/>
                 </Col>
                 <Col>
+                  <Form.Label>Number of Pages</Form.Label>
                   <Form.Control type="number" name="page_count" value={formData.page_count} label="No. Pages" onChange={handleChange}/>
                 </Col>
               </Form.Row>
@@ -228,11 +232,17 @@ const BookSubmit = () => {
                 </Col>
                 <Col>
                   <Form.Label>Date Published</Form.Label>
-                  <Form.Control type="date" name="pub_date" value={formData.pub_date} onChange={handleChange}/>
+                  <Form.Control type="date" name="pub_date" value={formData.pub_date} onChange={handleChange} />
+                  <Form.Text className="text-muted">
+                    {'If the exact date is unknown, you can put the 1st of the month instead.'}
+                  </Form.Text>
                 </Col>
                 <Col>
                   <Form.Label>Book Cover</Form.Label>
-                  <Form.Control type="text" placeholder="enter publisher" name="cover_image"  value={formData.cover_image} onChange={handleChange}/>
+                  <Form.Control type="text" placeholder="url link" name="cover_image" value={formData.cover_image} onChange={handleChange} />
+                  <Form.Text className="text-muted">
+                    {'Enter URL link for cover image, or leave blank for a default'}
+                  </Form.Text>
                 </Col>
               </Form.Row>
             </Form.Group>
@@ -240,7 +250,7 @@ const BookSubmit = () => {
               <Form.Label>ISBN</Form.Label>
               <Form.Control type="text" value={formData.ISBN} placeholder="enter ISBN" name="ISBN" onChange={handleChange}/>
               <Form.Text className="text-muted">
-                {'Enter in format ""'}
+                {'Enter in format "978-3-16-148410-0"'}
               </Form.Text>
             </Form.Group>
             <Form.Group>
@@ -310,11 +320,18 @@ const BookSubmit = () => {
                 })}
                 <option>None Listed</option>
               </Form.Control> */}
+
             </Form.Group>
+            <Form.Text className="text-muted">
+              {'You can select multiple supporting characters'}
+            </Form.Text>
             <Button variant="primary" type="submit">
       Submit
             </Button>
             <Button value="1" onClick={handlePageTurnBookForm}>Go Back</Button>
+            <Form.Text className="text-muted">
+              {'If a character doesn\'t exist, don\'t worry! You can add them to the book later '}
+            </Form.Text>
 
           </>
       }

@@ -110,7 +110,19 @@ h1 {
   font-family: 'herculanum';
 }
 
+.book-search-result {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  .book {
+    align-self: center;
 
+  }
+  .book :hover {
+    cursor: none;
+  }
+}
 .search-h2 {
   text-align: center;
   color: black;
@@ -342,7 +354,7 @@ body.fireMode{
     border: 10px solid  #43203f !important;
     background-color:#601515;
   }
-  
+
   .form-styling{
     color: beige;
   }
@@ -463,7 +475,7 @@ body.waterMode{
   }
   .profile-h3-right{
     background-color:#B7CEDF ;
-    bac
+
   }
   .primary{
     background-color: #5D78AB;
@@ -481,7 +493,7 @@ body.waterMode{
 }
 .profile-image{
   background-image: url('./assets/images/avatar-3.svg');
-  
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -490,7 +502,7 @@ body.waterMode{
 }
 .profile-info-right-sections {
   display: flex;
-  
+
 }
 
 .profile-info-right{
@@ -504,7 +516,7 @@ body.waterMode{
 }
 
 .profile-container {
-  
+
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 500px;

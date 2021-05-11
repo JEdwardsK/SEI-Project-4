@@ -24,7 +24,6 @@ class ProtagonistListView(APIView):
 class ProtagonistDetailView(APIView):
     ''' Request routes for individual Protagonists (SHOW Page).'''
     def get(self, _request, pk):
-        console.log('>>>>>>>>>>>>>>>', pk)
         try:
             protagonists = Protagonist.objects.get(pk = pk)
         except Protagonist.DoesNotExist:

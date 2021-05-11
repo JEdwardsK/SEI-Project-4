@@ -8,6 +8,10 @@ import Form from 'react-bootstrap/Form'
 import Select from 'react-select'
 import Spinner from 'react-bootstrap/Spinner'
 import Col from 'react-bootstrap/Col'
+import CardDeck from 'react-bootstrap/CardDeck'
+import Card from 'react-bootstrap/Card'
+import Accordion from 'react-bootstrap/Accordion'
+import ListGroup from 'react-bootstrap/ListGroup'
 import { genreFormOptions } from '../../helpers/helperFunctions'
 import makeAnimated from 'react-select/animated'
 
@@ -56,56 +60,127 @@ const Search = () => {
     const values = type === 'checkbox'
       ? checked
       : value
-    console.log(values)
     setFormData({ ...formData, [name]: values })
-    console.log(formData)
   }
 
-  const { formTitle, formAuthor, formIsFilm, formSearchPhrases, formGenres, formFirstName, formLastName, formIsSeries } = formData
+  const { formTitle, formAuthor, formIsFilm, formSearchPhrases, formGenres, formFirstName, formLastName, formIsSeries, supporting_characters: supChars, story_overview: synopsis } = formData
 
   const validBooksSearchArray = []
 
   const handleSubmit = (event) => {
     event.preventDefault()
     setShow(false)
+    console.log(formData)
+    console.log(allBooks[0])
     allBooks.forEach(book => {
       let matchCount = 0
-      const { title, author, is_made_into_film: isFilm, is_made_into_series: isSeries, story_overview: synopsis, genre: genres, supporting_characters: supChars } = book
-      if (formTitle !== '' && title.toLowerCase().includes(formTitle.toLowerCase())) matchCount++
-      if (formAuthor !== '' && author.toLowerCase().includes(formAuthor.toLowerCase())) matchCount++
-      if (formIsFilm !== '' && isFilm.toString() === formIsFilm) matchCount++
-      if (formIsSeries !== '' && isSeries === formIsSeries) matchCount++
+      const results = []
+      const { title, author, is_made_into_film: isFilm, is_made_into_series: isSeries, story_overview: synopsis, genre: genres, supporting_characters: supChars, main_protagonist: protag, main_antagonist: antag } = book
+      if (formTitle !== '' && title.toLowerCase().includes(formTitle.toLowerCase())) {
+        matchCount++
+        results.push(title)
+      }
+      if (formAuthor !== '' && author.toLowerCase().includes(formAuthor.toLowerCase())) {
+        matchCount++
+        results.push(author)
+      }
+      if (formIsFilm !== '' && isFilm === formIsFilm) {
+        matchCount++
+        results.push('Made into film')
+      }
+      if (formIsSeries !== '' && isSeries === formIsSeries) {
+        matchCount++
+        results.push('Made into tv series')
+      }
       // console.log(genres, story_overview)
-      // formSearchPhrases.forEach(searchPhrase => {
-      // if (story_overview.includes(searchPhrase)) matchCount++
-      // })
+      formSearchPhrases.split(',')
+        .forEach(searchPhrase => {
+          // console.log(synopsis)
+          // if (story_overview.includes(searchPhrase)) matchCount++
+        })
       // genre is an array of objects with the key genres. so to get to genres you need to genre.
-      // formGenres.forEach(formGenre => {
-      // if (genres.includes(formGenre)) matchCount++
-      // }) finesse
+      formGenres.forEach(formGenre => {
+        console.log(formGenre)
+        const genreIdArray = genres.map(item=>item.id)
+        console.log(genres)
+        const findGenre = genres.find(genre => genre.id = formGenre)
+        const genreName = findGenre.genre
+        console.log(findGenre)
+        genreIdArray.includes(formGenre) && matchCount++
+        results.push(genreName)
+
+      })
+      // finesse
 
       //? check data structure before use main_antagonist
       //? check data structure before use main_protagonist
 
       // make sure the for data produces an array of first names and last names. each character checks against the first and last name arrays
-      // supporting_characters.forEach(char => {
-      //   if(formFirstName.includes(char.first_name)) matchCount++
-      //   if(formLastName.includes(char.last_name)) matchCount++
-      // })
+      supChars.forEach(char => {
+        const name = (`${char.first_name} ${char.last_name}`).trim()
+        if (formFirstName !== '' && formFirstName.toLowerCase().includes(char.first_name.toLowerCase()) ) {
+          results.push(name)
+          matchCount++
+        }
+        if (formLastName !== '' && formLastName.toLowerCase().includes(char.last_name.toLowerCase())) {
+          results.push(name)
+          matchCount++
+        }
+      })
+      protag.forEach(char => {
+        const name = (`${char.first_name} ${char.last_name}`).trim()
+        if (formFirstName !== '' && char.first_name.toLowerCase().includes(formFirstName.toLowerCase()) ) {
+          matchCount++
+          results.push(name)
+        }
+        if (formLastName !== '' && char.last_name.toLowerCase().includes(formLastName.toLowerCase())) {
+          matchCount++
+          results.push(name)
+        }
+      })
+
+      antag.forEach(char => {
+        console.log(char.first_name.toLowerCase())
+        if (formFirstName !== '' && char.first_name.toLowerCase().includes(formFirstName.toLowerCase())) {
+          results.push(char.first_name)
+          matchCount++
+        }
+        if (formLastName !== '' && char.last_name.toLowerCase().includes(formLastName.toLowerCase())) {
+          const name = (`${char.first_name} ${char.last_name}`).trim()
+          matchCount++
+          results.push(name)
+        }
+      })
+
+
 
       // after checking all fields, if the match count is greater than 0, the search has found at least one match. We want to return the books that have matched something
       console.log(matchCount)
-      if (matchCount > 0) {
-        validBooksSearchArray.push({ resultBook: book, searchHits: matchCount })
+      const filteredResults = [...new Set(results)]
+      if (matchCount !== 0) {
+        validBooksSearchArray.push({ resultBook: book, searchHits: matchCount, results: filteredResults, bookTitle: title })
       }
     })
     console.log('🚀 ~ file: Search.js ~ line 69 ~ Search ~ validBooksSearchArray', validBooksSearchArray)
     setSearchResults(validBooksSearchArray)
-
+    const str = 'lord voldemort'; const substr = 'voldemort'; if (str.includes(substr) )console.log('Found the substring!')
   }
 
   const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleShow = () => {
+    setShow(true)
+    setSearchResults([])
+    setFormData({
+      formTitle: '',
+      formAuthor: '',
+      formIsFilm: '',
+      formSearchPhrases: '',
+      formGenres: [],
+      formFirstName: '',
+      formLastName: '',
+      formIsSeries: '',
+    })
+  }
   const handleMultiChange = (selected, name) => {
     const values = selected ? selected.map(item => item.value) : []
     setFormData({ ...formData, [name]: [...values] })
@@ -224,7 +299,7 @@ const Search = () => {
       <section>
         { !show &&
           <>
-            <h2 className="search-h2">Search Results</h2>
+            <h2 className="search-h2">Search Results: {searchResults.length} matches</h2>
             {searchResults.length === 0 ?
               <p>{'Sorry we\'ve not found a match... please try again'}</p>
             //       <>
@@ -245,18 +320,40 @@ const Search = () => {
               : <div className="book-search-container">
                 {searchResults
                   .sort((a, b) => b.searchHits - a.searchHits)
-                  .map(result => {
-                    const { searchHits, resultBook } = result
+                  .map((result, index) => {
+                    const { searchHits, resultBook, results, bookTitle } = result
                     const { cover_image: coverImage, id, title, author } = resultBook
 
                     return (
-                      <div className="book-search-result"key={id}>
-                        <Link to= {`/books/${id}`}>
-                          <div className='book'>
-                            <img src={coverImage} alt={`the cover for ${title}, by ${author}`} value={id}/>
-                          </div>
-                        </Link>
-                        <p>search hits: {searchHits}</p>
+                      <div key={id} className="book-search-result" >
+
+                        <div className='book'>
+                          <Card.Img src={coverImage} alt={`the cover for ${title}, by ${author}`} value={id}/>
+                        </div>
+                        <Card border={index === 0 && 'success'} style={{ width: '10rem' }}>
+                          <Card.Header>
+                            <Link to={`/books/${id}`}>
+                              {bookTitle}
+                            </Link>
+                          </Card.Header>
+                          <Card.Text>
+                            <Accordion>
+                              <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                View/Hide Result matches
+                              </Accordion.Toggle>
+                              <Accordion.Collapse eventKey="0">
+                                <ListGroup>
+                                  {results.map((result, index) => {
+                                    return <ListGroup.Item key={index}>{result}</ListGroup.Item>
+                                  })}
+                                </ListGroup>
+                              </Accordion.Collapse>
+                            </Accordion>
+                            <Card.Footer className="text-muted">
+                              search hits: {searchHits}
+                            </Card.Footer>
+                          </Card.Text>
+                        </Card>
                       </div>
                     )
                   })}
