@@ -5,7 +5,7 @@ import  Form  from 'react-bootstrap/Form'
 import { useHistory } from 'react-router'
 import { getPayloadFromToken } from '../../../helpers/auth'
 import Button  from 'react-bootstrap/Button'
-// import { setColourByNation } from '../../../helpers/helperFunctions'
+import { setColourByNation } from '../../../helpers/helperFunctions'
 
 
 
@@ -29,7 +29,7 @@ const Login = () => {
     const { data: user } = await axios.get(`api/auth/user/${userID}/`)
 
     localStorage.setItem('nation', user.nationality)
-    // setColourByNation()
+    setColourByNation()
     history.push('/books/')
     window.location.reload()
   }

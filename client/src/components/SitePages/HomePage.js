@@ -32,17 +32,16 @@ const HomePage = () => {
     setRegisterFormData(newFormData)
     console.log(registerFormData)
   }
-  const handleSubmitRegister = (event) => {
+  const handleSubmitRegister = async (event) => {
     event.preventDefault()
     window.alert(JSON.stringify(registerFormData, null, 2))
     handlePageTurn(event)
-    // try {
-    //   const response = await axios.post('/api/auth/register/', registerFormData)
-    //   console.log(response)
-    //   history.push('/login')
-    // } catch (err) {
-    //   console.log(err.response)
-    // }
+    try {
+      const response = await axios.post('/api/auth/register/', registerFormData)
+      console.log(response)
+    } catch (err) {
+      console.log(err.response)
+    }
   }
   const nationalityOptions = [
     { value: 'fire', label: 'Fire Nation' },
@@ -237,7 +236,7 @@ const HomePage = () => {
           { pageNumber === 3 &&
             <>
               <div className="homepage-container-sections">
-                <BookSubmit/>
+              <BookSubmit isModal={false}/>
               </div>
               <div className="homepage-container-sections buttons-page-0">
                 <Button onClick={handlePageTurn} value="4">Tell him you will talk about it inside after you have settled inside</Button>
