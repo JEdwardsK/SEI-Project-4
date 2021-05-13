@@ -15,12 +15,17 @@ export const genreFormOptions = (genreArray) => {
   return options
 }
 
-export const  setColourByNation = () => {
-  if (userIsAuthenticated() === true){
-    console.log('IS AUTHENTICATED HERE IS THE CLASSLIST', document.body.classList)
-    if ([...document.body.classList].includes('defaultMode') === true){
-      document.body.classList.remove('defaultMode')
-      document.body.classList.add(`${localStorage.getItem('nation')}Mode`)
-    }
+export const setColourByNation = () => {
+  const nation = localStorage.getItem('nation')
+  const isAcceptedNationClass = (nation === 'air')
+    || (nation === 'water')
+    || (nation === 'earth')
+    || (nation === 'fire')
+  const dbc = document.body.classList
+  if (userIsAuthenticated() && isAcceptedNationClass) {
+    [...dbc].includes('defaultMode') && (
+      dbc.remove('defaultMode'),
+      dbc.add(`${nation}Mode`)
+    )
   }
 }

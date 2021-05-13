@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import BooksCarousel from './BooksCarousel'
 import axios from 'axios'
-// import BookCard3d from './BookCard3d'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
-import { setColourByNation } from '../../helpers/helperFunctions'
+
 
 export const BookIndex = () => {
-  setColourByNation()
   const [books, setBooks] = useState(null)
 
 

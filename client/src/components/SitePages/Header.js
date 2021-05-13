@@ -5,13 +5,14 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import CharacterSubmit from '../Forms/CharacterSubmit'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import { setColourByNation } from '../../helpers/helperFunctions'
 import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form'
+import BookSubmit from '../Forms/BookSubmit'
+import Login from '../Forms/Users/Login'
+import Register from '../Forms/Users/Register'
 
 
 const Header = () => {
-  setColourByNation()
   const history = useHistory()
 
   // const handleNationChange = (event) => {
@@ -36,18 +37,36 @@ const Header = () => {
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
+    window.localStorage.removeItem('nation')
     window.alert('you have logged out, returning to homepage')
     history.push('/')
     window.location.reload()
   }
   const [show, setShow] = useState(false)
+  const [bookShow, setBookShow] = useState(false)
+  const [loginShow, setLoginShow] = useState(false)
+  const [registerShow, setRegisterShow] = useState(false)
   const [characterToSubmit, setCharacterToSubmit] = useState('')
 
   const handleShow = (event) => {
-    setShow(true)
-    setCharacterToSubmit(event.target.name)
+    const { name } = event.target
+    if (name === 'book') {
+      setBookShow(true)
+    } else if (name === 'login') {
+      setLoginShow(true)
+    } else if (name === 'register') {
+      setRegisterShow(true)
+    } else {
+      setShow(true)
+      setCharacterToSubmit(name)
+    }
   }
-  const handleClose = () => setShow(false)
+  const handleClose = () => {
+    setShow(false)
+    setBookShow(false)
+    setLoginShow(false)
+    setRegisterShow(false)
+  }
   return (
     <>
       <Navbar expand="xl" className="navbar background">
@@ -66,8 +85,8 @@ const Header = () => {
                 <NavDropdown.Item  className="primary" onClick={handleShow} name="protagonists">Submit a Protagonist</NavDropdown.Item>
                 <NavDropdown.Item className="secondary" onClick={handleShow} name="antagonists">Submit a Antagonist</NavDropdown.Item>
                 <NavDropdown.Item className="primary" onClick={handleShow} name="supporting_characters">Submit a Supporting Character</NavDropdown.Item>
-                <NavDropdown.Item className="secondary" href="/bookform">Submit a book</NavDropdown.Item>
-                
+                <NavDropdown.Item className="secondary" name="book" onClick={handleShow}>Submit a book</NavDropdown.Item>
+
               </NavDropdown>
               <Nav.Link className="nav-element secondary" href="/profile">Profile</Nav.Link>
               <Button className="nav-element  secondary" onClick={handleLogout}>Logout</Button>
@@ -77,8 +96,8 @@ const Header = () => {
           {
             !userIsAuthenticated() &&
         <>
-          <Nav.Link className="nav-element secondary" href="/login">Log In</Nav.Link>
-          <Nav.Link className="nav-element secondary" href="/register">Register</Nav.Link>
+          <Nav.Link className="nav-element secondary" onClick={handleShow} name="login">Log In</Nav.Link>
+          <Nav.Link className="nav-element secondary" onClick={handleShow} name="register">Register</Nav.Link>
 
         </>
           }
@@ -90,6 +109,15 @@ const Header = () => {
       </Navbar>
       <Modal show={show} onHide={handleClose} centered>
         <CharacterSubmit characterType={characterToSubmit}/>
+      </Modal>
+      <Modal show={bookShow} onHide={handleClose} centered>
+        <BookSubmit isModal={true}/>
+      </Modal>
+      <Modal show={registerShow} onHide={handleClose} centered>
+        <Register/>
+      </Modal>
+      <Modal show={loginShow} onHide={handleClose} centered>
+        <Login/>
       </Modal>
     </>
   )

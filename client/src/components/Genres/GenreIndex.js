@@ -1,11 +1,9 @@
 /*eslint-disable no-unused-vars */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { setColourByNation } from '../../helpers/helperFunctions'
 import BooksCarousel from '../Books/BooksCarousel'
 
 const GenreIndex = () => {
-  setColourByNation()
   const [allGenres, setAllGenres] = useState(null)
   const [showBooks, setShowBooks] = useState(false)
 

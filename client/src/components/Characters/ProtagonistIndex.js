@@ -4,12 +4,10 @@ import CharacterCard from './CharacterCard'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
 import CardColumns from 'react-bootstrap/CardColumns'
-import { setColourByNation } from '../../helpers/helperFunctions'
 
 
 
 const ProtagonistIndex = () => {
-  setColourByNation()
   const [allProtagonists, setAllProtagonists] = useState(null)
   useEffect(() => {
     const getProtagonists = async () => {
@@ -42,7 +40,7 @@ const ProtagonistIndex = () => {
           )
         })}
       </CardColumns>
-      
+
     </>
 
   )
