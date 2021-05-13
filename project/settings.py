@@ -1,4 +1,6 @@
 import os
+import django_on_heroku
+from decouple import config
 """
 Django settings for project project.
 
@@ -21,7 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-02_xbv)@e9)!bjm02oeozz=nhl6f3=a*6wy(9ot3j&3efav^q4'
+
+
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -157,3 +161,4 @@ STATIC_URL = '/static/'  # same with this
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'client', "build", "static"),
 )
+django_on_heroku.settings(locals())
