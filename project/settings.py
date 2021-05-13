@@ -1,3 +1,4 @@
+import os
 """
 Django settings for project project.
 
@@ -65,7 +66,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'client')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,6 +93,7 @@ DATABASES = {
         'PORT': 5432
     }
 }
+
 
 
 # Password validation
@@ -147,3 +149,11 @@ REST_FRAMEWORK = {
         'jwt_auth.authentication.JWTAuthentication'
     ],
 }
+
+ROOT_URLCONF = 'project.urls'  # check if you have this already, if not add it in
+
+STATIC_URL = '/static/'  # same with this
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'client', "build", "static"),
+)

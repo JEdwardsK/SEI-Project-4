@@ -3,6 +3,7 @@ import BooksCarousel from './BooksCarousel'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
+import { setColourByNation } from '../../helpers/helperFunctions'
 
 
 export const BookIndex = () => {
@@ -16,6 +17,8 @@ export const BookIndex = () => {
       setBooks(data)
     }
     getData()
+    setColourByNation()
+
   }, [])
 
   if (!books) return (

@@ -17,15 +17,17 @@ export const genreFormOptions = (genreArray) => {
 
 export const setColourByNation = () => {
   const nation = localStorage.getItem('nation')
-  const isAcceptedNationClass = (nation === 'air')
-    || (nation === 'water')
-    || (nation === 'earth')
-    || (nation === 'fire')
+  // const isAcceptedNationClass = (nation === 'air')
+  // || (nation === 'water')
+  // || (nation === 'earth')
+  // || (nation === 'fire')
   const dbc = document.body.classList
-  if (userIsAuthenticated() && isAcceptedNationClass) {
-    [...dbc].includes('defaultMode') && (
-      dbc.remove('defaultMode'),
+
+  if (userIsAuthenticated()) {
+    if ([...dbc].includes('defaultMode')) {
+      console.log(true)
+      dbc.remove('defaultMode')
       dbc.add(`${nation}Mode`)
-    )
+    }
   }
 }

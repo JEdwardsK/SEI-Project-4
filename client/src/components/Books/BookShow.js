@@ -4,8 +4,10 @@ import { useParams } from 'react-router'
 import BookCard3d from './BookCard3d'
 import Card from 'react-bootstrap/Card'
 import { Col, Container, Row } from 'react-bootstrap'
+import { setColourByNation } from '../../helpers/helperFunctions'
 
 const BookShow = () => {
+  setColourByNation()
   const { id: bookID } = useParams()
   const [singleBook, setSingleBook] = useState(null)
 

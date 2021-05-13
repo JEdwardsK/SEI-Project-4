@@ -30,7 +30,6 @@ const Login = () => {
     localStorage.setItem('nation', user.nationality)
     setColourByNation()
     history.push('/books/')
-    window.location.reload()
   }
 
   return (

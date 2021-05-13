@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { getPayloadFromToken } from '../../helpers/auth'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
+import { setColourByNation } from '../../helpers/helperFunctions'
 
 const Profile = () => {
   const [user, setUser] = useState(null)
@@ -11,6 +12,7 @@ const Profile = () => {
     const getUser = async () => {
       const { data } = await axios.get(`api/auth/user/${userID}/`)
       setUser(data)
+      setColourByNation()
     }
     getUser()
   },[userID])

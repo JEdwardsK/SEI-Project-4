@@ -4,9 +4,11 @@ import CharacterCard from './CharacterCard'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
 import CardColumns from 'react-bootstrap/CardColumns'
+import { setColourByNation } from '../../helpers/helperFunctions'
 
 
 const SupportingCharacterIndex = () => {
+  setColourByNation()
   const [allSupportingCharacters, setAllSupportingCharacters] = useState(null)
   useEffect(() => {
     const getSupportingCharacters = async () => {

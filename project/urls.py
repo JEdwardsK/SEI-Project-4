@@ -15,7 +15,8 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from .views import index
 
 
 urlpatterns = [
@@ -28,6 +29,5 @@ urlpatterns = [
     path('api/protagonists/', include ('protagonists.urls')),
     path('api/antagonists/', include ('antagonists.urls')),
     path('api/auth/', include('jwt_auth.urls')),
-
-
+    re_path(r'^.*$', index)
 ]

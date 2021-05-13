@@ -1,12 +1,14 @@
 
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { setColourByNation } from '../../helpers/helperFunctions'
 import BooksCarousel from '../books/BooksCarousel'
 
 const GenreIndex = () => {
   const [allGenres, setAllGenres] = useState(null)
 
   useEffect(() => {
+    setColourByNation()
     const getGenres = async () => {
       const { data } = await axios.get('api/genres/')
       setAllGenres(data)
