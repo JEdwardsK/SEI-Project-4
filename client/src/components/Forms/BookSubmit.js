@@ -10,8 +10,9 @@ import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 import { characterFormOptions, genreFormOptions } from '../../helpers/helperFunctions'
 import { useHistory } from 'react-router'
+import Modal from 'react-bootstrap/Modal'
 
-const BookSubmit = () => {
+const BookSubmit = ( { isModal }) => {
   // * the following fields are required for a successful post: title, author, ISBN, published by, genre, supporting characters, protagonist and antagonist. will change these later to only require title author and synopsis.
 
   // * the form will be segmented into at least parts: first the user will have the required fields. then they will pass to optional fields, displaying all of the remaining fields EXCEPT the character fields. these are relationship based and so must be posted first.
@@ -37,10 +38,12 @@ const BookSubmit = () => {
   //? 6) if user selects third button, the form is submitted and posted. they are then asked if they want submit characters and are directed to the character submission page. if they do not want to submit a character, they are directed to the posted books show page
 
   //* any null values must be in the format of an empty string "" or empty array []. do not submit data that is null or undefined it will either throw an error and not work, or work and cause a problem later with rendering info.
+
+  console.log('>>>>>>', isModal)
   const [formData, setFormData] = useState({
     title: '',
     author: '',
-    cover_image: 'https://cdn.wallpapersafari.com/35/57/iUfZRE.jpg',
+    cover_image: '',
     genre: [],
     is_made_into_film: false,
     is_made_into_series: false,
@@ -102,6 +105,9 @@ const BookSubmit = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    if (formData.cover_image === '' || formData.cover_image === ' ') {
+      formData.cover_image = 'https://cdn.wallpapersafari.com/35/57/iUfZRE.jpg'
+    }
     window.alert(JSON.stringify(formData, null, 2))
     const response = await axios.post('/api/books/', formData)
     console.log(response.data)
@@ -147,6 +153,11 @@ const BookSubmit = () => {
   return (
 
     <Form onSubmit={handleSubmit}>
+      {isModal &&
+        <Modal.Header closeButton>
+          <Modal.Title>Create a New Book</Modal.Title>
+        </Modal.Header>
+      }
       { pageNumber === 0 &&
           <>
             <Form.Group controlId="bookFormPartOne">
@@ -253,10 +264,18 @@ const BookSubmit = () => {
                 {'Enter in format "978-3-16-148410-0"'}
               </Form.Text>
             </Form.Group>
-            <Form.Group>
-              <Button value="2" onClick={handlePageTurnBookForm}>Move to final page</Button>
-              <Button value="0" onClick={handlePageTurnBookForm}>Go Back</Button>
-            </Form.Group>
+            { isModal ?
+              <Modal.Footer>
+                <Button value="2" onClick={handlePageTurnBookForm}>Move to final page</Button>
+                <Button value="0" onClick={handlePageTurnBookForm}>Go Back</Button>
+              </Modal.Footer>
+              :
+              <Form.Group>
+                <Button value="2" onClick={handlePageTurnBookForm}>Move to final page</Button>
+                <Button value="0" onClick={handlePageTurnBookForm}>Go Back</Button>
+              </Form.Group>
+
+            }
           </>
 
       }
@@ -325,13 +344,28 @@ const BookSubmit = () => {
             <Form.Text className="text-muted">
               {'You can select multiple supporting characters'}
             </Form.Text>
-            <Button variant="primary" type="submit">
-      Submit
-            </Button>
-            <Button value="1" onClick={handlePageTurnBookForm}>Go Back</Button>
-            <Form.Text className="text-muted">
-              {'If a character doesn\'t exist, don\'t worry! You can add them to the book later '}
-            </Form.Text>
+            { isModal ?
+
+              <Modal.Footer>
+                <Button variant="primary" type="submit">
+              Submit
+                </Button>
+                <Button value="1" onClick={handlePageTurnBookForm}>Go Back</Button>
+                <Form.Text className="text-muted">
+                  {'If a character doesn\'t exist, don\'t worry! You can add them to the book later '}
+                </Form.Text>
+              </Modal.Footer>
+              :
+              <Form.Group>
+                <Button variant="primary" type="submit">
+              Submit
+                </Button>
+                <Button value="1" onClick={handlePageTurnBookForm}>Go Back</Button>
+                <Form.Text className="text-muted">
+                  {'If a character doesn\'t exist, don\'t worry! You can add them to the book later '}
+                </Form.Text>
+              </Form.Group>
+            }
 
           </>
       }

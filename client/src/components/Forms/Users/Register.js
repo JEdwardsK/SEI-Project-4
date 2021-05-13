@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
+import Modal from 'react-bootstrap/Modal'
 
 
 
@@ -52,33 +53,39 @@ const Register = () => {
   return (
     <>
       <Form onSubmit={handleSubmit}>
-        <Form.Label>Register Form</Form.Label>
-        <Form.Group>
-          <Form.Label>Username</Form.Label>
-          <Form.Control type="text" placeholder="enter your username" name="username" value={formData.value} onChange={handleChange} required/>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="enter your email" name="email"  onChange={handleChange} required/>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="enter your password" name="password"  onChange={handleChange} required/>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Nation</Form.Label>
-          <Select
-            name="nationality"
-            options={nationalityOptions}
-            components={makeAnimated()}
-            onChange={(selected) => handleSelect(selected, 'nationality')}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Password Confirmation</Form.Label>
-          <Form.Control type="password" placeholder="re-enter your password" name="password_confirmation"  onChange={handleChange} required/>
-        </Form.Group>
-        <Button type="submit">Register</Button>
+        <Modal.Header>
+          <Modal.Title>Register Form</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Group>
+            <Form.Label>Username</Form.Label>
+            <Form.Control type="text" placeholder="enter your username" name="username" value={formData.value} onChange={handleChange} required/>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="enter your email" name="email"  onChange={handleChange} required/>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="enter your password" name="password"  onChange={handleChange} required/>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Nation</Form.Label>
+            <Select
+              name="nationality"
+              options={nationalityOptions}
+              components={makeAnimated()}
+              onChange={(selected) => handleSelect(selected, 'nationality')}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Password Confirmation</Form.Label>
+            <Form.Control type="password" placeholder="re-enter your password" name="password_confirmation"  onChange={handleChange} required/>
+          </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button type="submit">Register</Button>
+        </Modal.Footer>
 
       </Form>
     </>
