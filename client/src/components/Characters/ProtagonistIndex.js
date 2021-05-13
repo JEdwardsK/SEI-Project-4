@@ -11,7 +11,7 @@ const ProtagonistIndex = () => {
   const [allProtagonists, setAllProtagonists] = useState(null)
   useEffect(() => {
     const getProtagonists = async () => {
-      const { data } = await axios.get('/api/protagonists')
+      const { data } = await axios.get('/api/protagonists/')
       setAllProtagonists(data)
     }
     getProtagonists()

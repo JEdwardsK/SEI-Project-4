@@ -12,7 +12,7 @@ const AntagonistIndex = () => {
 
   useEffect(() => {
     const getAntagonists = async () => {
-      const { data } = await axios.get('/api/antagonists')
+      const { data } = await axios.get('/api/antagonists/')
       setAllAntagonists(data)
     }
     getAntagonists()

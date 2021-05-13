@@ -37,28 +37,28 @@ const BookSubmit = ( { isModal }) => {
   const history = useHistory()
   useEffect(() => {
     const getAntagonists = async () => {
-      const { data } = await axios.get('/api/antagonists')
+      const { data } = await axios.get('/api/antagonists/')
       setAllAntagonists(data)
     }
     getAntagonists()
   }, [])
   useEffect(() => {
     const getProtagonists = async () => {
-      const { data } = await axios.get('/api/protagonists')
+      const { data } = await axios.get('/api/protagonists/')
       setAllProtagonists(data)
     }
     getProtagonists()
   }, [])
   useEffect(() => {
     const getSupportingCharacters = async () => {
-      const { data } = await axios.get('/api/supporting_characters')
+      const { data } = await axios.get('/api/supporting_characters/')
       setAllSupportingCharacters(data)
     }
     getSupportingCharacters()
   }, [])
   useEffect(() => {
     const getGenres = async () => {
-      const { data } = await axios.get('/api/genres')
+      const { data } = await axios.get('/api/genres/')
       setAllGenres(data)
     }
     getGenres()

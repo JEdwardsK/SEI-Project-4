@@ -8,7 +8,7 @@ const GenreIndex = () => {
 
   useEffect(() => {
     const getGenres = async () => {
-      const { data } = await axios.get('api/genres')
+      const { data } = await axios.get('api/genres/')
       setAllGenres(data)
     }
     getGenres()
