@@ -1,11 +1,10 @@
-/*eslint-disable no-unused-vars */
+
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import BooksCarousel from '../Books/BooksCarousel'
+import BooksCarousel from '../books/BooksCarousel'
 
 const GenreIndex = () => {
   const [allGenres, setAllGenres] = useState(null)
-  const [showBooks, setShowBooks] = useState(false)
 
   useEffect(() => {
     const getGenres = async () => {
@@ -15,10 +14,6 @@ const GenreIndex = () => {
     getGenres()
   },[])
 
-  // const toggleShowBooks = () => {
-  //   setShowBooks(!showBooks)
-  // }
-  //!use bootstraps accordion for collapsing the genres!!
   if (!allGenres) return null
   return (
     <>
@@ -50,15 +45,3 @@ const GenreIndex = () => {
 }
 
 export default GenreIndex
-
-// { showBooks &&
-//   <ul className="book">
-//   {books.map(item => {
-//     const { title, author } = item
-//     <li className='book'>
-//       <img src="http://37signals.com/images/remote/remote_front.png" alt={`the cover for ${title}, by ${author}`}/>
-//     </li>
-//   }
-//     )}
-//   </ul>
-// }

@@ -1,4 +1,4 @@
-/*eslint-disable no-unused-vars */
+
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
@@ -8,17 +8,11 @@ import makeAnimated from 'react-select/animated'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 import Modal from 'react-bootstrap/Modal'
 
 
 
 const CharacterSubmit = ({ characterType }) => {
-  //* the following fields are required for a successful post: first name, character bio, character archetype. first name is a string, bio is a string, archetypes is an array of numbers. these numbers are the ids of the archetypes. a get request will be required for the archetypes and then attribute the value of the data as the id
-
-  //! all fields with a relationship will require a get all request to populate the form and have a value to return in the POST. for example, for character archetypes make a get request to get all, then map it into the form with each being a checkbox or something, with a value= their own id.
-
-  //? any null values must be in the format of an empty string "" or empty array []. do not submit data that is null or undefined it will either throw an error and not work, or work and cause a problem later with rendering info.
 
   //state variables
   const [allArchetypes, setAllArchetypes] = useState(null)
@@ -32,9 +26,6 @@ const CharacterSubmit = ({ characterType }) => {
     character_archetypes: [],
     books: [],
   })
-
-  const [relationshipData, setRelationshipData] = useState('')
-  const [show, setShow] = useState(false)
 
   useEffect(() => {
     const getArchetypes = async () => {
@@ -54,11 +45,8 @@ const CharacterSubmit = ({ characterType }) => {
 
   const handleChange = (event) => {
 
-    const { type, value, name } = event.target
-    console.log(type)
-
-    const newFormData = { ...formData, [event.target.name]: event.target.value }
-    console.log(newFormData)
+    const { value, name } = event.target
+    const newFormData = { ...formData, [name]: value }
     setFormData(newFormData)
   }
 
@@ -78,10 +66,6 @@ const CharacterSubmit = ({ characterType }) => {
     const selection = selected.value
     setFormData({ ...formData, [name]: selection })
   }
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-
 
   if (!allBooks || !allArchetypes) return null
 
@@ -115,11 +99,6 @@ const CharacterSubmit = ({ characterType }) => {
         'Create a New Protagonist' : null
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Create New Character
-      </Button>
-
-      <Modal show={show} onHide={handleClose} centered> */}
       <Form onSubmit={handleSubmit}>
         <Modal.Header closeButton>
           <Modal.Title>{modalFormHeading}</Modal.Title>
@@ -192,17 +171,11 @@ const CharacterSubmit = ({ characterType }) => {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
           <Button variant="primary" type="submit">
             Submit
           </Button>
         </Modal.Footer>
       </Form>
-      {/* </Modal> */}
-
-
     </>
   )
 }

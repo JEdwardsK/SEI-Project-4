@@ -1,23 +1,17 @@
 import './styles/main.scss'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
-
+import Header from './components/sitePages/Header'
+import HomePage from './components/sitePages/HomePage'
+import Footer from './components/sitePages/Footer'
+import Profile from './components/users/Profile'
+import BookShow from './components/books/BookShow'
+import BookIndex from './components/books/BookIndex'
+import ProtagonistIndex from './components/characters/ProtagonistIndex'
+import AntagonistIndex from './components/characters/AntagonistIndex'
+import SupportingCharacterIndex from './components/characters/SupportingCharacterIndex'
+import GenreIndex from './components/genres/GenreIndex'
 //#region imports
-import HomePage from './components/SitePages/HomePage'
-import Header from './components/SitePages/Header'
-import BookIndex from './components/Books/BookIndex'
-import GenreIndex from './components/Genres/GenreIndex'
-import BookShow from './components/Books/BookShow'
-import ProtagonistIndex from './components/Characters/ProtagonistIndex'
-import Footer from './components/SitePages/Footer'
-import AntagonistIndex from './components/Characters/AntagonistIndex'
-import SupportingCharacterIndex from './components/Characters/SupportingCharacterIndex'
-import Profile from './components/Users/Profile'
-import Login from './components/Forms/Users/Login'
-import Register from './components/Forms/Users/Register'
-import BookSubmit from './components/Forms/BookSubmit'
-import ModalTest from './helpers/ModalTest'
-import Search from './components/Forms/Search'
+
 
 
 //#endregion
@@ -29,13 +23,6 @@ const App = () => {
       <BrowserRouter >
         <Header/>
         <Switch>
-          <Route exact path = '/bookform'>
-            <BookSubmit/>
-          </Route>
-          <Route exact path='/create-chars/'>
-            <ModalTest/>
-          </Route>
-
           <Route exact path ='/'>
             <HomePage/>
           </Route>
@@ -48,7 +35,6 @@ const App = () => {
           <Route exact path ='/genres'>
             <GenreIndex/>
           </Route>
-          {/* The three fields below will all use CharacterCard to display the data */}
           <Route exact path ='/protagonists'>
             <ProtagonistIndex/>
           </Route>
@@ -56,26 +42,10 @@ const App = () => {
             <AntagonistIndex/>
           </Route>
           <Route exact path ='/supporting_characters'>
-            <SupportingCharacterIndex/>
+            <SupportingCharacterIndex />
           </Route>
-          {/* Use a : to display either login/register or as sign out button based on a users login status */}
-          <Route exact path ='/login'>
-            <Login/>
-          </Route>
-          <Route exact path ='/register'>
-            <Register/>
-          </Route>
-          {/* once someone has logged in show the profile button in navbar */}
           <Route exact path ='/profile'>
             <Profile/>
-          </Route>
-          {/* If the User is a superUser or admin send them to the auth profile page with additional options */}
-          {/** no need for separate page, can conditionally render on same page based on status
-      <Route exact path ='/profile/auth'>
-      </Route>
-      */}
-          <Route exact path='/search'>
-            <Search />
           </Route>
         </Switch>
         <Footer/>

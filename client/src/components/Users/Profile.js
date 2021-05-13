@@ -26,7 +26,6 @@ const Profile = () => {
     Loading...
     </Button>
   )
-  console.log('🚀 ~ file: Profile.js ~ line 18 ~ Profile ~ user', user)
   const { username, email, date_joined: dateJoined, nationality } = user
   return (
     <>
@@ -48,18 +47,6 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      {/* <div>
-        <h2>Reviews</h2>
-        <p>input reviews here if desired</p>
-      </div>
-      <div>
-        <h2>Recently Viewed</h2>
-        <p> input recently viewed pages using history from local storage?? display using grid or carousel</p>
-      </div>
-      <div>
-        <h2>Completed Searches</h2>
-        <p>enter completed searches here</p>
-      </div> */}
     </>
 
 

@@ -1,4 +1,3 @@
-/*eslint-disable no-unused-vars, indent */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -10,10 +9,10 @@ import Card from 'react-bootstrap/Card'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 
-import Register from '../Forms/Users/Register'
-import Login from '../Forms/Users/Login'
-import BookSubmit from '../Forms/BookSubmit'
-import { ReactComponent as WanShi } from '../../styles/assets/images/wan-shi.svg'
+import BookSubmit from '../forms/BookSubmit'
+import Login from '../forms/users/Login'
+
+
 
 const HomePage = () => {
   const [pageNumber, setPageNumber] = useState(0)
@@ -27,18 +26,15 @@ const HomePage = () => {
   })
 
   const handleChange = (event) => {
-    console.log(event.target.value)
     const newFormData = { ...registerFormData, [event.target.name]: event.target.value }
     setRegisterFormData(newFormData)
-    console.log(registerFormData)
   }
   const handleSubmitRegister = async (event) => {
     event.preventDefault()
     window.alert(JSON.stringify(registerFormData, null, 2))
     handlePageTurn(event)
     try {
-      const response = await axios.post('/api/auth/register/', registerFormData)
-      console.log(response)
+      await axios.post('/api/auth/register/', registerFormData)
     } catch (err) {
       console.log(err.response)
     }
@@ -56,10 +52,9 @@ const HomePage = () => {
   }
 
   const handlePageTurn = (event) => {
-    const { value, name } = event.target
+    const { value } = event.target
     const page = parseInt(value)
     setPageNumber(page)
-    console.log(pageNumber + 1)
   }
   const handleRiddle = (event) => {
     const { value } = event.target
@@ -69,13 +64,10 @@ const HomePage = () => {
 
   const entryPages = [4,7,8,9]
   return (
-      // <Button value="0" onClick={handlePageTurn}>Page One</Button>
     <Card className='trim'>
       <div className="homepage-container secondary">
         <div className="homepage-container-sections-left">
           <div className="homepage-wan-shi-image">
-            {/* <WanShi className="homepage-wan-shi"/> */}
-            {/* <img src="../../styles/assets/images/knowledge_seeker.png" alt="wan-shi"/> */}
           </div>
           <div className="homepage-text">
 
@@ -179,10 +171,10 @@ const HomePage = () => {
           { pageNumber === 0 &&
               <>
 
-                  <Button className= "page-zero-button primary" onClick={handlePageTurn} value="1">Provide a book to the Library</Button>
-                  <Button className= "page-zero-button primary" onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</Button>
-                  <Button className= "page-zero-button primary" onClick={handlePageTurn} value="8">Sneak into the Library</Button>
-                  <Button className= "page-zero-button primary" onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</Button>
+                <Button className= "page-zero-button primary" onClick={handlePageTurn} value="1">Provide a book to the Library</Button>
+                <Button className= "page-zero-button primary" onClick={handlePageTurn} value="6">Prove your Knowledge by Answering a Riddle</Button>
+                <Button className= "page-zero-button primary" onClick={handlePageTurn} value="8">Sneak into the Library</Button>
+                <Button className= "page-zero-button primary" onClick={handlePageTurn} value="5"> {'I\'ve been here before!!'}</Button>
 
               </>
           }
@@ -236,7 +228,7 @@ const HomePage = () => {
           { pageNumber === 3 &&
             <>
               <div className="homepage-container-sections">
-              <BookSubmit isModal={false}/>
+                <BookSubmit isModal={false}/>
               </div>
               <div className="homepage-container-sections buttons-page-0">
                 <Button onClick={handlePageTurn} value="4">Tell him you will talk about it inside after you have settled inside</Button>

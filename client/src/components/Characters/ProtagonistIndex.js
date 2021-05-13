@@ -29,7 +29,6 @@ const ProtagonistIndex = () => {
     Loading...
     </Button>
   )
-  console.log(allProtagonists)
   return (
     <>
       <h1 className='character-header background'>Protagonists</h1>

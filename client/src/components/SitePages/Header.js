@@ -1,40 +1,23 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { userIsAuthenticated } from '../../helpers/auth'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import CharacterSubmit from '../Forms/CharacterSubmit'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form'
-import BookSubmit from '../Forms/BookSubmit'
-import Login from '../Forms/Users/Login'
-import Register from '../Forms/Users/Register'
+
+import CharacterSubmit from '../forms/CharacterSubmit'
+import BookSubmit from '../forms/BookSubmit'
+import Register from '../forms/users/Register'
+import Login from '../forms/users/Login'
+
 
 
 const Header = () => {
   const history = useHistory()
-
-  // const handleNationChange = (event) => {
-  //   console.log('the props>>>>', event.target.checked)
-  //   if (event.target.name === 'toggle') {
-  //     if (userIsAuthenticated() === true){
-  //       console.log('IS AUTHENTICATED HERE IS THE CLASSLIST', document.body.classList)
-  //       if ([...document.body.classList].includes('defaultMode') === true){
-  //         document.body.classList.remove('defaultMode')
-  //         document.body.classList.add(`${localStorage.getItem('nation')}Mode`)
-  //       } else if ([...document.body.classList].includes(`${localStorage.getItem('nation')}Mode`) === true){
-  //         document.body.classList.remove(`${localStorage.getItem('nation')}Mode`)
-  //         document.body.classList.add('defaultMode')
-  //       }
-  //     } else if (userIsAuthenticated() === false){
-  //       console.log('NOT AUTHENTICATED')
-
-  //     }
-  //   }
-
-  // }
-
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     window.localStorage.removeItem('nation')

@@ -1,19 +1,10 @@
-/* eslint-disable no-unused-vars */
-import React, { useState  } from 'react'
-import BooksCarousel from '../Books/BooksCarousel'
+import React from 'react'
 import Card from 'react-bootstrap/Card'
-import Modal from 'react-bootstrap/Modal'
-const CharacterCard = ({ character, characterType }) => {
+const CharacterCard = ({ character }) => {
 
 
-  const { books, character_archetypes: archetypes, first_name: firstName, last_name: lastName, character_bio: bio, relationship_to_protagonist: relationship, quote } = character
-  //* id not used, removed to prevent linter issues, add back when required
-  console.log(archetypes)
-  const [show, setShow] = useState(false)
-  const handleShow = () => setShow(true)
+  const { books, first_name: firstName, last_name: lastName, character_bio: bio, relationship_to_protagonist: relationship, quote } = character
 
-  const handleClose = () => setShow(false)
-  console.log('first>>',books)
   return (
     <Card className='character-card background' style={{ width: 'auto' }}>
       <Card.Header className='secondary'>{`${firstName} ${lastName}`}</Card.Header>
@@ -37,7 +28,7 @@ const CharacterCard = ({ character, characterType }) => {
         </Card.Text>
 
       </Card.Body>
-      {/* <Card.Link  href={`/books/${books[0].id}`}>{books[0].title}</Card.Link> */}
+
       <Card.Footer className='secondary'>
         {'Appears In: '}
 

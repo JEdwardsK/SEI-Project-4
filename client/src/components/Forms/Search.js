@@ -1,14 +1,12 @@
-/*eslint-disable no-unused-vars */
+
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Select from 'react-select'
-import Spinner from 'react-bootstrap/Spinner'
 import Col from 'react-bootstrap/Col'
-import CardDeck from 'react-bootstrap/CardDeck'
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
 import ListGroup from 'react-bootstrap/ListGroup'
@@ -33,9 +31,7 @@ const Search = () => {
     formIsSeries: '',
   })
   const [searchResults, setSearchResults] = useState([])
-  const [genreValues, setGenreValues] = useState([])
   const [show, setShow] = useState(true)
-  const [showResults, setShowResults] = useState(false)
 
   useEffect(() => {
     const getBooks = async () => {
@@ -52,9 +48,6 @@ const Search = () => {
     getGenres()
   },[])
 
-
-
-
   const handleChange = (event) => {
     const { type, name, checked, value } = event.target
     const values = type === 'checkbox'
@@ -63,19 +56,17 @@ const Search = () => {
     setFormData({ ...formData, [name]: values })
   }
 
-  const { formTitle, formAuthor, formIsFilm, formSearchPhrases, formGenres, formFirstName, formLastName, formIsSeries, supporting_characters: supChars, story_overview: synopsis } = formData
+  const { formTitle, formAuthor, formIsFilm, formGenres, formFirstName, formLastName, formIsSeries } = formData
 
   const validBooksSearchArray = []
 
   const handleSubmit = (event) => {
     event.preventDefault()
     setShow(false)
-    console.log(formData)
-    console.log(allBooks[0])
     allBooks.forEach(book => {
       let matchCount = 0
       const results = []
-      const { title, author, is_made_into_film: isFilm, is_made_into_series: isSeries, story_overview: synopsis, genre: genres, supporting_characters: supChars, main_protagonist: protag, main_antagonist: antag } = book
+      const { title, author, is_made_into_film: isFilm, is_made_into_series: isSeries, genre: genres, supporting_characters: supChars, main_protagonist: protag, main_antagonist: antag } = book
       if (formTitle !== '' && title.toLowerCase().includes(formTitle.toLowerCase())) {
         matchCount++
         results.push(title)
@@ -92,30 +83,14 @@ const Search = () => {
         matchCount++
         results.push('Made into tv series')
       }
-      // console.log(genres, story_overview)
-      formSearchPhrases.split(',')
-        .forEach(searchPhrase => {
-          // console.log(synopsis)
-          // if (story_overview.includes(searchPhrase)) matchCount++
-        })
-      // genre is an array of objects with the key genres. so to get to genres you need to genre.
       formGenres.forEach(formGenre => {
-        console.log(formGenre)
         const genreIdArray = genres.map(item=>item.id)
-        console.log(genres)
         const findGenre = genres.find(genre => genre.id = formGenre)
         const genreName = findGenre.genre
-        console.log(findGenre)
         genreIdArray.includes(formGenre) && matchCount++
         results.push(genreName)
 
       })
-      // finesse
-
-      //? check data structure before use main_antagonist
-      //? check data structure before use main_protagonist
-
-      // make sure the for data produces an array of first names and last names. each character checks against the first and last name arrays
       supChars.forEach(char => {
         const name = (`${char.first_name} ${char.last_name}`).trim()
         if (formFirstName !== '' && formFirstName.toLowerCase().includes(char.first_name.toLowerCase()) ) {
@@ -140,7 +115,6 @@ const Search = () => {
       })
 
       antag.forEach(char => {
-        console.log(char.first_name.toLowerCase())
         if (formFirstName !== '' && char.first_name.toLowerCase().includes(formFirstName.toLowerCase())) {
           results.push(char.first_name)
           matchCount++
@@ -151,19 +125,12 @@ const Search = () => {
           results.push(name)
         }
       })
-
-
-
-      // after checking all fields, if the match count is greater than 0, the search has found at least one match. We want to return the books that have matched something
-      console.log(matchCount)
       const filteredResults = [...new Set(results)]
       if (matchCount !== 0) {
         validBooksSearchArray.push({ resultBook: book, searchHits: matchCount, results: filteredResults, bookTitle: title })
       }
     })
-    console.log('🚀 ~ file: Search.js ~ line 69 ~ Search ~ validBooksSearchArray', validBooksSearchArray)
     setSearchResults(validBooksSearchArray)
-    const str = 'lord voldemort'; const substr = 'voldemort'; if (str.includes(substr) )console.log('Found the substring!')
   }
 
   const handleClose = () => setShow(false)
@@ -211,8 +178,6 @@ const Search = () => {
           <Modal.Title>Enter Search Information Below</Modal.Title>
         </Modal.Header>
         <Form className="form search-form" onSubmit={handleSubmit}>
-
-
           <Form.Group controlId="bookFormPartOne">
             <Form.Row>
               <Col>
@@ -302,21 +267,6 @@ const Search = () => {
             <h2 className="search-h2">Search Results: {searchResults.length} matches</h2>
             {searchResults.length === 0 ?
               <p>{'Sorry we\'ve not found a match... please try again'}</p>
-            //       <>
-            //         <Button disabled>
-            //           <Spinner
-            //             as="span"
-            //             animation="border"
-            //             role="status"
-            //             aria-hidden="true"
-            //           />
-            // Loading...
-            //         </Button>
-            //       </> :
-            // <>
-            //   <p>{'if we\'ve found the book you were looking for, click on it below'}</p>
-            //   {console.log('validBooksSearchArray', searchResults)}
-            //   < className="books-index-container" >
               : <div className="book-search-container">
                 {searchResults
                   .sort((a, b) => b.searchHits - a.searchHits)
@@ -364,8 +314,6 @@ const Search = () => {
             </Button>
           </>
         }
-
-
       </section>
 
     </>

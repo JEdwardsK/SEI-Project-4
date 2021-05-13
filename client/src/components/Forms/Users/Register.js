@@ -1,4 +1,3 @@
-/*eslint-disable no-unused-vars */
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
@@ -21,19 +20,14 @@ const Register = () => {
   })
 
   const handleChange = (event) => {
-    console.log(event.target.value)
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     setFormData(newFormData)
-    console.log(formData)
   }
   const handleSubmit = async (event) => {
     event.preventDefault()
-    window.alert(JSON.stringify(formData, null, 2))
     try {
-      const response = await axios.post('/api/auth/register/', formData)
-      console.log(response)
+      await axios.post('/api/auth/register/', formData)
       history.push('/login')
-      console.log('SETTING LOCAL STORAGE>>>>>>', formData.nationality)
       localStorage.setItem('nation', formData.nationality )
     } catch (err) {
       console.log(err.response)

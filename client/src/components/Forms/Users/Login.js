@@ -18,7 +18,6 @@ const Login = () => {
   const handleChange = (event) => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     setFormData(newFormData)
-    console.log(formData)
   }
 
   const handleSubmit = async (event) => {

@@ -30,7 +30,6 @@ const AntagonistIndex = () => {
     Loading...
     </Button>
   )
-  console.log('the data>>>>', allAntagonists)
   return (
     <>
       <h1 className='character-header background'>Antagonists</h1>
