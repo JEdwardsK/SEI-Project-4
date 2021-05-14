@@ -85,8 +85,8 @@ const Header = () => {
         </>
           }
           <Form className='form-styling ' inline>
-            <FormControl type="text" placeholder="Search for a Book" className=" mr-sm-2" />
-            <Button type="submit">Submit</Button>
+            <FormControl type="text" placeholder="Search for a Book (WIP)" className=" mr-sm-2" />
+            <Button style={{ cursor: 'not-allowed' }} type="button">Submit</Button>
           </Form>
         </Nav>
       </Navbar>
