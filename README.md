@@ -326,7 +326,7 @@ The idea was as the user contributed more to the site, their profile image would
 Alternatively, the user would be able to select from a number of different images as their profile
 
 <div styles="display:flex, flex-wrap:wrap">
-    <img width="(1/3)%" src="./client/src/styles/assets/images/avatar.svg" alt="index page for earth mode" />
+    <img width="30%" src="./client/src/styles/assets/images/avatar.svg" alt="index page for earth mode" />
     <img width="(1/3)%" src="./client/src/styles/assets/images/avatar 4.svg" alt="index page for earth mode" />
     <img width="(1/3)%" src="./client/src/styles/assets/images/avatar-3.svg" alt="index page for earth mode" />
     <img width="(1/3)%" src="./client/src/styles/assets/images/wan-shi.svg" alt="index page for earth mode" />
