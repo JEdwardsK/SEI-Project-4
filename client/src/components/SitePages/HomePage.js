@@ -61,7 +61,7 @@ const HomePage = () => {
     setRiddleAnswer(answer)
   }
 
-  const entryPages = [4,7,8,9]
+  const entryPages = [8,9]
   return (
     <Card className='trim'>
       <div className="homepage-container secondary">
