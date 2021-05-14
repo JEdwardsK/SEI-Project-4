@@ -336,10 +336,16 @@ Alternatively, the user would be able to select from a number of different image
 
 I mocked up an idea for the homepage's design. Below are some of the page designs, next to the end result
 
-<img src="./client/src/styles/assets/images/avatar 2.svg" alt="index page for earth mode" />
-<img src="./client/src/styles/assets/images/tribe-homepage.svg" alt="index page for earth mode" />
-<img src="./client/src/styles/assets/images/riddle.svg" alt="index page for earth mode" />
-<img src="./client/src/styles/assets/images/register.svg" alt="index page for earth mode" />
+<div styles="display:flex, flex-wrap:wrap">
+  <img width="47%" src="./client/src/styles/assets/images/avatar 2.svg" alt="mockup homepage enter" />
+  <img width="50%" src="./readme/registerhome.png" alt="screenshot homepage enter" />
+  <img width="47%" src="./client/src/styles/assets/images/tribe-homepage.svg" alt="nation select mockup" />
+  <img width="50%" src="./readme/nation.png" alt="screenshot nation register" />
+  <img width="47%" src="./client/src/styles/assets/images/riddle.svg" alt="riddle mockup" />
+  <img width="50%" src="./readme/riddle.png" alt="index page for earth mode" />
+  <img width="47%" src="./client/src/styles/assets/images/register.svg" alt="mockup registration homepage" />
+  <img width="50%" src="./readme/registerhome.png" alt="registration home screenshot" />
+</div>
 
 The intent was to have the user's profile image set dependant on their nation, however this functionality wasn't completed in time
 
