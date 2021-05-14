@@ -330,9 +330,9 @@ Alternatively, the user would be able to select from a number of different image
     <img width="30%" src="./client/src/styles/assets/images/knowledge_seeker.svg" alt="index page for earth mode" />
     <img width="30%" src="./client/src/styles/assets/images/untitled(4).svg" alt="index page for earth mode" />
 </div>
-
-I mocked up an idea for the homepage's design. Below are some of the page designs, next to the end result
-
+<br>
+I also mocked up an idea for the homepage's design. Below are some of the page designs, next to the end result
+<br>
 <div styles="display:flex, flex-wrap:wrap">
   <img width="47%" src="./client/src/styles/assets/images/avatar 2.svg" alt="mockup homepage enter" />
   <img width="50%" src="./readme/registerhome.png" alt="screenshot homepage enter" />
