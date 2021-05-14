@@ -79,6 +79,13 @@ h1 {
   justify-content: center;
 }
 
+.homepage-container-sections.riddle-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  button {
+    margin: 10px;
+  }
+}
 
 //? /////////////// BOOK INDEX PAGE STYLYING - LAYOUT
 
