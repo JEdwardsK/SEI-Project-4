@@ -284,29 +284,29 @@ To meet this design style we attempted three things:
 
 The font was found through a online search. For the theme toggle. the document body was assigned a class `defaultMode`. when the user signed in, their nation (water, earth, fire, air) would be assigned to local storage. a function `setColourByNation()` would then check local storage, remove the class `defaultMode` and apply the class `{nation}Mode`.
 
-<div styles="display:flex; flex-wrap:wrap" width="600">
+<div styles="display:flex; flex-wrap:wrap">
   <figure>
-  <img src="./readme/watermode.png" alt="index page for water mode" width="300" />
+  <img src="./readme/watermode.png" alt="index page for water mode" width="50%">
   <figcaption>
     <small>water mode theme</small>
   </figcaption>
   </figure>
 
   <figure>
-  <img src="./readme/earthmode.png" alt="index page for earth mode" width="300" />
+  <img src="./readme/earthmode.png" alt="index page for earth mode" width="50%">
   <figcaption>
    <small>earth mode theme</small>
   </figcaption>
   </figure>
 
   <figure>
-  <img src="./readme/firemode.png" alt="index page for fire mode" width="300" />
+  <img src="./readme/firemode.png" alt="index page for fire mode" width="50%">
   <figcaption>
     <small>fire mode theme</small>
   </figcaption>
   </figure>
   <figure>
-  <img src="./readme/airmode.png" alt="index page for air mode" width="300" />
+  <img src="./readme/airmode.png" alt="index page for air mode" width="50%">
   <figcaption>
     <small>air mode theme</small>
   </figcaption>
