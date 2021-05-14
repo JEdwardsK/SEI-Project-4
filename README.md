@@ -285,7 +285,7 @@ To meet this design style we attempted three things:
 The font was found through a online search. For the theme toggle. the document body was assigned a class `defaultMode`. when the user signed in, their nation (water, earth, fire, air) would be assigned to local storage. a function `setColourByNation()` would then check local storage, remove the class `defaultMode` and apply the class `{nation}Mode`.
 
 <div styles="display:flex; flex-wrap:wrap" width="600">
-  <figure>
+  <figure styles="display:flex">
   <img src="./readme/watermode.png" alt="index page for water mode" width="300" />
   <figcaption>
     <small>water mode theme</small>
