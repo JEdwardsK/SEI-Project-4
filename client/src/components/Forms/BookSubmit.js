@@ -77,7 +77,6 @@ const BookSubmit = ( { isModal }) => {
     if (formData.cover_image === '' || formData.cover_image === ' ') {
       formData.cover_image = 'https://cdn.wallpapersafari.com/35/57/iUfZRE.jpg'
     }
-    window.alert(JSON.stringify(formData, null, 2))
     const response = await axios.post('/api/books/', formData)
     const postedBookID = response.data.id
     history.push(`/books/${postedBookID}`)

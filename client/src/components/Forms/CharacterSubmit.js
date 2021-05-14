@@ -57,7 +57,6 @@ const CharacterSubmit = ({ characterType }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    window.alert(JSON.stringify(formData, null, 2))
     await axios.post(`/api/${characterType}/`, formData)
 
   }

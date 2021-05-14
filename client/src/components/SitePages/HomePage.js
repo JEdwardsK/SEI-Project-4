@@ -31,7 +31,6 @@ const HomePage = () => {
   }
   const handleSubmitRegister = async (event) => {
     event.preventDefault()
-    window.alert(JSON.stringify(registerFormData, null, 2))
     handlePageTurn(event)
     try {
       await axios.post('/api/auth/register/', registerFormData)
