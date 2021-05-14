@@ -350,11 +350,13 @@ The intent was to have the user's profile image set dependant on their nation, h
 
 ### Wins/ Challenges
 
-Working on the project had a few challenges. Hardware issues meant losing connections to the psql databases occasionally. I had also setup the backend with Python 3.9, not realising that my partner had not updated from Python 3.8 installed instead
+Working on the project had a few challenges. Hardware issues meant losing connections to the psql databases occasionally. I had also setup the backend with Python 3.9, not realising that my partner had not updated from Python 3.8 installed instead. 
 
 Working with the search form, I felt that it could have been written in a more efficient manner, possibly through regex. Initially I wanted to handle it through a backend request, but couldn't work out how to do so. I also hadn't worked with svgs before.
 
-Overall the project was good at solidifying some of the knowledge using django, whilst highlighting areas to expand knowledge and skills.### Known Errors
+Overall the project was good at solidifying some of the knowledge using django, whilst highlighting areas to expand knowledge and skills.
+
+### Known Errors
 
 - Font works on Chrome but not Firefox
 - Theme change works on chrome, hit and miss on Firefox
