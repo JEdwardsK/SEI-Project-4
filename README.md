@@ -10,7 +10,7 @@ The goal of this project was to create a full stack application. The requirement
 3) CRUD Functionality
 
 [<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/homepage.png">](http://project-book-finder.herokuapp.com/)
-><small> Link to deployed app</small>
+><small> Click the image to link to the deployed app</small>
 
 Team Members
 
@@ -19,7 +19,7 @@ George Shaw
 ## Installing / Getting started
 ### Development
 
-When forking/cloning the repo, a yarn and yarn start should start up the app's frontend
+If forking/cloning the repo, a yarn and yarn start should start up the app's frontend
 
 ```shell
 $ cd client;
@@ -34,7 +34,7 @@ $ pipenv run seedall; pipenv run serve
 ```
 ### Main
 
-If working from the main branch the front and backend are connected
+If working from the main branch the front and backend run on the same server.
 
 ```shell
 $ pipenv run seedall; pipenv run serve
@@ -87,6 +87,8 @@ Stretch Goals:
 - User can
 
 ### Functionality
+
+I was responsible for generating the backend. I also handled the frontend search form
 #### CRUD
 
 Create
@@ -99,16 +101,10 @@ Read
 - Requests are sent to get data from the database to render on the site
 
 Update
+- Books can be updated by registered users (not implemented fronted)
 
 
-Delete
-
-
-#### Personal Responsibilities
-
-I was responsible for generating the backend. I also handled the frontend search form
-
-#### Backend
+#### Personal Responsibilities - Backend
 
 The books had the following model
 
@@ -190,7 +186,7 @@ class User(AbstractUser):
 ```
 
 
-##### Frontend
+#### Personal Responsibility - Frontend
 
 For the search form, the user would fill out the displayed form which was saved to state. Clicking submit would run the user through `handleSubmit()`.
 
@@ -272,9 +268,36 @@ const handleSubmit = (event) => {
     setSearchResults(validBooksSearchArray)
   }
 ```
+
+I also wrote some scripts to handle things like flushing and reseeding the database
+
+```
+[scripts]
+flush = "python manage.py flush"
+
+seedall = "python manage.py loaddata jwt_auth/seeds.json archetypes/seeds.json genres/seeds.json supporting_characters/seeds.json protagonists/seeds.json antagonists/seeds.json reviews/seeds.json books/seeds.json"
+
+mm = "python manage.py makemigrations"
+
+migrate = "python manage.py migrate"
+
+serve = "python manage.py runserver"
+
+dump_jwt_auth = "python manage.py dumpdata jwt_auth --output jwt_auth/seeds.json --indent=2"
+dump_archetype = "python manage.py dumpdata archetypes --output archetypes/seeds.json --indent=2"
+dump_genres = "python manage.py dumpdata genres --output genres/seeds.json --indent=2"
+dump_supporting_characters ="python manage.py dumpdata supporting_characters --output supporting_characters/seeds.json --indent=2"
+dump_protagonists = "python manage.py dumpdata protagonists --output protagonists/seeds.json --indent=2"
+dump_antagonists = "python manage.py dumpdata antagonists --output antagonists/seeds.json --indent=2"
+dump_books = "python manage.py dumpdata books --output books/seeds.json --indent=2"
+dump_reviews = "python manage.py dumpdata reviews --output reviews/seeds.json --indent=2"
+```
+
+
+
 ### Design
 
-The design was a theme based on Avatar: the Last Airbender. The database is  meant to emulate Wan-Shi-Tong's Spirit Library from season two of the tv series.
+The design was a theme based on Avatar: the Last Airbender. The database is  meant to emulate Wan Shi Tong's Spirit Library from season two of the tv series.
 
 To meet this design style we attempted three things:
 
@@ -282,7 +305,9 @@ To meet this design style we attempted three things:
 2) Logos and icons based on characters from the show
 3) Toggling the colour scheme based on the users nation
 
-The font was found through a online search. For the theme toggle. the document body was assigned a class `defaultMode`. when the user signed in, their nation (water, earth, fire, air) would be assigned to local storage. a function `setColourByNation()` would then check local storage, remove the class `defaultMode` and apply the class `{nation}Mode`.
+I was responsible for the design of the homepage and the character icons. The font was found through a online search.
+
+For the theme toggle, the document body was assigned a class `defaultMode`. when the user signed in, their nation (water, earth, fire, air) would be assigned to local storage. a function `setColourByNation()` would then check local storage, remove the class `defaultMode` and apply the class `{nation}Mode`. The result is displayed below
 
 <div styles="display:flex; flex-wrap:wrap">
   <img src="./readme/watermode.png" alt="index page for water mode" width="50%">
@@ -292,8 +317,14 @@ The font was found through a online search. For the theme toggle. the document b
 
 </div>
 
-#### Personal Responsibilities
-I was responsible for the design of the homepage and the character icons. For the icons I made some svgs
+#### Personal Responsibilities - Character Icons
+
+For the icons i designed some svgs. The idea was that there would be an icon set as the profile image based on their nationality. Admin users would have either a Knowledge Seeker (the fox/dog with the book) or Wan Shi Tong. The elemental nations would have a corresponding character svg relating to their nation (displayed below is Toph for earth and Aang for air).
+
+The idea was as the user contributed more to the site, their profile image would change in colour or detail.
+
+Alternatively, the user would be able to select from a number of different images as their profile
+
 <img src="./client/src/styles/assets/images/avatar.svg" alt="index page for earth mode" />
 <img src="./client/src/styles/assets/images/avatar 4.svg" alt="index page for earth mode" />
 <img src="./client/src/styles/assets/images/avatar-3.svg" alt="index page for earth mode" />
@@ -301,27 +332,42 @@ I was responsible for the design of the homepage and the character icons. For th
 <img src="./client/src/styles/assets/images/knowledge_seeker.svg" alt="index page for earth mode" />
 <img src="./client/src/styles/assets/images/untitled(4).svg" alt="index page for earth mode" />
 
-I mocked up an idea for the homepage's design
+I mocked up an idea for the homepage's design. Below are some of the page designs
+
 <img src="./client/src/styles/assets/images/avatar 2.svg" alt="index page for earth mode" />
 <img src="./client/src/styles/assets/images/tribe-homepage.svg" alt="index page for earth mode" />
 <img src="./client/src/styles/assets/images/riddle.svg" alt="index page for earth mode" />
 <img src="./client/src/styles/assets/images/register.svg" alt="index page for earth mode" />
 
-### Known Errors
-
-- Font works on Chrome but not Firefox
-- Theme change works on chrome, hit and miss on Firefox
-
-### Future Improvements
-
-
-#### Additional Features
-
-
-#### Edits and Updates/Fixes
+The intent was to have the user's profile image set dependant on their nation, however this functionality wasn't completed in time
 
 ## Learning Outcomes
 
 ### Wins/ Challenges
 
-### Wallkthrough
+Working on the project had a few challenges. Hardware issues meant losing connections to the psql databases occasionally. I had also setup the backend with Python 3.9, not realising that my partner had not updated from Python 3.8 installed instead
+
+Working with the search form, I felt that it could have been written in a more efficient manner, possibly through regex. Initially I wanted to handle it through a backend request, but couldn't work out how to do so. I also hadn't worked with svgs before.
+
+Overall the project was good at solidifying some of the knowledge using django, whilst highlighting areas to expand knowledge and skills.### Known Errors
+
+- Font works on Chrome but not Firefox
+- Theme change works on chrome, hit and miss on Firefox
+
+## Future Improvements
+### Additional Features
+- a forum style user to user interaction, where users can post and reply to search questions rather than looking in database
+- an onboarding path implementing the `is_first_login` field for users first login
+- an onboarding path for book/ character creation
+- an index page of incomplete books for users to navigate to and complete
+
+### Edits and Updates/Fixes
+- implement edit and delete routes in the front end
+- fix styling elements
+- update to include more responsive design
+- fix Firefox issues
+- bookShow page broken on deployment
+
+
+## Walkthrough
+
