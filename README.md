@@ -1,6 +1,3 @@
-
-
-
 # <img src="./client/src/styles/assets/images/knowledge_seeker.svg" alt="index page for earth mode" width=50/>BookFinder<img src="./client/src/styles/assets/images/knowledge_seeker.svg" alt="index page for earth mode" width=50/>
 > SEI Project 4 - A full stack Django App
 
@@ -14,7 +11,7 @@ The goal of this project was to create a full stack application. The requirement
 
 Team Members
 
-George Shaw
+George Shaw [<img src="./readme/github.png" width="25">](https://github.com/Gs742) [<img src="./readme/linkedin.png" width="31.5">](https://www.linkedin.com/in/georgeshaw1998)
 
 ## Installing / Getting started
 ### Development
