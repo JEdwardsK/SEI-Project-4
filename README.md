@@ -375,7 +375,3 @@ Overall the project was good at solidifying some of the knowledge using django, 
 - update to include more responsive design
 - fix Firefox issues
 - bookShow page broken on deployment
-
-
-## Walkthrough
-
