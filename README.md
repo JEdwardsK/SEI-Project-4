@@ -310,10 +310,10 @@ I was responsible for the design of the homepage and the character icons. The fo
 For the theme toggle, the document body was assigned a class `defaultMode`. when the user signed in, their nation (water, earth, fire, air) would be assigned to local storage. a function `setColourByNation()` would then check local storage, remove the class `defaultMode` and apply the class `{nation}Mode`. The result is displayed below
 
 <div styles="display:flex; flex-wrap:wrap">
-  <img src="./readme/watermode.png" alt="index page for water mode" width="50%">
-  <img src="./readme/earthmode.png" alt="index page for earth mode" width="50%">
-  <img src="./readme/firemode.png" alt="index page for fire mode" width="50%">
-  <img src="./readme/airmode.png" alt="index page for air mode" width="50%">
+  <img src="./readme/watermode.png" alt="index page for water mode" width="49%">
+  <img src="./readme/earthmode.png" alt="index page for earth mode" width="49%">
+  <img src="./readme/firemode.png" alt="index page for fire mode" width="49%">
+  <img src="./readme/airmode.png" alt="index page for air mode" width="49%">
 
 </div>
 
@@ -325,14 +325,16 @@ The idea was as the user contributed more to the site, their profile image would
 
 Alternatively, the user would be able to select from a number of different images as their profile
 
-<img src="./client/src/styles/assets/images/avatar.svg" alt="index page for earth mode" />
-<img src="./client/src/styles/assets/images/avatar 4.svg" alt="index page for earth mode" />
-<img src="./client/src/styles/assets/images/avatar-3.svg" alt="index page for earth mode" />
-<img src="./client/src/styles/assets/images/wan-shi.svg" alt="index page for earth mode" />
-<img src="./client/src/styles/assets/images/knowledge_seeker.svg" alt="index page for earth mode" />
-<img src="./client/src/styles/assets/images/untitled(4).svg" alt="index page for earth mode" />
+<div styles="display:flex, flex-wrap:wrap">
+    <img width="30%" src="./client/src/styles/assets/images/avatar.svg" alt="index page for earth mode" />
+    <img width="30%" src="./client/src/styles/assets/images/avatar 4.svg" alt="index page for earth mode" />
+    <img width="30%" src="./client/src/styles/assets/images/avatar-3.svg" alt="index page for earth mode" />
+    <img width="30%" src="./client/src/styles/assets/images/wan-shi.svg" alt="index page for earth mode" />
+    <img width="30%" src="./client/src/styles/assets/images/knowledge_seeker.svg" alt="index page for earth mode" />
+    <img width="30%" src="./client/src/styles/assets/images/untitled(4).svg" alt="index page for earth mode" />
+</div>
 
-I mocked up an idea for the homepage's design. Below are some of the page designs
+I mocked up an idea for the homepage's design. Below are some of the page designs, next to the end result
 
 <img src="./client/src/styles/assets/images/avatar 2.svg" alt="index page for earth mode" />
 <img src="./client/src/styles/assets/images/tribe-homepage.svg" alt="index page for earth mode" />
