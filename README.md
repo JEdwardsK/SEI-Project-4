@@ -69,6 +69,7 @@ The idea of the app is to have a user generated database that can be populated a
 
 We started by splitting up the tasks required, using Trello for project management.
 
+<img width="1423" alt="Screenshot of homepage" src="./readme/Trello-project-4.png">
 
 MVP Goals:
 - Users can view books whilst unregistered
