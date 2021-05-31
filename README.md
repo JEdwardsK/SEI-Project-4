@@ -315,6 +315,8 @@ For the theme toggle, the document body was assigned a class `defaultMode`. when
 
 </div>
 
+The two book animations used on hover were from [Willian Ribeiro](https://codepen.io/willianribeiro/pen/mBrLwZ?editors=0100) and [Rafael](https://codepen.io/rafaelrinaldi/pen/LEYyKZ)
+
 #### Personal Responsibilities - Character Icons
 
 For the icons I designed some SVGs. The idea was that there would be an icon set as the profile image based on their nationality. Admin users would have either a Knowledge Seeker (the fox/dog with the book) or Wan Shi Tong. The elemental nations would have a corresponding character svg relating to their nation (displayed below is Toph for earth and Aang for air).
