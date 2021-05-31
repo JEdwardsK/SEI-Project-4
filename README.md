@@ -315,6 +315,7 @@ For the theme toggle, the document body was assigned a class `defaultMode`. when
 
 </div>
 
+
 The two book animations used on hover were from [Willian Ribeiro](https://codepen.io/willianribeiro/pen/mBrLwZ?editors=0100) and [Rafael](https://codepen.io/rafaelrinaldi/pen/LEYyKZ)
 
 #### Personal Responsibilities - Character Icons
@@ -363,6 +364,7 @@ Overall the project was good at solidifying some of the knowledge using django, 
 
 - Font works on Chrome but not Firefox
 - Theme change works on chrome, hit and miss on Firefox
+- bookShow page page not working
 
 ## Future Improvements
 ### Additional Features
