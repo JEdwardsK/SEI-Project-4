@@ -364,7 +364,7 @@ Overall the project was good at solidifying some of the knowledge using django, 
 
 - Font works on Chrome but not Firefox
 - Theme change works on chrome, hit and miss on Firefox
-- bookShow page page not working
+- ~~bookShow page page not working~~ (FIXED)
 
 ## Future Improvements
 ### Additional Features
