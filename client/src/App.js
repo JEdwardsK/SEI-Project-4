@@ -10,6 +10,7 @@ import ProtagonistIndex from './components/characters/ProtagonistIndex'
 import AntagonistIndex from './components/characters/AntagonistIndex'
 import SupportingCharacterIndex from './components/characters/SupportingCharacterIndex'
 import GenreIndex from './components/genres/GenreIndex'
+import Search from './components/forms/Search'
 //#region imports
 
 
@@ -34,6 +35,9 @@ const App = () => {
           </Route>
           <Route exact path ='/genres'>
             <GenreIndex/>
+          </Route>
+          <Route exact path='/search'>
+            <Search/>
           </Route>
           <Route exact path ='/protagonists'>
             <ProtagonistIndex/>

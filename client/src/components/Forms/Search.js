@@ -10,14 +10,14 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
 import ListGroup from 'react-bootstrap/ListGroup'
-import { genreFormOptions } from '../../helpers/helperFunctions'
+import { genreFormOptions, setColourByNation } from '../../helpers/helperFunctions'
 import makeAnimated from 'react-select/animated'
 
 
 
 
 const Search = () => {
-
+  setColourByNation()
   const [allBooks, setAllBooks] = useState(null)
   const [allGenres, setAllGenres] = useState(null)
   const [formData, setFormData] = useState({
@@ -228,9 +228,6 @@ const Search = () => {
               <Form.Group>
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control type="text" placeholder="What is their last name" name="formLastName" value={formData.formLastName} onChange={handleChange}/>
-                <Form.Text className="text-muted">
-                  {'input user message'}
-                </Form.Text>
               </Form.Group>
             </Col>
           </Form.Group>
