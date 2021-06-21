@@ -13,7 +13,7 @@ const BookShow = () => {
 
   useEffect(() => {
     const getSingleBook = async () => {
-      const { data } = await axios.get(`/api/books/${bookID}`)
+      const { data } = await axios.get(`/api/books/${bookID}/`)
       setSingleBook(data)
     }
     getSingleBook()
