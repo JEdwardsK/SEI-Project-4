@@ -6,24 +6,24 @@ The goal of this project was to create a full stack application. The requirement
 2) Consume your API with a separate front end built with ReactJS
 3) CRUD Functionality
 
-[<img width="1423" alt="Screenshot 2021-05-07 at 14 19 11" src="./readme/homepage.png">](http://project-book-finder.herokuapp.com/)
+[<img width="1423" alt="Screenshot of homepage" src="./readme/homepage.png">](http://project-book-finder.herokuapp.com/)
 ><small> Click the image to link to the deployed app</small>
 
 Team Members
 
-George Shaw [<img src="./readme/github.png" width="25">](https://github.com/Gs742) [<img src="./readme/linkedin.png" width="31.5">](https://www.linkedin.com/in/georgeshaw1998)
+George Shaw [<img src="./readme/github.png" alt="github logo" width="25">](https://github.com/Gs742) [<img src="./readme/linkedin.png" alt="linkedin logo" width="31.5">](https://www.linkedin.com/in/georgeshaw1998)
 
 ## Installing / Getting started
 ### Development
 
-If forking/cloning the repo, a yarn and yarn start should start up the app's frontend
+If forking/cloning the repo, a yarn and yarn start should start up the app's frontend:
 
 ```shell
 $ cd client;
 $ yarn; yarn start
 ```
 
-For the backend, the database needs to be seeded and started.
+For the backend, the database needs to be seeded and started:
 
 ```shell
 $ cd backend;
@@ -31,7 +31,7 @@ $ pipenv run seedall; pipenv run serve
 ```
 ### Main
 
-If working from the main branch the front and backend run on the same server.
+If working from the main branch the front and backend run on the same server:
 
 ```shell
 $ pipenv run seedall; pipenv run serve
@@ -51,7 +51,7 @@ $ pipenv run seedall; pipenv run serve
 - bootstrap
 - http-proxy-middleware
 - react-bootstrap
--  react-router-dom
+- react-router-dom
 
 ### Backend
 
@@ -69,6 +69,7 @@ The idea of the app is to have a user generated database that can be populated a
 
 We started by splitting up the tasks required, using Trello for project management.
 
+<img width="1423" alt="Screenshot of homepage" src="./readme/Trello-project-4.png">
 
 MVP Goals:
 - Users can view books whilst unregistered
@@ -85,7 +86,7 @@ Stretch Goals:
 
 ### Functionality
 
-I was responsible for generating the backend. I also handled the frontend search form
+I was responsible for generating the backend. I also handled the frontend search form.
 #### CRUD
 
 Create
@@ -98,12 +99,12 @@ Read
 - Requests are sent to get data from the database to render on the site
 
 Update
-- Books can be updated by registered users (not implemented fronted)
+- Books can be updated by registered users (not implemented frontend)
 
 
 #### Personal Responsibilities - Backend
 
-The books had the following model
+The books had the following model:
 
 ```python
 class Book(models.Model):
@@ -130,7 +131,7 @@ The Antagonists, Protagonists, and Supporting Characters had the following relat
 - Books - ManytoMany
 - Archetypes - ManytoMany
 
-The models for each of the characters types were similar except for particular fields. For example, the antagonist has a field `relationship_to_protagonist`, whereas the antagonist and protagonist have `quotes`. The model for the supporting characters is shown below
+The models for each of the characters types were similar except for particular fields. For example, the antagonist has a field `relationship_to_protagonist`, whereas the antagonist and protagonist have `quotes`. The model for the supporting characters is shown below:
 
 ```python
 class SupportingCharacter(models.Model):
@@ -162,7 +163,7 @@ class SupportingCharacter(models.Model):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 ```
-The users have the following model
+The users have the following model:
 
 ```python
 class User(AbstractUser):
@@ -189,7 +190,7 @@ For the search form, the user would fill out the displayed form which was saved 
 
 The function takes each of the criteria and checks each book in the database if it is included. There is a running counter variable `matchCount`. If there is a match `matchCount++`.
 
-After all the searches are complete, the function compiles an array of books where `matchCount > 0`. This is then sorted by the `matchCount` and displayed to the user as 'Search Hits'.
+After all the searches are complete, the function compiles an array of books where `matchCount > 0`. This is then sorted by the `matchCount` and displayed to the user as 'Search Hits':
 
 ```javascript
 const handleSubmit = (event) => {
@@ -266,7 +267,7 @@ const handleSubmit = (event) => {
   }
 ```
 
-I also wrote some scripts to handle things like flushing and reseeding the database
+I also wrote some scripts to handle things like flushing and reseeding the database:
 
 ```
 [scripts]
@@ -304,7 +305,7 @@ To meet this design style we attempted three things:
 
 I was responsible for the design of the homepage and the character icons. The font was found through a online search.
 
-For the theme toggle, the document body was assigned a class `defaultMode`. when the user signed in, their nation (water, earth, fire, air) would be assigned to local storage. a function `setColourByNation()` would then check local storage, remove the class `defaultMode` and apply the class `{nation}Mode`. The result is displayed below
+For the theme toggle, the document body was assigned a class `defaultMode`. when the user signed in, their nation (water, earth, fire, air) would be assigned to local storage. a function `setColourByNation()` would then check local storage, remove the class `defaultMode` and apply the class `{nation}Mode`. The result is displayed below:
 
 <div styles="display:flex; flex-wrap:wrap">
   <img src="./readme/watermode.png" alt="index page for water mode" width="49%">
@@ -314,13 +315,16 @@ For the theme toggle, the document body was assigned a class `defaultMode`. when
 
 </div>
 
+
+The two book animations used on hover were from [Willian Ribeiro](https://codepen.io/willianribeiro/pen/mBrLwZ?editors=0100) and [Rafael](https://codepen.io/rafaelrinaldi/pen/LEYyKZ)
+
 #### Personal Responsibilities - Character Icons
 
-For the icons i designed some svgs. The idea was that there would be an icon set as the profile image based on their nationality. Admin users would have either a Knowledge Seeker (the fox/dog with the book) or Wan Shi Tong. The elemental nations would have a corresponding character svg relating to their nation (displayed below is Toph for earth and Aang for air).
+For the icons I designed some SVGs. The idea was that there would be an icon set as the profile image based on their nationality. Admin users would have either a Knowledge Seeker (the fox/dog with the book) or Wan Shi Tong. The elemental nations would have a corresponding character svg relating to their nation (displayed below is Toph for earth and Aang for air).
 
 The idea was as the user contributed more to the site, their profile image would change in colour or detail.
 
-Alternatively, the user would be able to select from a number of different images as their profile
+Alternatively, the user would be able to select from a number of different images as their profile:
 
 <div styles="display:flex, flex-wrap:wrap">
     <img width="30%" src="./client/src/styles/assets/images/avatar.svg" alt="index page for earth mode" />
@@ -331,7 +335,7 @@ Alternatively, the user would be able to select from a number of different image
     <img width="30%" src="./client/src/styles/assets/images/untitled(4).svg" alt="index page for earth mode" />
 </div>
 <br>
-I also mocked up an idea for the homepage's design. Below are some of the page designs, next to the end result
+I also mocked up an idea for the homepage's design. Below are some of the page designs, next to the end result:
 <br>
 <div styles="display:flex, flex-wrap:wrap">
   <img width="47%" src="./client/src/styles/assets/images/avatar 2.svg" alt="mockup homepage enter" />
@@ -344,7 +348,7 @@ I also mocked up an idea for the homepage's design. Below are some of the page d
   <img width="50%" src="./readme/registerhome.png" alt="registration home screenshot" />
 </div>
 
-The intent was to have the user's profile image set dependant on their nation, however this functionality wasn't completed in time
+The intent was to have the user's profile image set dependant on their nation, however this functionality wasn't completed in time.
 
 ## Learning Outcomes
 
@@ -360,6 +364,7 @@ Overall the project was good at solidifying some of the knowledge using django, 
 
 - Font works on Chrome but not Firefox
 - Theme change works on chrome, hit and miss on Firefox
+- bookShow page page not working
 
 ## Future Improvements
 ### Additional Features
