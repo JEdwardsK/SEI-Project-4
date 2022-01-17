@@ -6,8 +6,8 @@ The goal of this project was to create a full stack application. The requirement
 2) Consume your API with a separate front end built with ReactJS
 3) CRUD Functionality
 
-[<img width="1423" alt="Screenshot of homepage" src="./readme/homepage.png">](http://project-book-finder.herokuapp.com/)
-><small> Click the image to link to the deployed app</small>
+<img width="1423" alt="Screenshot of homepage" src="./readme/homepage.png">
+
 
 Team Members
 
